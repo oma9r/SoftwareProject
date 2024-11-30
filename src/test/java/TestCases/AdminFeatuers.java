@@ -1,15 +1,21 @@
 package TestCases;
 
+
 import Fitness.Admin;
 import io.cucumber.java.en.*;
+
 
 public class AdminFeatuers {
     Admin admin=new Admin ("Ibrahim","yaseed","mashaqi@gmail.com","12345");
     AdminFeatuers(){
 
+
     }
 
 
+
+
+    }
     @Given("the owner has logged into the system with email {string} and password {string}")
     public void the_owner_has_logged_into_the_system_with_email_and_password(String string, String string2) {
 
