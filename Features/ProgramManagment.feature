@@ -68,8 +68,27 @@ Feature: Program Management
 
           Scenario: set schedules
             Given Malik enter the date "1/1/2025" and day "Wed" with "online" session
+            When Malik choose to set session
             Then the system will create the session
-            And the system will notificate the group 
+            And the system will notificate the group
+
+            Scenario: invalid date
+              Given that Malik enter a date "12/2/2023"
+              When Malik choose to set session
+              Then the system will not create the seesion
+              And the system will display a message "Invalid date"
+
+              Scenario: invalid day or wrong string
+                Given Malik enter a wrong day or wrong input
+                When Malik choose to set session
+                Then the system will not create the seesion
+                And the system will display a message "Invalid input"
+
+                Scenario: set schedules with missing data
+                  Given Malik provides a incomplete data about the seesion
+                  When Malik choose to set the session
+                  Then the system will not create the seesion
+                  And the system will display a message "Missing fields required"
 
 
 
