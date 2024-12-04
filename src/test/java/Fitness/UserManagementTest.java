@@ -1,4 +1,4 @@
-package use_cases;
+package Fitness;
 
 
 import org.junit.runner.RunWith;
