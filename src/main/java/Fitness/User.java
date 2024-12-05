@@ -28,7 +28,8 @@ public class User {
 
     }
     public User(){
-        this.id = idCounter++;points=new Random().nextInt(100);
+        this.id = idCounter++;
+        points=new Random().nextInt(100);
     }
 
 public int getPoints(){

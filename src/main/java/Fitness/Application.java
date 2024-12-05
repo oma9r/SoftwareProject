@@ -1,13 +1,18 @@
+
+
 package Fitness;
 
+import Fitness.InstructorP.Program;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Application {
+public class Application
+{
     public static User currentUser =null;
     public static List<User> users =new ArrayList<User>();
     String currentFeature;
+    public static List<Program> programsList = new ArrayList<>();
 
 
     public static User login(String string, String string2) {
