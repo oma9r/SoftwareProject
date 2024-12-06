@@ -8,7 +8,6 @@ public class Session
     private String sessionName;
     private String sessionDay;//friday and tue is holidays
     private String sessionTime;
-    private String sessionLocation;
     private sessionType sessionType; //online or offline
 
 
@@ -18,15 +17,16 @@ public class Session
         this.setSessionName("");
         this.setSessionDay("");
         this.setSessionTime("");
-        this.setSessionLocation("");
         this.setSessionType(null);
     }
 
-    public Session(String sessionID, String sessionName, String sessionDay, String sessionTime, String sessionLocation, sessionType sessionType)
+    public Session(String sessionID, String sessionName, String sessionDay, String sessionTime,sessionType sessionType)
     {
         this.setSessionID(sessionID);
         this.setSessionName(sessionName);
         this.setSessionDay(sessionDay);
+        this.setSessionTime(sessionTime);
+        this.setSessionType(sessionType);
 
 
     }
@@ -63,12 +63,7 @@ public class Session
     public void setSessionTime(String sessionTime) {
         this.sessionTime = sessionTime;
     }
-    public String getSessionLocation() {
-        return sessionLocation;
-    }
-    public void setSessionLocation(String sessionLocation) {
-        this.sessionLocation = sessionLocation;
-    }
+
     public sessionType getSessionType() {
         return sessionType;
     }

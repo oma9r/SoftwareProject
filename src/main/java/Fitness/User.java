@@ -64,6 +64,8 @@ public int getPoints(){
     public void setAddress(String address) {
         this.address = address;
     }
+    public void setName(String name) {this.name = name;}
+
 
 
     public void incPoints() {

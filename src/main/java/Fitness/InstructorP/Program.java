@@ -1,5 +1,8 @@
 package Fitness.InstructorP;
 
+import Fitness.Application;
+import Fitness.Instructor;
+
 import java.util.ArrayList;
 
 public class Program
@@ -8,12 +11,16 @@ public class Program
     private String programDuration;
     private String programLevel;
     private String programGoals;
-    private String programTutorialType;              //compare with tutorialTypeProgram - video,image or document
+    private tutorialTypeProgram programTutorialType;              //compare with tutorialTypeProgram - video,image or document
     private String programPrice;
     private int idProgram;
     private ArrayList sessions;
     private int numberOfSessions;
+    private Instructor instructorProgram;
+    private ProgramStatus programStatus;
+    private String tutorialType;
 
+;
 
     //7 variables
 
@@ -26,30 +33,60 @@ public class Program
         this.setProgramDuration("");
         this.setProgramLevel("");
         this.setProgramGoals("");
-        this.setProgramTutorialType("");
         this.setProgramPrice("");
-        this.setIdProgram(0);
         this.sessions = new ArrayList();
         this.numberOfSessions = 0;
+        this.instructorProgram = null;
+        this.programStatus = null;
+        this.setTutorialType("");
+        Application.currentProgramId++;
+        this.setIdProgram(Application.currentProgramId);
+
+
+
+
 
     }
 
 //user defined constructor
-    public Program(int idProgram, String title, String duration, String level, String goals, String tutorial, String price, int numberOfSessions, ArrayList sessions)
+    public Program(String title, String duration, String level, String goals,String tutorialType, String price,ProgramStatus programStatus,Instructor instructorProgram)
     {
 
         this.setProgramTitle(title);
         this.setProgramDuration(duration);
         this.setProgramLevel(level);
         this.setProgramGoals(goals);
-        this.setProgramTutorialType(tutorial);
         this.setProgramPrice(price);
-        this.setIdProgram(idProgram);
         this.sessions = new ArrayList();
-        this.numberOfSessions = numberOfSessions;
-        this.sessions = sessions;
+        this.numberOfSessions = 0;
+        this.instructorProgram.setName(instructorProgram.getName());
+        this.programStatus = programStatus;
+        this.setTutorialType(tutorialType);
+        Application.currentProgramId++;
+        this.setIdProgram(Application.currentProgramId);
 
 
+
+
+
+
+
+    }
+
+    public Program(String programTitle,String programDuration,String programLevel,String programGoals)
+    {
+        this.setProgramTitle(programTitle);
+        this.setProgramDuration(programDuration);
+        this.setProgramLevel(programLevel);
+        this.setProgramGoals(programGoals);
+        this.setProgramPrice("");
+        this.sessions = new ArrayList();
+        this.numberOfSessions = 0;
+        this.instructorProgram = null;
+        this.programStatus = null;
+        this.setTutorialType("");
+        Application.currentProgramId++;
+        this.setIdProgram(Application.currentProgramId);
     }
 
     //setter and getter methods
@@ -80,24 +117,14 @@ public class Program
     public void setProgramGoals(String programGoals) {
         this.programGoals = programGoals;
     }
-    public String getProgramTutorialType() {
-        return programTutorialType;
-    }
-    public void setProgramTutorialType(String programTutorialType) {
-        this.programTutorialType = programTutorialType;
-    }
+
     public String getProgramPrice() {
         return programPrice;
     }
     public void setProgramPrice(String programPrice) {
         this.programPrice = programPrice;
     }
-    public int getIdProgram() {
-        return idProgram;
-    }
-    public void setIdProgram(int idProgram) {
-        this.idProgram = idProgram;
-    }
+
 
     public ArrayList getSessions() {
         return sessions;
@@ -112,6 +139,38 @@ public class Program
         this.numberOfSessions = numberOfSessions;
     }
 
+    public String getInstructorProgramName() {
+
+        return instructorProgram.getName();
+    }
+
+    public void setInstructorProgram(Instructor instructorProgram) {
+
+        this.instructorProgram.setName(instructorProgram.getName());
+;    }
+
+    public String getTutorialType() {
+        return tutorialType;
+    }
+    public void setTutorialType(String tutorialType) {
+        this.tutorialType = tutorialType;
+    }
+
+    public void setIdProgram(int idProgram) {
+        this.idProgram = idProgram;
+    }
+
+    public int getIdProgram() {
+        return idProgram;
+    }
+
+    public void setProgramTutorialType(tutorialTypeProgram programTutorialType)
+    {
+        this.programTutorialType = programTutorialType;
+    }
+    public tutorialTypeProgram getProgramTutorialType() {
+        return programTutorialType;
+    }
 
 
 }

@@ -13,6 +13,7 @@ public class Application
     public static List<User> users =new ArrayList<User>();
     String currentFeature;
     public static List<Program> programsList = new ArrayList<>();
+    public static  int currentProgramId;
 
 
     public static User login(String string, String string2) {
@@ -67,5 +68,6 @@ public class Application
         }
         return false;
     }
+
 
 }
