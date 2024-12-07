@@ -16,7 +16,7 @@ public class ProgramManagementStep
 {
     Instructor instructor1,instructor2;
     Program program1,program2,program3,upProgram,notUpProgram,deleteProgram,notDeleteProgram;
-    Session session1,session2;
+    Session session1,session2,session3,session4;
     UserStatus statusInstructor1;
     ArrayList<Session> sessionsList;
     ArrayList<Instructor> instructorsList;
@@ -34,8 +34,8 @@ public class ProgramManagementStep
         program2 = new Program("Beta","90","very hard","more body", "Video","70$",ProgramStatus.Active,instructor2);
         instructor2.addPrograms(program2);
         sessionsList = new ArrayList<>();
-        session1 = new Session("12","triceps and biceps","Sunday","6:00pm", sessionType.online);
-        session2 = new Session("13","Chest","Tuesday","6:00pm", sessionType.online);
+        session1 = new Session("12","triceps and biceps","12/2/2025","Sunday","6:00pm", "offline");
+        session2 = new Session("13","Chest","Tuesday","12/1/2025","6:00pm", "oneline");
         sessionsList.add(session1);
         sessionsList.add(session2);
         program1.setSessions(sessionsList);
@@ -363,27 +363,41 @@ public class ProgramManagementStep
 
 
     @Given("Malik enter the date {string} and day {string} with {string} session")
-    public void malik_enter_the_date_and_day_with_session(String string, String string2, String string3)
+    public void malik_enter_the_date_and_day_with_session(String sessionDate, String sessionDay, String sessionType)
     {
+        session3 = new Session(sessionDate,sessionDay,sessionType);
+
+
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @When("Malik choose to set session")
-    public void malik_choose_to_set_session() {
-        // Write code here that turns the phrase above into concrete actions
+    public void malik_choose_to_set_session()
+    {
+       program3.addSession(session3);
         throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will create the session")
-    public void the_system_will_create_the_session() {
-        // Write code here that turns the phrase above into concrete actions
+    public void the_system_will_create_the_session()
+    {
+        boolean flag = false;
+        if(program3.getSessions().contains(session3))
+        {
+            flag = true;
+        }
+        assertTrue(flag);
+
         throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will notified the group")
-    public void the_system_will_notified_the_group() {
-        // Write code here that turns the phrase above into concrete actions
+    public void the_system_will_notified_the_group()
+    {
+        System.out.println("notified the group");
+
+
         throw new io.cucumber.java.PendingException();
     }
 
@@ -392,22 +406,30 @@ public class ProgramManagementStep
 
 
     @Given("that Malik enter a date {string}")
-    public void that_malik_enter_a_date(String string)
+    public void that_malik_enter_a_date(String sessionDate)
     {
-        // Write code here that turns the phrase above into concrete actions
+        session4 = new Session(sessionDate);
+
+
+
         throw new io.cucumber.java.PendingException();
     }
 
 
     @Then("the system will not create the session")
-    public void the_system_will_not_create_the_session() {
-        // Write code here that turns the phrase above into concrete actions
+    public void the_system_will_not_create_the_session()
+    {
+        boolean flag = true;
+        String sessionName = session4.getSessionName();
+        flag = session4.isSessionDateValid(sessionName);
+        assertFalse(flag);
         throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will display an Invalid date message {string}")
-    public void the_system_will_display_an_invalid_date_message(String string) {
-        // Write code here that turns the phrase above into concrete actions
+    public void the_system_will_display_an_invalid_date_message(String string)
+    {
+        System.out.println("Invalid date!");
         throw new io.cucumber.java.PendingException();
     }
 
@@ -415,35 +437,58 @@ public class ProgramManagementStep
     @Given("Malik enter a wrong day or wrong input")
     public void malik_enter_a_wrong_day_or_wrong_input()
     {
-        // Write code here that turns the phrase above into concrete actions
+        boolean flag = true;
+        session4 = new Session("13","ses3","12/2/2025","Friday","6:00pm","offline");
+        if(session4.getSessionDate().equals("Friday") || session4.getSessionDate().equals("Tuesday"))
+        {
+            flag = false;
+
+        }
+
+        assertTrue(flag);
         throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will display a invalid input message {string}")
     public void the_system_will_display_a_invalid_input_message(String string)
     {
-        // Write code here that turns the phrase above into concrete actions
+        System.out.println("Invalid input!");
         throw new io.cucumber.java.PendingException();
     }
 
     @Given("Malik provides a incomplete data about the session")
-    public void malik_provides_a_incomplete_data_about_the_session() {
-        // Write code here that turns the phrase above into concrete actions
+    public void malik_provides_a_incomplete_data_about_the_session()
+    {
+        session4 = new Session("12/3/2025","Wed","online");
+
         throw new io.cucumber.java.PendingException();
     }
 
     @When("Malik choose to set the session")
-    public void malik_choose_to_set_the_session() {
-        // Write code here that turns the phrase above into concrete actions
+    public void malik_choose_to_set_the_session()
+    {
+        boolean flag = true;
+        if(session4.getSessionName().equals(null))
+        {
+            flag = false;
+
+        }
+        assertFalse(flag);
         throw new io.cucumber.java.PendingException();
     }
 
 
     @Then("the system will display a Missing fields message {string}")
-    public void the_system_will_display_a_missing_fields_message(String string) {
+    public void the_system_will_display_a_missing_fields_message(String string)
+    {
+        System.out.println("Missing fields");
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
+
+
+
 
 
 

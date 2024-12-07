@@ -41,6 +41,7 @@ public class Program
         this.setTutorialType("");
         Application.currentProgramId++;
         this.setIdProgram(Application.currentProgramId);
+        this.setNumberOfSessions(0);
 
 
 
@@ -64,6 +65,7 @@ public class Program
         this.setTutorialType(tutorialType);
         Application.currentProgramId++;
         this.setIdProgram(Application.currentProgramId);
+        this.setNumberOfSessions(0);
 
 
 
@@ -87,6 +89,7 @@ public class Program
         this.setTutorialType("");
         Application.currentProgramId++;
         this.setIdProgram(Application.currentProgramId);
+        this.setNumberOfSessions(0);
     }
 
     //setter and getter methods
@@ -170,6 +173,27 @@ public class Program
     }
     public tutorialTypeProgram getProgramTutorialType() {
         return programTutorialType;
+    }
+
+    public boolean addSession(Session session)
+    {
+        this.sessions.add(session);
+        if(this.sessions.contains(session))
+        {
+            return true;
+        }
+        return false;
+
+    }
+
+    public boolean removeSession(Session session)
+    {
+        this.sessions.remove(session);
+        if(this.sessions.contains(session))
+        {
+            return false;
+        }
+        return true;
     }
 
 

@@ -2,13 +2,18 @@
 
 package Fitness.InstructorP;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class Session
 {
     private String sessionID;
     private String sessionName;
+    private String sessionDate;
     private String sessionDay;//friday and tue is holidays
     private String sessionTime;
-    private sessionType sessionType; //online or offline
+    private String sessionType; //online or offline
 
 
     public Session()
@@ -17,18 +22,42 @@ public class Session
         this.setSessionName("");
         this.setSessionDay("");
         this.setSessionTime("");
-        this.setSessionType(null);
+        this.setSessionType("");
+        this.setSessionDate("");
     }
 
-    public Session(String sessionID, String sessionName, String sessionDay, String sessionTime,sessionType sessionType)
+    public Session(String sessionID, String sessionName,String sessionDate, String sessionDay, String sessionTime,String sessionType)
     {
         this.setSessionID(sessionID);
         this.setSessionName(sessionName);
         this.setSessionDay(sessionDay);
         this.setSessionTime(sessionTime);
         this.setSessionType(sessionType);
+        this.setSessionDate(sessionDate);
 
 
+    }
+
+    public Session(String sessionDate,String sessionDay,String sessionType)
+    {
+        this.setSessionDate(sessionDate);
+        this.setSessionType(sessionType);
+        this.setSessionDay(sessionDay);
+        this.setSessionID("");
+        this.setSessionName("");
+        this.setSessionType("");
+
+
+    }
+
+    public Session(String sessionDate)
+    {
+        this.setSessionDate(sessionDate);
+        this.setSessionDay("");
+        this.setSessionID("");
+        this.setSessionName("");
+        this.setSessionType("");
+        this.setSessionTime("");
     }
 
 
@@ -64,11 +93,41 @@ public class Session
         this.sessionTime = sessionTime;
     }
 
-    public sessionType getSessionType() {
+    public String getSessionType() {
         return sessionType;
     }
-    public void setSessionType(sessionType sessionType) {
+    public void setSessionType(String sessionType) {
         this.sessionType = sessionType;
     }
+
+    public void setSessionDate(String sessionDate) {
+        this.sessionDate = sessionDate;
+    }
+    public String getSessionDate() {
+        return sessionDate;
+    }
+
+
+
+
+
+        public boolean isSessionDateValid(String dateString) {
+            try {
+
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");
+
+                LocalDate inputDate = LocalDate.parse(dateString, formatter);
+
+                LocalDate today = LocalDate.now();
+
+                return !inputDate.isBefore(today);
+            }
+            catch (DateTimeParseException e)
+            {
+
+                return false;
+            }
+        }
+
 
 }
