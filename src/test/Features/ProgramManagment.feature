@@ -47,13 +47,14 @@ Feature: Program Management
           #delete scenarios
 
         Scenario: delete a program
-          Given already program exist with following details:
+          Given already program exist with following details to delete it:
 
             |Program Title|duration|level|goal        |video|images     |documents|price|
             |Alpha        | 90     | 3   | more power | url1| image.png | roadmap | 65$ |
-          When Malik enter the program title called "Alpha"
+          And Malik enter the program title called "Alpha"
+          When Malik choose to delete the program
           Then the system will delete the program with its details
-          And the system will display a message "The Deletion of the program done!"
+          And the system will display message that the program deleted "The Deletion of the program done!"
 
           Scenario: failed to delete a program
             Given already program exist with following details:

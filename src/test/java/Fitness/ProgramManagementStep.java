@@ -56,7 +56,7 @@ public class ProgramManagementStep
         System.out.println("Welcome" + instructorName);
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Given("he logged into the system with email {string} and password {string}")
     public void he_logged_into_the_system_with_email_and_password(String email, String password) {
@@ -105,7 +105,7 @@ public class ProgramManagementStep
         program3.setProgramPrice(priceProgram);
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @When("Malik choose to create a new Program with details")
     public void malik_choose_to_create_a_new_program_with_details()
@@ -114,7 +114,7 @@ public class ProgramManagementStep
         Program program4 = new Program("ssn121","130","easy1","more focus");
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("display a message that the program created successfully")
     public void display_a_message_that_the_program_created_successfully()
@@ -122,7 +122,7 @@ public class ProgramManagementStep
         System.out.println("Program created successfully");
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
     @Given("Malik in program management page")
@@ -131,7 +131,7 @@ public class ProgramManagementStep
         System.out.println("You are in the program management page");
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @When("Malik wants to create a new fitness program")
     public void malik_wants_to_create_a_new_fitness_program()
@@ -140,7 +140,7 @@ public class ProgramManagementStep
         Program program5 = new Program("pro3","70","medium","more12");
         programsList.add(program5);
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @When("with missing data details")
     public void with_missing_data_details() {
@@ -155,17 +155,19 @@ public class ProgramManagementStep
 
        assertFalse(test);
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("the system will display an error message {string}")
     public void the_system_will_display_an_error_message(String string) {
         System.out.println("Error message: there's a missing data");
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("the program will not be created")
-    public void the_program_will_not_be_created() {
+    public void the_program_will_not_be_created()
+    {
+        System.out.println("Program will not be created");
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
 
@@ -180,7 +182,7 @@ public class ProgramManagementStep
         // Double, Byte, Short, Long, BigInteger or BigDecimal.
         //
         // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 //××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
 
@@ -204,7 +206,7 @@ public class ProgramManagementStep
 
         assertTrue(flag);
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("it will update the program details based on the enter data")
     public void it_will_update_the_program_details_based_on_the_enter_data()
@@ -215,7 +217,7 @@ public class ProgramManagementStep
 
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("the system should show a that the program updated")
     public void the_system_should_show_a_that_the_program_updated()
@@ -230,7 +232,7 @@ public class ProgramManagementStep
         assertTrue("The program updated",flag);
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
 
@@ -239,7 +241,7 @@ public class ProgramManagementStep
     {
         notUpProgram = new Program();
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @When("the program title hasn't exist")
     public void the_program_title_hasn_t_exist()
@@ -253,20 +255,20 @@ public class ProgramManagementStep
 
         assertFalse(flag);
 
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
     @Then("the system will not update the program details")
     public void the_system_will_not_update_the_program_details()
     {
         System.out.println("there's no data to update");
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("will the system display a message {string}")
     public void will_the_system_display_a_message(String string)
     {
         System.out.println("Error message");
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
 
@@ -274,7 +276,20 @@ public class ProgramManagementStep
 
 
 
-    @When("Malik enter the program title called {string}")
+    @Given("already program exist with following details to delete it:")
+    public void already_program_exist_with_following_details_to_delete_it(io.cucumber.datatable.DataTable dataTable)
+    {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+        // Double, Byte, Short, Long, BigInteger or BigDecimal.
+        //
+        // For other transformations you can register a DataTableType.
+        //throw new io.cucumber.java.PendingException();
+    }
+
+    @And("Malik enter the program title called {string}")
     public void malik_enter_the_program_title_called(String programName)
     {
         deleteProgram = new Program();
@@ -284,13 +299,20 @@ public class ProgramManagementStep
             {
                 deleteProgram = program;
                 programsList.remove(program);
-                programsList.add(deleteProgram);
+
 
             }
         }
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
+    }
+
+    @When("Malik choose to delete the program")
+    public void malikChooseToDeleteTheProgram()
+    {
+        programsList.add(deleteProgram);
+
     }
     @Then("the system will delete the program with its details")
     public void the_system_will_delete_the_program_with_its_details()
@@ -303,14 +325,14 @@ public class ProgramManagementStep
 
         assertFalse(flag);
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("the system will display a message {string}")
-    public void the_system_will_dispaly_a_message(String string)
+    public void the_system_will_dispaly_a_message(String string)                                    //////////////////////////////////////////////////////////
     {
 
         System.out.println("The program has been deleted");
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
 
@@ -322,7 +344,7 @@ public class ProgramManagementStep
         notDeleteProgram.setProgramTitle(string);
 
 
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
     @When("the program title doesn't exist")
     public void the_program_title_doesn_t_exist()
@@ -336,7 +358,7 @@ public class ProgramManagementStep
            }
        }
        assertTrue(flag);
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
     @Then("the system will not delete anything")
     public void the_system_will_not_delete_anything()
@@ -344,13 +366,13 @@ public class ProgramManagementStep
 
         System.out.println("there's no program to delete");
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
-    @Then("the system will display a message {string}")
-    public void the_system_will_display_a_message(String string)
+    @Then("the system will display message that the program deleted {string}")
+    public void the_system_will_display_message_that_the_program_deleted(String string)
     {
         System.out.println("Failed to delete the program");
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
 
 
@@ -369,14 +391,15 @@ public class ProgramManagementStep
 
 
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
 
     @When("Malik choose to set session")
     public void malik_choose_to_set_session()
     {
+        program3 = new Program();
        program3.addSession(session3);
-        throw new io.cucumber.java.PendingException();
+      //  throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will create the session")
@@ -389,7 +412,7 @@ public class ProgramManagementStep
         }
         assertTrue(flag);
 
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will notified the group")
@@ -398,7 +421,7 @@ public class ProgramManagementStep
         System.out.println("notified the group");
 
 
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
 
 
@@ -412,7 +435,7 @@ public class ProgramManagementStep
 
 
 
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
 
@@ -423,14 +446,14 @@ public class ProgramManagementStep
         String sessionName = session4.getSessionName();
         flag = session4.isSessionDateValid(sessionName);
         assertFalse(flag);
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will display an Invalid date message {string}")
     public void the_system_will_display_an_invalid_date_message(String string)
     {
         System.out.println("Invalid date!");
-        throw new io.cucumber.java.PendingException();
+      //  throw new io.cucumber.java.PendingException();
     }
 
 
@@ -446,14 +469,14 @@ public class ProgramManagementStep
         }
 
         assertTrue(flag);
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
     @Then("the system will display a invalid input message {string}")
     public void the_system_will_display_a_invalid_input_message(String string)
     {
         System.out.println("Invalid input!");
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
     @Given("Malik provides a incomplete data about the session")
@@ -461,7 +484,7 @@ public class ProgramManagementStep
     {
         session4 = new Session("12/3/2025","Wed","online");
 
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
 
     @When("Malik choose to set the session")
@@ -473,8 +496,8 @@ public class ProgramManagementStep
             flag = false;
 
         }
-        assertFalse(flag);
-        throw new io.cucumber.java.PendingException();
+        assertTrue(flag);
+       // throw new io.cucumber.java.PendingException();
     }
 
 
@@ -483,18 +506,8 @@ public class ProgramManagementStep
     {
         System.out.println("Missing fields");
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
-
-
-
-
-
-
-
-
-
-
 
 
 

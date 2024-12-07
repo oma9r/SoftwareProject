@@ -36,6 +36,7 @@ public class Program
         this.setProgramPrice("");
         this.sessions = new ArrayList();
         this.numberOfSessions = 0;
+        instructorProgram = new Instructor();
         this.instructorProgram = null;
         this.programStatus = null;
         this.setTutorialType("");
@@ -50,7 +51,7 @@ public class Program
     }
 
 //user defined constructor
-    public Program(String title, String duration, String level, String goals,String tutorialType, String price,ProgramStatus programStatus,Instructor instructorProgram)
+    public Program(String title, String duration, String level, String goals,String tutorialType, String price,ProgramStatus programStatus,Instructor instructorProgram1)
     {
 
         this.setProgramTitle(title);
@@ -60,7 +61,8 @@ public class Program
         this.setProgramPrice(price);
         this.sessions = new ArrayList();
         this.numberOfSessions = 0;
-        this.instructorProgram.setName(instructorProgram.getName());
+        instructorProgram = new Instructor();
+        this.instructorProgram.setName(instructorProgram1.getName());
         this.programStatus = programStatus;
         this.setTutorialType(tutorialType);
         Application.currentProgramId++;

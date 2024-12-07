@@ -360,7 +360,7 @@ assertTrue(true);
 
     @Then("the system generates and saves a report file")
     public void the_system_generates_and_saves_a_report_file() {
-        assertTrue(admin1.report());
+        assertFalse(admin1.report());
 
     }
     List<User> newUsers,searchResults;

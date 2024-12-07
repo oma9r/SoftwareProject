@@ -15,6 +15,12 @@ public class Instructor extends User
         this.status=status;
         programs = new ArrayList();
     }
+
+    public Instructor()
+    {
+        programs = new ArrayList();
+
+    }
     public UserStatus getStatus() {
         return status;
     }
