@@ -28,7 +28,16 @@ public class User {
 
     }
     public User(){
-        this.id = idCounter++;points=new Random().nextInt(100);
+        this.id = idCounter++;
+        points=0;
+        name="ibrahim";
+        age=20;
+        gender="male";
+        address="palestine";
+        email="ibrahim"+new Random().nextInt()+"@gmail.com";
+        password="password";
+
+
     }
 
 public int getPoints(){
@@ -67,5 +76,10 @@ public int getPoints(){
 
     public void incPoints() {
         this.points++;
+    }
+
+    @Override
+    public String toString() {
+        return "[id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender+", address=" + address + ", email=" + email + ", password=" + password + ", role=" + role + "]";
     }
 }

@@ -3,8 +3,8 @@ package Fitness;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
+import static Fitness.Application.*;
 
 public class Admin extends User {
     public Admin(String name, int age, String gender, String address, String email, String password) {
@@ -12,6 +12,7 @@ public class Admin extends User {
 
 
     }
+
     public Admin(){}
 
     public boolean addAdmin(String name, int age, String gender, String address, String email, String pass) {
@@ -22,7 +23,6 @@ public class Admin extends User {
         Admin a = new Admin(name, age, gender, address, email, pass);
         return Application.users.add(a);
     }
-
 
     public boolean deleteUser(String deleted) {
         for(int i=0; i<Application.users.size(); i++){
@@ -137,25 +137,99 @@ return y;
     }
 
     public boolean report() {
+        String filePath = "C:\\Users\\HP\\Desktop\\New folder\\SoftwareProject\\Report.txt";
+
         try {
-            File file=new File("C:\\Users\\HP\\Desktop\\softProj\\Report.txt");
+            File file = new File(filePath);
+
+            file.getParentFile().mkdirs();
+
+
             if (file.createNewFile()) {
                 System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists, writing to the existing file.");
             }
-            else {
-                FileWriter fw = new FileWriter("C:\\Users\\HP\\Desktop\\softProj\\Report.txt");
+
+            try (FileWriter fw = new FileWriter(file)) {
                 for (int i = 0; i < Application.users.size(); i++) {
-                    fw.write(Application.users.get(i).toString());
+                    fw.write(Application.users.get(i).toString() + System.lineSeparator());
                 }
-                fw.close();
-                return true;
+                System.out.println("Report written successfully.");
             }
+            return true;
 
-
-
-        }catch (IOException e){
-            System.out.println(e);
+        } catch (IOException e) {
+            System.out.println("An exception occurred:");
+            e.printStackTrace();
         }
+
         return false;
+
+    }
+
+    @Override
+    public String toString() {
+        return "["+super.toString()+"]\n";
+    }
+
+    public void approve(Article article) {
+        article.setApprove(true);
+        wallness.add(article);
+    }
+
+    public void review() {
+        for(int i=0; i<notApprovedArticles.size(); i++){
+            System.out.println(notApprovedArticles.get(i).toString());
+            System.out.println("1.Approve");
+            System.out.println("2.Reject");
+           /* Scanner sc = new Scanner(System.in);
+            while (true) {
+                int choice = sc.nextInt();
+                if (choice == 1){
+                    approve(notApprovedArticles.get(i));
+                    notApprovedArticles.remove(i);
+                    sc.close();
+                    break;
+                }
+
+                else if (choice == 2){
+                    notApprovedArticles.remove(i);
+                    sc.close();
+                    break;
+                }
+            }*/
+        }
+
+    }
+
+    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+        if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0){
+            System.out.println("Missed data");
+            return false;
+          }
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getEmail().equals(email)){
+                System.out.println("email already used");
+                return false;
+            }
+        }
+        users.add(new Client(name,age,gender,address,email,pass,status));
+        return true;
+    }
+
+    public boolean viewSubscriptions() {
+        try {
+            for(int i=0; i<users.size(); i++) {
+                if (users.get(i) instanceof Client) {
+                    System.out.println(users.get(i).getName() + ((Client) users.get(i)).getPlan());
+                }
+            }
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+
+
     }
 }

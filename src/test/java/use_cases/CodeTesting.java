@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(features="Features",plugin={"html:target/cucumber/wikipedia.html"},monochrome=true,snippets=SnippetType.CAMELCASE,glue={"use_cases"})
 
 
-public class UserManagementTest {
+public class CodeTesting {
 
 
 }
