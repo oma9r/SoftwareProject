@@ -1,0 +1,59 @@
+package use_cases;
+
+import Fitness.Admin;
+import Fitness.Application;
+import Fitness.Client;
+import Fitness.UserStatus;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+import static Fitness.Application.users;
+import static org.junit.Assert.assertTrue;
+
+public class SubscriptionManagementSteps {
+Client client=new Client();
+Admin admin=new Admin();
+
+    public SubscriptionManagementSteps(){
+        users.add(client);
+
+    }
+
+
+    @Given("a client is logged in")
+    public void a_client_is_logged_in() {
+        Application.login(client.getEmail(),client.getPass());
+        assertTrue(Application.currentUser instanceof Client);
+    }
+    String plan;
+    @When("the client selects the {string} plan")
+    public void the_client_selects_the_plan(String string) {
+        plan=string;
+    }
+
+
+    @Then("the client's subscription is activated")
+    public void the_client_s_subscription_is_activated() {
+        assertTrue(client.setPlan(plan));
+    }
+
+    @Then("the client can access premium features")
+    public void the_client_can_access_premium_features() {
+        assertTrue(client.isPremium());
+    }
+
+boolean flag;
+    @When("the admin views the subscription plans")
+    public void the_admin_views_the_subscription_plans() {
+       flag= admin.viewSubscriptions();
+    }
+
+    @Then("the admin can see all active plans")
+    public void the_admin_can_see_all_active_plans() {
+
+        assertTrue(flag);
+    }
+
+
+}
