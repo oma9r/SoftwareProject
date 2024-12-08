@@ -2,6 +2,7 @@ package Fitness.InstructorP;
 
 import Fitness.Application;
 import Fitness.Instructor;
+import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 
 import java.util.ArrayList;
 
@@ -14,11 +15,12 @@ public class Program
     private tutorialTypeProgram programTutorialType;              //compare with tutorialTypeProgram - video,image or document
     private String programPrice;
     private int idProgram;
-    private ArrayList sessions;
+    private ArrayList<Session> sessions;
     private int numberOfSessions;
     private Instructor instructorProgram;
     private ProgramStatus programStatus;
     private String tutorialType;
+    private ArrayList<DiscussionForm> discussionForms;
 
 ;
 
@@ -34,7 +36,7 @@ public class Program
         this.setProgramLevel("");
         this.setProgramGoals("");
         this.setProgramPrice("");
-        this.sessions = new ArrayList();
+        this.sessions = new ArrayList<Session>();
         this.numberOfSessions = 0;
         instructorProgram = new Instructor();
         this.instructorProgram = null;
@@ -43,6 +45,7 @@ public class Program
         Application.currentProgramId++;
         this.setIdProgram(Application.currentProgramId);
         this.setNumberOfSessions(0);
+        this.discussionForms = new ArrayList<DiscussionForm>();
 
 
 
@@ -59,7 +62,7 @@ public class Program
         this.setProgramLevel(level);
         this.setProgramGoals(goals);
         this.setProgramPrice(price);
-        this.sessions = new ArrayList();
+        this.sessions = new ArrayList<Session>();
         this.numberOfSessions = 0;
         instructorProgram = new Instructor();
         this.instructorProgram.setName(instructorProgram1.getName());
@@ -68,6 +71,7 @@ public class Program
         Application.currentProgramId++;
         this.setIdProgram(Application.currentProgramId);
         this.setNumberOfSessions(0);
+        this.discussionForms = new ArrayList<DiscussionForm>();
 
 
 
@@ -84,7 +88,7 @@ public class Program
         this.setProgramLevel(programLevel);
         this.setProgramGoals(programGoals);
         this.setProgramPrice("");
-        this.sessions = new ArrayList();
+        this.sessions = new ArrayList<Session>();
         this.numberOfSessions = 0;
         this.instructorProgram = null;
         this.programStatus = null;
@@ -92,6 +96,27 @@ public class Program
         Application.currentProgramId++;
         this.setIdProgram(Application.currentProgramId);
         this.setNumberOfSessions(0);
+        this.discussionForms = new ArrayList<DiscussionForm>();
+    }
+
+    public Program(DiscussionForm discussionForm)
+    {
+        this.setProgramTitle("");
+        this.setProgramDuration("");
+        this.setProgramLevel("");
+        this.setProgramGoals("");
+        this.setProgramPrice("");
+        this.sessions = new ArrayList<Session>();
+        this.numberOfSessions = 0;
+        instructorProgram = new Instructor();
+        this.instructorProgram = null;
+        this.programStatus = null;
+        this.setTutorialType("");
+        Application.currentProgramId++;
+        this.setIdProgram(Application.currentProgramId);
+        this.setNumberOfSessions(0);
+        this.discussionForms = new ArrayList<DiscussionForm>();
+        this.setDiscussionForms(discussionForms);
     }
 
     //setter and getter methods
@@ -131,10 +156,10 @@ public class Program
     }
 
 
-    public ArrayList getSessions() {
+    public ArrayList<Session> getSessions() {
         return sessions;
     }
-    public void setSessions(ArrayList sessions) {
+    public void setSessions(ArrayList<Session> sessions) {
         this.sessions = sessions;
     }
     public int getNumberOfSessions() {
@@ -175,6 +200,16 @@ public class Program
     }
     public tutorialTypeProgram getProgramTutorialType() {
         return programTutorialType;
+    }
+
+    public void setDiscussionForms(ArrayList<DiscussionForm> discussionForms)
+    {
+        this.discussionForms = discussionForms;
+    }
+
+    public ArrayList<DiscussionForm> getDiscussionForms()
+    {
+        return discussionForms;
     }
 
     public boolean addSession(Session session)

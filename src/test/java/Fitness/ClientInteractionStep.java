@@ -1,11 +1,16 @@
 package Fitness;
 
+import Fitness.InstructorP.Program;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ClientInteractionStep
 {
+
+    Instructor instructor1;
+    Program program1;
+
 
     @Given("Malik has logged to the system")
     public void malik_has_logged_to_the_system()
