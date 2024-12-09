@@ -34,13 +34,18 @@ public class Admin extends User {
         return false;
     }
 
-    public boolean addClient(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+    public Client addClient(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
         if(Application.findUser(email)==true)
-            return false;
-        if(name==null||age<16||gender==null||address==null||email==null||pass==null)
-            return false;
+            return null;
+
+
+        if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0)
+            return null;
+
+
         Client c = new Client(name, age, gender, address, email, pass,status);
-        return Application.users.add(c);
+        Application.users.add(c);
+        return c;
     }
 
     public boolean updateUser(String mail,int age,String address, String pass) {
