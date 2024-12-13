@@ -6,92 +6,101 @@ import java.util.ArrayList;
 
 public class Post
 {
-    private String contentPost;
-    private User authorPost;
-    private String datePost;
-    private String dayPost;
-    private String timePost;
+    private String content;
+    private User author;
+    private String date;
+    private String day;
+    private String time;
     private ArrayList<Comment> comments;
     private DiscussionForm discussionForm;
+    private String title;
 
 
 
     public Post()
     {
-        this.setAuthorPost(null);
-        this.setDatePost("");
-        this.setDayPost("");
-        this.setTimePost("");
-        this.setContentPost("");
+        this.setAuthor(null);
+        this.setDate("");
+        this.setDay("");
+        this.setTime("");
+        this.setContent("");
+        comments = new ArrayList<Comment>();
+        discussionForm = new DiscussionForm();
+        this.setTitle("");
+
+    }
+
+    public Post(User authorPost,String titlePost, String contentPost,String datePost)
+    {
+        this.setAuthor(authorPost);
+        this.setDate(datePost);
+        this.setDay("");
+        this.setTime("");
+        this.setContent(contentPost);
         comments = new ArrayList<Comment>();
         discussionForm = new DiscussionForm();
 
     }
+    
+    
+    
+    
+    
+    
+    
 
-    public Post(String contentPost,User authorPost,String datePost,String dayPost,String timePost)
+
+
+
+
+
+
+
+
+
+
+    public String getContent()
     {
-        this.setAuthorPost(authorPost);
-        this.setDatePost(datePost);
-        this.setDayPost(dayPost);
-        this.setTimePost(timePost);
-        this.setContentPost(contentPost);
-        comments = new ArrayList<Comment>();
-        discussionForm = new DiscussionForm();
-
+        return content;
     }
 
-
-
-
-
-
-
-
-
-
-
-    public String getContentPost()
+    public void setContent(String contentPost)
     {
-        return contentPost;
+        this.content = contentPost;
+    }
+    public User getAuthor()
+    {
+        return author;
     }
 
-    public void setContentPost(String contentPost)
+    public void setAuthor(User authorPost)
     {
-        this.contentPost = contentPost;
-    }
-    public User getAuthorPost()
-    {
-        return authorPost;
+        this.author = authorPost;
     }
 
-    public void setAuthorPost(User authorPost)
+    public String getDate()
     {
-        this.authorPost = authorPost;
+        return date;
     }
-
-    public String getDatePost()
+    public void setDate(String datePost)
     {
-        return datePost;
+        this.date = datePost;
     }
-    public void setDatePost(String datePost)
+    public String getDay()
     {
-        this.datePost = datePost;
+        return day;
     }
-    public String getDayPost()
+    public void setDay(String dayPost)
     {
-        return dayPost;
+        this.day = dayPost;
     }
-    public void setDayPost(String dayPost)
+    public String getTime()
     {
-        this.dayPost = dayPost;
+        return time;
     }
-    public String getTimePost()
+    public void setTime(String timePost)
     {
-        return timePost;
-    }
-    public void setTimePost(String timePost)
-    {
-        this.timePost = timePost;
+        this.time = timePost;
     }
 
     public ArrayList<Comment> getComment()
@@ -109,6 +118,13 @@ public class Post
 
     public DiscussionForm getDiscussionForm() {
         return this.discussionForm;
+    }
+
+    public void setTitle(String titlePost) {
+        this.title = titlePost;
+    }
+    public String getTitle() {
+        return title;
     }
 
     public boolean addComment(Comment comment)

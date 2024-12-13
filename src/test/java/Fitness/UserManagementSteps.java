@@ -56,10 +56,10 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     }
 
-    @Then("displays the message: {string}")
+    @Then("displays the Message: {string}")
     public void displays_the_message(String msg) {
         System.out.println(msg);
-//        boolean m=msg.equals(message);
+//        boolean m=msg.equals(Message);
 //
 //      assertTrue(m==true ? true : false);
 
@@ -86,7 +86,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     }
 
-    @Then("the system displays an error message: {string}")
+    @Then("the system displays an error Message: {string}")
     public void the_system_displays_an_error_message(String string) {
         if (flag)
             System.out.println("fail to add user");
@@ -126,7 +126,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
         app.setCurrentFeature("");
     }
 
-    @Then("the system displays an error message: Required fields are missing")
+    @Then("the system displays an error Message: Required fields are missing")
     public void the_system_displays_an_error_message_required_fields_are_missing() {
         System.out.println("Required fields are missing");
 
@@ -309,9 +309,9 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
         assertFalse(admin1.setStatus("admin@gmail.com", UserStatus.DeActive));
     }
 
-    @Then("the system displays the error message: {string}")
+    @Then("the system displays the error Message: {string}")
     public void the_system_displays_the_error_message(String string) {
-        System.out.println("error message: " + string);
+        System.out.println("error Message: " + string);
     }
 
 
@@ -415,7 +415,7 @@ assertTrue(true);
         }
     }
 
-    @Then("the system displays message: {string}")
+    @Then("the system displays Message: {string}")
     public void thenTheSystemDisplaysMessage(String expectedMessage) {
         assertEquals(expectedMessage, searchMessage);
     }

@@ -70,4 +70,44 @@ public class DiscussionForm
     public void setClientsList(ArrayList<User> clientsList) {
         this.clientsList = clientsList;
     }
+
+    public boolean addClient(User user)
+    {
+        if(!this.clientsList.contains(user))
+        {
+            this.clientsList.add(user);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeClient(User user)
+    {
+        if(this.clientsList.contains(user))
+        {
+            this.clientsList.remove(user);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean addPost(Post post)
+    {
+        if(!this.postList.contains(post))
+        {
+            this.postList.add(post);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removePost(Post post)
+    {
+        if(this.postList.contains(post))
+        {
+            this.postList.remove(post);
+            return true;
+        }
+        return false;
+    }
 }

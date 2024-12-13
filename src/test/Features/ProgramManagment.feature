@@ -21,7 +21,7 @@ Feature: Program Management
       Given Malik in program management page
       When Malik wants to create a new fitness program
       And with missing data details
-      Then the system will display an error message "Required fields are missing"
+      Then the system will display an error Message "Required fields are missing"
       And the program will not be created
 
       #update scenarios
@@ -42,7 +42,7 @@ Feature: Program Management
           And Malik enter a title program "Gama"
            When the program title hasn't exist
           Then the system will not update the program details
-          And will the system display a message "There's no Program with this title"
+          And  the system will display a message "There's no Program with this title"
 
           #delete scenarios
 

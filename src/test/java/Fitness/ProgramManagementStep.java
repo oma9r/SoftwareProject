@@ -1,12 +1,9 @@
 package Fitness;
-
 import Fitness.InstructorP.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.awt.*;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertFalse;
@@ -17,7 +14,6 @@ public class ProgramManagementStep
     Instructor instructor1,instructor2;
     Program program1,program2,program3,upProgram,notUpProgram,deleteProgram,notDeleteProgram;
     Session session1,session2,session3,session4;
-    UserStatus statusInstructor1;
     ArrayList<Session> sessionsList;
     ArrayList<Instructor> instructorsList;
     ArrayList<Program> programsList;
@@ -35,7 +31,7 @@ public class ProgramManagementStep
         instructor2.addPrograms(program2);
         sessionsList = new ArrayList<>();
         session1 = new Session("12","triceps and biceps","12/2/2025","Sunday","6:00pm", "offline");
-        session2 = new Session("13","Chest","Tuesday","12/1/2025","6:00pm", "oneline");
+        session2 = new Session("13","Chest","Tuesday","12/1/2025","6:00pm", "online");
         sessionsList.add(session1);
         sessionsList.add(session2);
         program1.setSessions(sessionsList);
@@ -68,6 +64,7 @@ public class ProgramManagementStep
             if(instructor.getEmail().equals(email) && instructor.getPass().equals(password))
             {
                 isLoggedIn = true;
+                break;
             }
         }
 
@@ -112,6 +109,8 @@ public class ProgramManagementStep
     {
         // Write code here that turns the phrase above into concrete actions
         Program program4 = new Program("ssn121","130","easy1","more focus");
+        programsList.add(program4);
+
 
 
         //throw new io.cucumber.java.PendingException();
@@ -157,9 +156,9 @@ public class ProgramManagementStep
 
         //throw new io.cucumber.java.PendingException();
     }
-    @Then("the system will display an error message {string}")
-    public void the_system_will_display_an_error_message(String string) {
-        System.out.println("Error message: there's a missing data");
+    @Then("the system will display an error Message {string}")
+    public void the_system_will_display_an_error_message() {
+        System.out.println("Error Message: there's a missing data");
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the program will not be created")
@@ -173,7 +172,7 @@ public class ProgramManagementStep
 
 //××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
     @Given("already program exist with following details:")
-    public void already_program_exist_with_following_details(io.cucumber.datatable.DataTable dataTable)
+    public void already_program_exist_with_following_details(/*io.cucumber.datatable.DataTable dataTable*/)
     {
         // Write code here that turns the phrase above into concrete actions
         // For automatic transformation, change DataTable to one of
@@ -223,10 +222,8 @@ public class ProgramManagementStep
     public void the_system_should_show_a_that_the_program_updated()
     {
         boolean flag = true;
-        if(upProgram.getProgramTitle().isEmpty())
-        {
+        if(upProgram.getProgramTitle().isEmpty()) {
             flag = false;
-
         }
 
         assertTrue("The program updated",flag);
@@ -244,7 +241,7 @@ public class ProgramManagementStep
         //throw new io.cucumber.java.PendingException();
     }
     @When("the program title hasn't exist")
-    public void the_program_title_hasn_t_exist()
+    public void the_program_title_has_not_exist()
     {
         boolean flag = true;
 
@@ -264,10 +261,10 @@ public class ProgramManagementStep
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();
     }
-    @Then("will the system display a message {string}")
+    @Then("the system will display a message {string}")
     public void will_the_system_display_a_message(String string)
     {
-        System.out.println("Error message");
+        System.out.println("Error Message");
         //throw new io.cucumber.java.PendingException();
     }
 
@@ -327,8 +324,8 @@ public class ProgramManagementStep
 
         //throw new io.cucumber.java.PendingException();
     }
-    @Then("the system will display a message {string}")
-    public void the_system_will_dispaly_a_message(String string)                                    //////////////////////////////////////////////////////////
+    @Then("the system will display message that the program deleted {string}")
+    public void the_system_will_display_a_message(String string)                                    //////////////////////////////////////////////////////////
     {
 
         System.out.println("The program has been deleted");
@@ -347,7 +344,7 @@ public class ProgramManagementStep
        // throw new io.cucumber.java.PendingException();
     }
     @When("the program title doesn't exist")
-    public void the_program_title_doesn_t_exist()
+    public void the_program_title_does_not_exist()
     {
        boolean flag = true;
        for(Program program : programsList)
@@ -355,6 +352,7 @@ public class ProgramManagementStep
            if(notDeleteProgram.getProgramTitle().equals(program.getProgramTitle()))
            {
                flag = false;
+               break;
            }
        }
        assertTrue(flag);
@@ -368,7 +366,7 @@ public class ProgramManagementStep
 
         //throw new io.cucumber.java.PendingException();
     }
-    @Then("the system will display message that the program deleted {string}")
+    @Then("the system will display Message that the program deleted {string}")
     public void the_system_will_display_message_that_the_program_deleted(String string)
     {
         System.out.println("Failed to delete the program");
@@ -491,7 +489,7 @@ public class ProgramManagementStep
     public void malik_choose_to_set_the_session()
     {
         boolean flag = true;
-        if(session4.getSessionName().equals(null))
+        if(session4.getSessionName()==null)
         {
             flag = false;
 
@@ -508,6 +506,28 @@ public class ProgramManagementStep
         // Write code here that turns the phrase above into concrete actions
        // throw new io.cucumber.java.PendingException();
     }
+
+    public boolean addProgram(Program program)
+    {
+        if(!this.programsList.contains(program))
+        {
+            this.programsList.add(program);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeProgram(Program program)
+    {
+        if(this.programsList.contains(program))
+        {
+            this.programsList.remove(program);
+            return true;
+        }
+        return false;
+    }
+
+
 
 
 

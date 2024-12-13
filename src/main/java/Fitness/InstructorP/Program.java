@@ -1,6 +1,7 @@
 package Fitness.InstructorP;
 
 import Fitness.Application;
+import Fitness.Client;
 import Fitness.Instructor;
 import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 
@@ -21,7 +22,7 @@ public class Program
     private ProgramStatus programStatus;
     private String tutorialType;
     private ArrayList<DiscussionForm> discussionForms;
-
+    private ArrayList<Client> ClientsList;
 ;
 
     //7 variables
@@ -46,6 +47,7 @@ public class Program
         this.setIdProgram(Application.currentProgramId);
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
+        this.ClientsList = new ArrayList<Client>();
 
 
 
@@ -72,6 +74,7 @@ public class Program
         this.setIdProgram(Application.currentProgramId);
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
+        this.ClientsList = new ArrayList<Client>();
 
 
 
@@ -97,6 +100,7 @@ public class Program
         this.setIdProgram(Application.currentProgramId);
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
+        this.ClientsList = new ArrayList<Client>();
     }
 
     public Program(DiscussionForm discussionForm)
@@ -117,6 +121,7 @@ public class Program
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.setDiscussionForms(discussionForms);
+        this.ClientsList = new ArrayList<Client>();
     }
 
     //setter and getter methods
@@ -212,25 +217,80 @@ public class Program
         return discussionForms;
     }
 
-    public boolean addSession(Session session)
+    public ArrayList<Client> getClientsList()
     {
-        this.sessions.add(session);
-        if(this.sessions.contains(session))
+        return this.ClientsList;
+    }
+
+    public void setClientsList(ArrayList<Client> clientsList) {
+        this.ClientsList = clientsList;
+    }
+
+    public boolean addClient(Client client)
+    {
+        if(!this.ClientsList.contains(client))
         {
+            this.ClientsList.add(client);
             return true;
         }
-        return false;
+        else
+            return false;
+    }
+
+    public boolean removeClient(Client client)
+    {
+        if(this.ClientsList.contains(client))
+        {
+            this.ClientsList.remove(client);
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public boolean addSession(Session session)
+    {
+
+        if(!this.sessions.contains(session))
+        {
+            this.sessions.add(session);
+            return true;
+        }
+        else
+            return false;
 
     }
 
     public boolean removeSession(Session session)
     {
-        this.sessions.remove(session);
+
         if(this.sessions.contains(session))
         {
-            return false;
+            this.sessions.remove(session);
+            return true;
         }
-        return true;
+        else
+            return false;
+    }
+
+    public boolean addDiscussionForm(DiscussionForm discussionForm)
+    {
+        if(!this.discussionForms.contains(discussionForm))
+        {
+            this.discussionForms.add(discussionForm);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeDiscussionForm(DiscussionForm discussionForm)
+    {
+        if(this.discussionForms.contains(discussionForm))
+        {
+            this.discussionForms.remove(discussionForm);
+            return true;
+        }
+        return false;
     }
 
 
