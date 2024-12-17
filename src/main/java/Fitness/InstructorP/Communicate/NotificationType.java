@@ -5,5 +5,7 @@ public enum NotificationType
     Message,
     CreateProgram,
     Post,
-    Comment;
+    Comment,
+    Report,
+    Reply;
 }

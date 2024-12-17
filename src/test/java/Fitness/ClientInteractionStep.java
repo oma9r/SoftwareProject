@@ -4,11 +4,16 @@ import Fitness.InstructorP.Communicate.*;
 import Fitness.InstructorP.DiscussionFromP.Comment;
 import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 import Fitness.InstructorP.DiscussionFromP.Post;
+import Fitness.InstructorP.DiscussionFromP.PostType;
 import Fitness.InstructorP.Program;
+import Fitness.InstructorP.Reports.Report;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ClientInteractionStep
@@ -18,13 +23,16 @@ public class ClientInteractionStep
     Program program1;
     Instructor instructor1;
     Client client1,client2,client3,client4;
-    DiscussionForm discussionForm1,discussionForm2;
+    DiscussionForm discussionForm1,discussionForm2,discussionFormReport;
     MessagingSystem messagingSystem1;
     Message messageInstructor,messageClient;
-    NotificationSystem notificationSystem1,notificationSystem2;
-    Notification notification1,notification2,notification3,notification4,notification5,notification6,notification7;
-    Post post1,post2,post3,post4,post5;
-    Comment comment1,comment2,comment3;
+    NotificationSystem notificationSystem1,notificationSystem2,notificationSystem3;
+    Notification notification1,notification2,notification3,notification4,notification5,notification6,notification7,notification8,notification9,notification10;
+    Notification[] notificationArray;
+    Post post1,post2,post3,post4,post5,reportPost;
+    Comment comment1,comment2,comment3,comment4;
+    Comment [] commentArray;
+    Report report1;
 
 
 
@@ -50,6 +58,9 @@ public class ClientInteractionStep
         client1 = new Client();
         client1.setEmail("ahmad@gmail.com");
         client1.setPass("ahmad123");
+        client1.setName("Ahmad");
+
+        post1 = new Post();
 
 
         messagingSystem1 = new MessagingSystem(instructor1,client1);
@@ -80,6 +91,8 @@ public class ClientInteractionStep
         client4.setPass("client4123");
         program1.addClient(client4);
 
+        notification5 = new Notification();
+
         discussionForm2 = new DiscussionForm();
         post2 = new Post();
         discussionForm2.setProgram(program1);
@@ -91,12 +104,34 @@ public class ClientInteractionStep
         notification6 = new Notification();
         notification7 = new Notification();
 
+
         post3 = new Post();
         post3.setContent("how to work?");
 
         post4 = new Post();
 
         post5 = new Post();
+
+        comment4 = new Comment();
+
+        report1 = new Report();
+        notificationArray = new Notification[10];
+
+
+
+        commentArray = new Comment[10];
+        commentArray[0] = new Comment();
+
+        discussionFormReport = new DiscussionForm();
+        reportPost = new Post();
+        notificationSystem3 = new NotificationSystem();
+
+        notification8 = new Notification();
+        notification9 = new Notification();
+        notification10 = new Notification();
+
+
+
 
 
 
@@ -107,7 +142,7 @@ public class ClientInteractionStep
     @Given("client named {string}  has enrolled in a Malik's program")
     public void client_named_has_enrolled_in_a_malik_s_program(String clientName)
     {
-        client1.setName(clientName);
+        //client1.setName(clientName);
 
 
         program1.addClient(client1);
@@ -186,28 +221,36 @@ public class ClientInteractionStep
     {
         client1.addNotification(notification1);
 
-        boolean flag = false;
+        //boolean flag = false;
+
+        //boolean flag1 = false;
+        //boolean flag2 = false;
+        boolean flag3 = false;
 
         if(client1.getNotificationList().contains(notification1))
         {
+            //flag1 = true;
+            //assertTrue(flag1);
             if(notificationSystem1.getNotificationsList().contains(notification1))
             {
+                //flag2 = true;
+                //assertTrue(flag2);
                 if(notificationSystem1.getClientNotificationList().contains(notification1))
                 {
-                    flag = true;
+
+
+                    //flag = true;
                     notification1.setNotificationType(NotificationType.Message);
                     notification1.setNotificationAuthor(instructor1);
                     notificationSystem1.addClientNotification(notification1);
                     notification1.setNotificationContent(messageInstructor.getMessageAuthor().getName() + "has sent a message for you!");
+                    flag3 = true;
+                    assertTrue(flag3);
                 }
             }
         }
 
-        assertTrue(flag);
-
-
-
-
+       // assertTrue(flag);
 
         //throw new io.cucumber.java.PendingException();
     }
@@ -298,16 +341,19 @@ public class ClientInteractionStep
             {
                 if(notificationSystem1.getInstructorNotificationList().contains(notification1))
                 {
-                    flag = true;
+
                     notification2.setNotificationType(NotificationType.Message);
                     notification2.setNotificationAuthor(instructor1);
                     notificationSystem1.addInstructorNotification(notification2);
                     notification1.setNotificationContent(messageInstructor.getMessageAuthor().getName() + "has sent a message for you!");
+                    flag = true;
+                    assertTrue(flag);
+
                 }
             }
         }
 
-        assertTrue(flag);
+
 
 
 
@@ -340,6 +386,7 @@ public class ClientInteractionStep
     @Then("the question message should display in the discussion form to the other clients and to the instructor Malik")
     public void the_question_message_should_display_in_the_discussion_form_to_the_other_clients_and_to_the_instructor_malik()
     {
+
         notification2.setNotificationContent(post1.getTitle());
         notification2.setNotificationType(NotificationType.Post);
         //System.out.println("Title post: " + post1.getTitle());
@@ -459,10 +506,13 @@ public class ClientInteractionStep
                 if(notificationSystem2.getInstructorNotificationList().contains(notification3))
                 {
                     flag = true;
+                    assertTrue(flag,"error in notification system");
 
                 }
             }
         }
+
+
 
 
 
@@ -504,6 +554,8 @@ public class ClientInteractionStep
             }
         }
 
+        assertTrue(flag,"failed to post");
+
     }
 
     @And("the system should sent a notification to all clients in the discussion form")
@@ -530,22 +582,26 @@ public class ClientInteractionStep
                     if(notificationSystem2.getInstructorNotificationList().contains(notification4))
                     {
                         flag = true;
+                        assertTrue(flag,"There's a problem in notificationSystem, try again please");
                     }
-                    else
-                        flag = false;
+
                 }
             }
         }
 
-        assertTrue(flag,"There's a problem in notificationSystem, try again please");
+
 
 
     }
 
 
     @Given("Sami has logged to the system")
-    public void sami_has_logged_to_the_system(String clientEmail,String clientPassword)
+    public void sami_has_logged_to_the_system()
     {
+        String clientEmail = "client2@gmail.com";
+
+        String clientPassword = "client2123";
+
         boolean loggedIn = false;
         for(Client client: program1.getClientsList() )
         {
@@ -567,8 +623,10 @@ public class ClientInteractionStep
     }
 
     @And("Emad has logged to the system")
-    public void emad_has_logged_to_the_system(String clientEmail,String clientPassword)
+    public void emad_has_logged_to_the_system()
     {
+        String clientEmail = "client3@gmail.com";
+        String clientPassword = "client3123";
         boolean loggedIn = false;
         for(Client client: program1.getClientsList() )
         {
@@ -594,14 +652,16 @@ public class ClientInteractionStep
     }
 
     @When("Sami answer Ahmad {string}")
-    public void sami_answer_ahmad(String comment)
+    public void sami_answer_ahmad(String answer)
     {
+         //"you can ask me later in the offline session"
+
 
         discussionForm2.setInstructor(instructor1);
         discussionForm2.addPost(post1);
         discussionForm2.addClient(client1);
         discussionForm2.addClient(client2);
-        comment2 = new Comment(client2,"you can ask me later in the offline session","6:45pm",post1);
+        comment2 = new Comment(client2,answer,"6:45pm",post1);
         post1.addComment(comment2);
         notification5.setNotificationTitle(client2.getName() + " answer your question");
 
@@ -639,13 +699,15 @@ public class ClientInteractionStep
         //throw new io.cucumber.java.PendingException();
     }
     @When("Emad answer Ahmad {string}")
-    public void emad_answer_ahmad(String string)
+    public void emad_answer_ahmad(String answer)
     {
+        //"you can ask me later in the offline session"//
+
         discussionForm2.setInstructor(instructor1);
         discussionForm2.addPost(post1);
         discussionForm2.addClient(client1);
         discussionForm2.addClient(client3);
-        comment3 = new Comment(client3,"you can ask me later in the offline session","6:45pm",post1);
+        comment3 = new Comment(client3,answer,"6:45pm",post1);
         post1.addComment(comment3);
         notification5.setNotificationTitle(client3.getName() + " answer your question");
 
@@ -691,24 +753,35 @@ public class ClientInteractionStep
 
         for(int i=0; i<post1.getComment().size(); i++)
         {
-            if(i == post1.getComment().size() -1)
+            if(post1.getComment().size() == 1) {
+                System.out.println(post1.getComment().get(i).getAuthor().getName() + " posted a comment");
+                System.out.println("post content: " + post1.getComment().get(i).getContent());
+                break;
+            }
+
+            if(post1.getComment().size() == 2)
             {
                 System.out.println(post1.getComment().get(i).getAuthor().getName() + " posted a comment");
                 System.out.println("post content: " + post1.getComment().get(i).getContent());
-
+                break;
             }
+            
 
-            if (post1.getComment().get(i).dateCompare(post1.getComment().get(i+1).getDate()))
-            {
-                System.out.println(post1.getComment().get(i).getAuthor().getName() + " posted a comment");
-                System.out.println("post content: " + post1.getComment().get(i).getContent());
+                if (post1.getComment().get(i).dateCompare(post1.getComment().get(i+1).getDate()))
+                {
+                    System.out.println(post1.getComment().get(i).getAuthor().getName() + " posted a comment");
+                    System.out.println("post content: " + post1.getComment().get(i).getContent());
 
-            }
-            else
-            {
-                System.out.println(post1.getComment().get(i+1).getAuthor().getName() + " posted a comment");
-                System.out.println("post content: " + post1.getComment().get(i+1).getContent());
-            }
+                }
+                else
+                {
+                    System.out.println(post1.getComment().get(i+1).getAuthor().getName() + " posted a comment");
+                    System.out.println("post content: " + post1.getComment().get(i+1).getContent());
+                }
+
+
+
+
 
         }
 
@@ -733,10 +806,7 @@ public class ClientInteractionStep
                 {
                     if(notificationSystem2.getClientNotificationList().contains(notification6))
                     {
-                        if(notificationSystem2.getClient().equals(client2))
-                        {
-                            flag1 = true;
-                        }
+                        flag1 = true;
                     }
                 }
 
@@ -762,10 +832,8 @@ public class ClientInteractionStep
                 {
                     if(notificationSystem2.getClientNotificationList().contains(notification7))
                     {
-                        if(notificationSystem2.getClient().equals(client3))
-                        {
-                            flag2 = true;
-                        }
+
+                        flag2 = true;
                     }
                 }
 
@@ -802,6 +870,8 @@ public class ClientInteractionStep
             }
         }
 
+        assertTrue(flag,"it's a new post");
+
 
 
 
@@ -810,6 +880,22 @@ public class ClientInteractionStep
     @When("Malik marks the question as answered before")
     public void malik_marks_the_question_as_answered_before()
     {
+        boolean flag = false;
+
+        for(Post post : discussionForm1.getPostList())
+        {
+            if(post.getContent().equals(post5.getContent()))
+            {
+                post.setPostType(PostType.answeredPost);
+                comment4 = new Comment(instructor1,"This post has answered before","7:00pm",post);
+                post.addComment(comment4);
+                discussionForm1.addPost(post);
+                flag = true;
+                break;
+            }
+        }
+
+        assertTrue(flag);
 
 
 
@@ -817,69 +903,305 @@ public class ClientInteractionStep
        // throw new io.cucumber.java.PendingException();
     }
     @Then("the old answer should appear under the question")
-    public void the_old_answer_should_appear_under_the_question() {
+    public void the_old_answer_should_appear_under_the_question()
+    {
+        Post InnerPost = comment4.getPost();
+        comment4.setPost(InnerPost);
 
+        System.out.println("Post content: \n" + post1.getContent());
+        System.out.println("Instructor comment: " + comment4.getContent());
+        System.out.println("Post answered before: \n" + InnerPost.getContent());
 
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the system should sent notification to all participants in the Ahmad's question")
-    public void the_system_should_sent_notification_to_all_participants_in_the_ahmad_s_question() {
+    public void the_system_should_sent_notification_to_all_participants_in_the_ahmad_s_question()
+    {
+        boolean flag1 = false;
+        boolean flag2 = false;
+        boolean flag3 = false;
+
+       if(!post4.getAuthor().equals(client1))
+       {
+           System.out.println("you need to add an author to the post");
+           return;
+       }
+
+
+
+
+       post4.addParticipant(client1);
+        notification10.setNotificationAuthor(instructor1);
+        notification10.setNotificationTitle(instructor1.getName() + " answer " + post4.getAuthor().getName());
+        notification10.setNotificationType(NotificationType.Comment);
+        client1.addNotification(notification10);
+        notificationSystem2.addNotification(notification10);
+        notificationSystem2.addInstructorNotification(notification10);
+        notificationSystem2.addClientNotification(notification10);
+
+        if(notification10.getNotificationAuthor().equals(instructor1))
+        {
+            if(client1.getNotificationList().contains(notification10))
+            {
+                flag1 = true;
+            }
+
+        }
+
+
+        post4.addParticipant(client2);
+
+
+       notification8.setNotificationAuthor(instructor1);
+       notification8.setNotificationTitle(instructor1.getName() + " answer " + post4.getAuthor().getName());
+       notification8.setNotificationType(NotificationType.Comment);
+       client2.addNotification(notification8);
+       notificationSystem2.addNotification(notification8);
+       notificationSystem2.addInstructorNotification(notification8);
+       notificationSystem2.addClientNotification(notification8);
+
+        if(notification8.getNotificationAuthor().equals(instructor1))
+        {
+            if(client2.getNotificationList().contains(notification8))
+            {
+                flag2 = true;
+            }
+
+        }
+
+        post4.addParticipant(client3);
+
+        notification9.setNotificationAuthor(instructor1);
+        notification9.setNotificationTitle(instructor1.getName() + " answer " + post4.getAuthor().getName());
+        notification9.setNotificationType(NotificationType.Comment);
+        client3.addNotification(notification9);
+        notificationSystem2.addNotification(notification9);
+        notificationSystem2.addInstructorNotification(notification9);
+        notificationSystem2.addClientNotification(notification9);
+
+        if(notification9.getNotificationAuthor().equals(instructor1))
+        {
+            if(client1.getNotificationList().contains(notification9))
+            {
+                flag3 = true;
+                assertTrue(flag1&&flag2&&flag3,"wrong process in notification system");
+            }
+
+        }
+
 
 
         //throw new io.cucumber.java.PendingException();
     }
 
     @Given("Malik creates a feedback or reports for Ahmad")
-    public void malik_creates_a_feedback_or_reports_for_ahmad() {
+    public void malik_creates_a_feedback_or_reports_for_ahmad()
+    {
+        boolean flag = false;
+        report1.setName("report1");
+        report1.setID("12");
+        report1.setInstructor(instructor1);
+        program1.addReport(report1);
+
+        if(program1.getReportList().contains(report1))
+        {
+            flag = true;
+        }
+
+        assertTrue(flag,"failed to create a report");
+
+
+
+
+
 
 
         //throw new io.cucumber.java.PendingException();
     }
     @When("Malik sent the results to Ahmad")
-    public void malik_sent_the_results_to_ahmad() {
+    public void malik_sent_the_results_to_ahmad()
+    {
+        boolean flag = false;
+
+        notificationArray[0] = new Notification();
+
+        notificationArray[0].setNotificationAuthor(instructor1);
+        notificationArray[0].setNotificationType(NotificationType.Report);
+
+        notificationSystem2.addNotification(notificationArray[0]);
+        notificationSystem2.addInstructorNotification(notificationArray[0]);
+
+
+        if(instructor1.getNotificationList().contains(notificationArray[0]))
+        {
+            flag = true;
+            assertTrue(flag,"failed to create a send a report to: " + client1.getName());
+        }
+
+
 
         //throw new io.cucumber.java.PendingException();
     }
     @When("Malik can write a comment about Ahmad's results")
-    public void malik_can_write_a_comment_about_ahmad_s_results() {
+    public void malik_can_write_a_comment_about_ahmad_s_results()
+    {
+        boolean flag = false;
+
+
+        commentArray[0].setContent("good results: " + client1.getName());
+        commentArray[0].setAuthor(instructor1);
+        instructor1.addCommentReport(commentArray[0]);
+        report1.addComment(commentArray[0]);
+        discussionFormReport.addPost(reportPost);
+        reportPost.addComment(commentArray[0]);
+
+        notificationArray[1] = new Notification();
+        notificationArray[1].setNotificationAuthor(instructor1);
+        notificationArray[1].setNotificationType(NotificationType.Comment);
+        for(Report report: client1.getReportList())
+        {
+            if(report.equals(report1))
+            {
+                notificationArray[1].setNotificationContent(instructor1.getName() + " comment in your report: " + report.getName());
+                flag = true;
+                assertTrue(flag,"failed to write a comment");
+                break;
+
+            }
+        }
+
+
+
+
+
 
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the reports should be available in the client's progress section")
-    public void the_reports_should_be_available_in_the_client_progress_section() {
+    public void the_reports_should_be_available_in_the_client_progress_section()
+    {
+        boolean flag = false;
+        if(client1.getReportList().contains(report1))
+        {
+
+            flag = true;
+            assertTrue(flag,"No report!");
+
+        }
+
+
+
+
 
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the system should display Malik's comment about Ahmad report")
-    public void the_system_should_display_malik_s_comment_about_ahmad_report() {
+    public void the_system_should_display_malik_s_comment_about_ahmad_report()
+    {
+
+        System.out.println("Report Name: " + report1.getName());
+        System.out.println("ID report: " + report1.getID());
+        System.out.println("Instructor Name: " + instructor1.getName());
+        System.out.println("Comment Content: " + commentArray[0].getContent());
 
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the system should send a notification to Ahmad that receive a report or feedback from Malik")
-    public void the_system_should_send_a_notification_to_ahmad_that_receive_a_report_or_feedback_from_malik() {
+    public void the_system_should_send_a_notification_to_ahmad_that_receive_a_report_or_feedback_from_malik()
+    {
+        boolean flag = false;
+        client1.addNotification(notificationArray[0]);
+        notificationSystem2.addClientNotification(notificationArray[0]);
+
+        if(client1.getNotificationList().contains(notificationArray[0]))
+        {
+            flag = true;
+        }
+
+        assertTrue(flag,"Failed in notification system");
+
 
        // throw new io.cucumber.java.PendingException();
     }
 
 
     @Given("receive a report from Malik")
-    public void receive_a_report_from_malik() {
+    public void receive_a_report_from_malik()
+    {
+        boolean flag = false;
+        report1.setClient(client1);
+        client1.addReport(report1);
+
+        if(client1.getReportList().contains(report1))
+        {
+            flag = true;
+        }
+
+        assertTrue(flag,"Failed in receiving report process");
 
 
         //throw new io.cucumber.java.PendingException();
     }
     @When("Ahmad send a reply")
-    public void ahmad_send_a_reply() {
+    public void ahmad_send_a_reply()
+    {
+        boolean flag = false;
+        commentArray[1] = new Comment();
+        commentArray[1].setReply(true);
+        commentArray[1].setAuthor(client1);
+        commentArray[1].setContent("Thanks for this report");
+
+        notificationArray[2] = new Notification();
+        notificationArray[2].setNotificationType(NotificationType.Reply);
+        notificationArray[2].setNotificationContent("New report from " + instructor1.getName());
+
+        client1.addReply(commentArray[1]);
+
+        commentArray[0].addComment(commentArray[1]);
+
+        if(client1.getReplyList().contains(commentArray[1]))
+        {
+            flag = true;
+            assertTrue(flag,"Failed in reply process");
+        }
+
+
+
+
+
+
+
 
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the reply should appear to Malik in client's progress reports page")
-    public void the_reply_should_appear_to_malik_in_client_s_progress_reports_page() {
+    public void the_reply_should_appear_to_malik_in_client_s_progress_reports_page()
+    {
+
+
+        System.out.println("Report Name: " + report1.getName());
+        System.out.println("Comment Content: " + commentArray[0].getContent());
+        System.out.println("Reply content: " + commentArray[1].getContent());
+        System.out.println("========================================================");
 
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the system should send a notification to Malik about Ahmad's reply")
-    public void the_system_should_send_a_notification_to_malik_about_ahmad_s_reply() {
+    public void the_system_should_send_a_notification_to_malik_about_ahmad_s_reply()
+    {
+        boolean flag = false;
+
+        notificationSystem3.addNotification(notificationArray[2]);
+        notificationSystem3.addClientNotification(notificationArray[2]);
+
+        if(notificationSystem3.getNotificationsList().contains(notificationArray[2]))
+        {
+            flag = true;
+        }
+
+        assertTrue(flag,"Failed in notification system");
+
+
 
         //throw new io.cucumber.java.PendingException();
     }

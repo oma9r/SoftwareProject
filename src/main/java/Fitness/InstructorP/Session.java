@@ -2,6 +2,8 @@
 
 package Fitness.InstructorP;
 
+import Fitness.User;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -14,6 +16,8 @@ public class Session
     private String sessionDay;//friday and tue is holidays
     private String sessionTime;
     private String sessionType; //online or offline
+    private SessionCompleteStatus sessionStatus;
+    private User client;
 
 
     public Session()
@@ -107,11 +111,21 @@ public class Session
         return sessionDate;
     }
 
+    public SessionCompleteStatus getSessionStatus() {
+        return sessionStatus;
+    }
+    public void setSessionStatus(SessionCompleteStatus sessionStatus) {
+        this.sessionStatus = sessionStatus;
+    }
 
+    public void setClient(User client) {
+        this.client = client;
+    }
+    public User getClient() {
+        return client;
+    }
 
-
-
-        public boolean isSessionDateValid(String dateString) {
+    public boolean isSessionDateValid(String dateString) {
             try {
 
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");

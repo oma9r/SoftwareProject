@@ -14,12 +14,16 @@ public class Post
     private ArrayList<Comment> comments;
     private DiscussionForm discussionForm;
     private String title;
+    private PostType postType;
+    private ArrayList<User> participantList;
 
 
 
     public Post()
     {
-        this.setAuthor(null);
+
+        //this.setAuthor(null);
+        this.setAuthor(new User());
         this.setDate("");
         this.setDay("");
         this.setTime("");
@@ -27,6 +31,9 @@ public class Post
         comments = new ArrayList<Comment>();
         discussionForm = new DiscussionForm();
         this.setTitle("");
+        this.setPostType(null);
+        this.participantList = new ArrayList<User>();
+
 
     }
 
@@ -39,6 +46,8 @@ public class Post
         this.setContent(contentPost);
         comments = new ArrayList<Comment>();
         discussionForm = new DiscussionForm();
+        this.setPostType(null);
+        this.participantList = new ArrayList<User>();
 
     }
     
@@ -70,7 +79,7 @@ public class Post
     }
     public User getAuthor()
     {
-        return author;
+        return this.author;
     }
 
     public void setAuthor(User authorPost)
@@ -127,6 +136,21 @@ public class Post
         return title;
     }
 
+    public void setPostType(PostType postType) {
+        this.postType = postType;
+    }
+    public PostType getPostType() {
+        return postType;
+    }
+
+    public ArrayList<User> getParticipantList() {
+        return participantList;
+    }
+
+    public void setParticipantList(ArrayList<User> participantList) {
+        this.participantList = participantList;
+    }
+
     public boolean addComment(Comment comment)
     {
         this.comments.add(comment);
@@ -138,6 +162,27 @@ public class Post
     {
         this.comments.remove(comment);
         return true;
+    }
+
+    public boolean addParticipant(User user)
+    {
+        if(!this.participantList.contains(user))
+        {
+            this.participantList.add(user);
+            return true;
+        }
+        return false;
+
+    }
+
+    public boolean removeParticipant(User user)
+    {
+        if(this.participantList.contains(user))
+        {
+            this.participantList.remove(user);
+            return true;
+        }
+        return false;
     }
 
 

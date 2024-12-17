@@ -1,5 +1,6 @@
 package Fitness;
 
+import Fitness.InstructorP.DiscussionFromP.Comment;
 import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 import Fitness.InstructorP.Program;
 
@@ -11,17 +12,21 @@ public class Instructor extends User
 
     private ArrayList <Program> programs;
     private ArrayList <DiscussionForm> discussionFormList;
+    private ArrayList <Comment> commentReportList;
     public Instructor(String name,int age,String gender,String address,String email,String password,UserStatus status)
     {
         super(name,age,gender,address,email,password,Role.Instructor);
         this.status=status;
         programs = new ArrayList<Program>();
+        discussionFormList = new ArrayList<DiscussionForm>();
+        commentReportList = new ArrayList<Comment>();
     }
 
     public Instructor()
     {
         programs = new ArrayList<Program>();
         discussionFormList = new ArrayList<DiscussionForm>();
+        commentReportList = new ArrayList<Comment>();
 
     }
     public UserStatus getStatus() {
@@ -46,6 +51,13 @@ public class Instructor extends User
         this.discussionFormList = discussionFormList;
     }
 
+    public ArrayList <Comment> getCommentReportList() {
+        return commentReportList;
+    }
+    public void setCommentReportList(ArrayList <Comment> commentReportList) {
+        this.commentReportList = commentReportList;
+    }
+
     public boolean addPrograms(Program program)
     {
         if(!programs.contains(program))
@@ -68,12 +80,21 @@ public class Instructor extends User
 
     public boolean addDiscussionForm(DiscussionForm discussionForm)
     {
-        if(!discussionFormList.contains(discussionForm))
+        if(discussionFormList.isEmpty())
+        {
+            discussionFormList.add(discussionForm);
+            return true;
+
+        }
+
+        else if (!discussionFormList.contains(discussionForm))
         {
             discussionFormList.add(discussionForm);
             return true;
         }
-        return false;
+            return false;
+
+
     }
 
     public boolean removeDiscussionForm(DiscussionForm discussionForm)
@@ -85,4 +106,24 @@ public class Instructor extends User
         }
         return false;
     }
+
+    public boolean addCommentReport(Comment comment)
+    {
+        if(!commentReportList.contains(comment))
+        {
+            commentReportList.add(comment);
+            return true;
+        }
+        return false;
+    }
+    public boolean removeCommentReport(Comment comment)
+    {
+        if(commentReportList.contains(comment))
+        {
+            commentReportList.remove(comment);
+            return true;
+        }
+        return false;
+    }
+
 }

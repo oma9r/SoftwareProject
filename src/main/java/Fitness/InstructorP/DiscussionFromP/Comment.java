@@ -5,11 +5,14 @@ import Fitness.User;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Comment extends Post{
 
     private Post post;
+    private  boolean isReply;
+    private ArrayList<Comment> replyList;
     //dateComment & dayComment are depends on post object, no need to set them again
 
 
@@ -22,6 +25,7 @@ public class Comment extends Post{
         setPost(post);
         this.setDate(this.getPost().getDate());
         this.setDay(this.getPost().getDay());
+        replyList = new ArrayList<Comment>();
     }
 
     public Comment()
@@ -42,6 +46,20 @@ public class Comment extends Post{
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public boolean isReply() {
+        return isReply;
+    }
+    public void setReply(boolean isReply) {
+        this.isReply = isReply;
+    }
+
+    public ArrayList<Comment> getReplyList() {
+        return replyList;
+    }
+    public void setReplyList(ArrayList<Comment> replyList) {
+        this.replyList = replyList;
     }
 
     public boolean dateCompare(String dateString) {

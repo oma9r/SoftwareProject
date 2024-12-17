@@ -4,6 +4,7 @@ import Fitness.Application;
 import Fitness.Client;
 import Fitness.Instructor;
 import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
+import Fitness.InstructorP.Reports.Report;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,7 @@ public class Program
     private String tutorialType;
     private ArrayList<DiscussionForm> discussionForms;
     private ArrayList<Client> ClientsList;
+    private ArrayList<Report> reportList;
 ;
 
     //7 variables
@@ -48,6 +50,7 @@ public class Program
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.ClientsList = new ArrayList<Client>();
+        this.reportList = new ArrayList<Report>();
 
 
 
@@ -75,6 +78,7 @@ public class Program
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.ClientsList = new ArrayList<Client>();
+        this.reportList = new ArrayList<Report>();
 
 
 
@@ -101,6 +105,7 @@ public class Program
         this.setNumberOfSessions(0);
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.ClientsList = new ArrayList<Client>();
+        this.reportList = new ArrayList<Report>();
     }
 
     public Program(DiscussionForm discussionForm)
@@ -122,6 +127,7 @@ public class Program
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.setDiscussionForms(discussionForms);
         this.ClientsList = new ArrayList<Client>();
+        this.reportList = new ArrayList<Report>();
     }
 
     //setter and getter methods
@@ -226,6 +232,13 @@ public class Program
         this.ClientsList = clientsList;
     }
 
+    public ArrayList<Report> getReportList() {
+        return reportList;
+    }
+    public void setReportList(ArrayList<Report> reportList) {
+        this.reportList = reportList;
+    }
+
     public boolean addClient(Client client)
     {
         if(!this.ClientsList.contains(client))
@@ -288,6 +301,27 @@ public class Program
         if(this.discussionForms.contains(discussionForm))
         {
             this.discussionForms.remove(discussionForm);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean addReport(Report report)
+    {
+        if(!this.reportList.contains(report))
+        {
+            this.reportList.add(report);
+            return true;
+        }
+        return false;
+
+    }
+
+    public boolean removeReport(Report report)
+    {
+        if(this.reportList.contains(report))
+        {
+            this.reportList.remove(report);
             return true;
         }
         return false;

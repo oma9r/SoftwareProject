@@ -19,6 +19,8 @@ public class DiscussionForm
     {
         this.setProgram(null);
         this.setInstructor(null);
+        this.clientsList = new ArrayList<User>();
+        this.postList = new ArrayList<Post>();
 
     }
 
@@ -28,6 +30,8 @@ public class DiscussionForm
         this.setInstructor(instructor);
         this.setPostList(postList);
         this.setClientsList(clientsList);
+        this.clientsList = new ArrayList<User>();
+        this.postList = new ArrayList<Post>();
 
     }
 
