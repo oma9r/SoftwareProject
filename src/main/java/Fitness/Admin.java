@@ -34,7 +34,7 @@ public class Admin extends User {
         return false;
     }
 
-    public Client addClient(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+    public Client addClient(String name, int age, String gender, String address, String email, String pass, Status status) {
         if(Application.findUser(email)==true)
             return null;
 
@@ -69,7 +69,7 @@ public class Admin extends User {
                 String address =Application.users.get(i).getAddress();
                 String pass =Application.users.get(i).getPass();
                 Application.users.remove(i);
-                Instructor instructor=new Instructor(name,age,gender,address,email,pass,UserStatus.Active);
+                Instructor instructor=new Instructor(name,age,gender,address,email,pass, Status.Active);
                 Application.users.add(instructor);
                 return true;
             }
@@ -77,7 +77,7 @@ public class Admin extends User {
         return false;
     }
 
-    public boolean setStatus(String email,UserStatus status) {
+    public boolean setStatus(String email, Status status) {
         for(int i=0; i<Application.users.size(); i++){
             if(Application.users.get(i).getEmail().equals(email)&&(Application.users.get(i) instanceof Client)) {
                 Client c=(Client)Application.users.get(i);
@@ -86,7 +86,7 @@ public class Admin extends User {
             }
             if(Application.users.get(i).getEmail().equals(email)&&(Application.users.get(i) instanceof Instructor)) {
                 Instructor instructor=(Instructor)Application.users.get(i);
-                instructor.setStatus(UserStatus.Active);
+                instructor.setStatus(Status.Active);
                 return true;
             }
 
@@ -126,14 +126,14 @@ return y;
         for(int i=0; i<Application.users.size(); i++){
             if(Application.users.get(i) instanceof Instructor) {
                 Instructor instructor=(Instructor)Application.users.get(i);
-                if(instructor.getStatus()==UserStatus.DeActive) {
+                if(instructor.getStatus()== Status.DeActive) {
                     System.out.println(instructor);
                 }
 
             }
             else if(Application.users.get(i) instanceof Client) {
                 Client c=(Client)Application.users.get(i);
-                if(c.getStatus()==UserStatus.DeActive) {
+                if(c.getStatus()== Status.DeActive) {
                     System.out.println(c);
                 }
             }
@@ -208,7 +208,7 @@ return y;
 
     }
 
-    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass, Status status) {
         if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0){
             System.out.println("Missed data");
             return false;
@@ -234,6 +234,36 @@ return y;
         }catch (Exception e){
             return false;
         }
+
+
+    }
+
+    public Session [] showAtetendance(Program program) {
+        Session [] sessions=program.getSessions();
+        System.out.println("Program title:"+program.getTitle());
+        System.out.println("Session number\t Session attendance");
+
+        for (int i=0; i<sessions.length; i++) {
+            System.out.println(i+"\t"+sessions[i].getAttendance());
+        }
+        return sessions;
+    }
+
+    public boolean clientProgress(Client c) {
+        try {
+
+            System.out.println(c.getName() + "\t" + c.getProgram().getTitle() + "\t" + c.getProgress() + "\t");
+        }
+        catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public void getProgramsActive() {
+        for(Program p:programs)
+            System.out.println(p.getTitle()+"\t"+p.isComplete());
 
 
     }

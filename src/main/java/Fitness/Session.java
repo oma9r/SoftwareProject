@@ -1,15 +1,16 @@
 package Fitness;
 
 public class Session {
-    Program program;
+    String program;
     int participants;
-    Session(Program program) {
-        this.program = program;
-        participants = 0;
 
-    }
     @Override
     public String toString() {
         return "Session [program=" + program + ", participants=" + participants + "]";
+    }
+
+
+    public int getAttendance() {
+        return participants;
     }
 }

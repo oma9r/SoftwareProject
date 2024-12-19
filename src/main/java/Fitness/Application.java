@@ -47,16 +47,6 @@ public class Application {
 
     }
 
-    public static void participants() {
-        if(sessions.isEmpty()) {
-            System.out.println("No session found");
-            return;
-        }
-        for(Session session : sessions) {
-            System.out.println(session);
-        }
-
-    }
 
     public void setCurrentFeature(String cF) {
         currentFeature = cF;
@@ -76,11 +66,11 @@ public class Application {
             if (u.getEmail().equals(mail)) {
                 if (u instanceof Client) {
                     Client c = (Client) u;
-                    return (c.getStatus() == UserStatus.Active);
+                    return (c.getStatus() == Status.Active);
                 }
                 else if (u instanceof Instructor) {
                     Instructor i = (Instructor) u;
-                    return (i.getStatus() == UserStatus.Active);
+                    return (i.getStatus() == Status.Active);
                 }
                 return true;
             }
@@ -99,19 +89,19 @@ public class Application {
         }
         return false;
     }
-
+    public static Admin admin1 = null;
+    public static Admin admin2 = null;
     public static void init(){
-        Admin admin1 = null;
-        Admin admin2 = null;
-        String message="";
+
+
 
         admin1 = new Admin("ibrahim", 20, "male", "yaseed", "mashaqi@gmail.com", "pass");
         admin2 = new Admin("admin", 22, "male", "palestine", "admin@gmail.com", "4865");
         users.add(admin1);
         users.add(admin2);
-        admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", UserStatus.Active);
-        admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", UserStatus.DeActive);
-        admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", UserStatus.Active);
+        admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
+        admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", Status.DeActive);
+        admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", Status.Active);
 
     }
 

@@ -1,27 +1,25 @@
 package Fitness;
 
-import io.cucumber.java.be.I;
-
 import static Fitness.Application.notApprovedArticles;
 
 public class Instructor extends User{
-    private UserStatus status;
+    private Status status;
 
     public Instructor() {
         super();
-        status=UserStatus.Active;
+        status= Status.Active;
     }
 
-    public Instructor(String name,int age,String gender,String address,String email,String pass,UserStatus status) {
+    public Instructor(String name, int age, String gender, String address, String email, String pass, Status status) {
         super(name,age,gender,address,email,pass,Role.Instructor);
         this.status=status;
     }
-    public UserStatus getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(UserStatus userStatus) {
-        this.status = userStatus;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override

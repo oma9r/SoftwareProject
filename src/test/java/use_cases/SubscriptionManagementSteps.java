@@ -3,7 +3,6 @@ package use_cases;
 import Fitness.Admin;
 import Fitness.Application;
 import Fitness.Client;
-import Fitness.UserStatus;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

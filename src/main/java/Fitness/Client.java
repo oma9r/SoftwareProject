@@ -1,25 +1,27 @@
 package Fitness;
 
 public class Client extends User {
-    private UserStatus status;
+    private Status status;
     private boolean premium;
+    private Program program;
+    private int programTime;
 
-    public Client(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+    public Client(String name, int age, String gender, String address, String email, String pass, Status status) {
         super(name, age, gender, address, email, pass,Role.Client);
         this.status = status;
     }
 
     public Client() {
         super();
-        status=UserStatus.Active;
+        status= Status.Active;
     }
 
-    public UserStatus getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(UserStatus userStatus) {
-        this.status = userStatus;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
 
@@ -41,5 +43,15 @@ public class Client extends User {
         if(premium)
             return "Premium";
         return "Not Premium";
+    }
+
+    public Program getProgram() {
+        return program;
+    }
+
+    public float getProgress() {
+
+
+        return programTime/program.getTime();
     }
 }

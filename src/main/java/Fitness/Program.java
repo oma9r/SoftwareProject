@@ -6,8 +6,9 @@ public class Program {
     int enrollments;
     int duration;
     String difficulty;
-    boolean complete;
+    Status status;
     float revenue=0;
+    Session [] sessions;
 
     public Program(String title, String goals, int enrollments, int duration, String difficulty) {
         this.title = title;
@@ -15,7 +16,7 @@ public class Program {
         this.enrollments = enrollments;
         this.duration = duration;
         this.difficulty = difficulty;
-        this.complete = false;
+        this.status = Status.Active;
 
     }
 
@@ -30,5 +31,16 @@ public class Program {
 
     public float getRevenue() {
         return revenue;
+    }
+
+    public Session[] getSessions() {
+        return sessions;
+    }
+
+    public int getTime() {
+        return duration;
+    }
+    public Status isComplete() {
+        return status;
     }
 }

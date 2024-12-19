@@ -1,6 +1,6 @@
 package Fitness;
 
-public enum UserStatus {
+public enum Status {
     Active,
     DeActive;
 }
