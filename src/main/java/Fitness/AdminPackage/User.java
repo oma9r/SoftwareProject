@@ -3,6 +3,7 @@ package Fitness.AdminPackage;
 import Fitness.InstructorP.Communicate.Message;
 import Fitness.InstructorP.Communicate.Notification;
 import Fitness.InstructorP.DiscussionFromP.Post;
+import Fitness.InstructorP.ProgramPackage.Program;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,6 +23,9 @@ public class User
     private ArrayList<Message> messageList;
     private ArrayList<Notification> notificationList;
     private ArrayList<Post> postList;
+    private Program userProgram;
+    private String dietaryPreferencesUser;
+    private String dietaryRestrictions;
 
     public User( String name, int age, String gender, String address, String email, String password, Role role)
     {
@@ -55,19 +59,21 @@ public class User
     }
 
 
-    public User(String userName)
+    public User(String userName,String password)
     {
         this.setName(userName);
         this.id = idCounter++;
         this.points=new Random().nextInt(100);
         this.setAddress("");
         this.setAge(0);
-        this.setPass("");
+        this.setPass(password);
         this.messageList = new ArrayList<Message>();
         this.notificationList = new ArrayList<Notification>();
         this.postList = new ArrayList<Post>();
 
     }
+
+
 
 
 
@@ -94,7 +100,7 @@ public int getPoints(){
     public String getAddress() {
         return address;
     }
-    protected void setAge(int age) {
+    public void setAge(int age) {
         this.age = age;
     }
     public void setPass(String password) {
@@ -132,6 +138,27 @@ public int getPoints(){
     }
     public void setPostList(ArrayList<Post> postList) {
         this.postList = postList;
+    }
+
+    public Program getUserProgram() {
+        return userProgram;
+    }
+    public void setUserProgram(Program userProgram) {
+        this.userProgram = userProgram;
+    }
+
+    public String getDietaryPreferencesUser() {
+        return dietaryPreferencesUser;
+    }
+    public void setDietaryPreferencesUser(String dietaryPreferencesUser) {
+        this.dietaryPreferencesUser = dietaryPreferencesUser;
+    }
+
+    public void setDietaryRestrictions(String dietaryRestrictions) {
+        this.dietaryRestrictions = dietaryRestrictions;
+    }
+    public String getDietaryRestrictions() {
+        return dietaryRestrictions;
     }
 
     public boolean addMessage(Message message)

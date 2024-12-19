@@ -168,4 +168,26 @@ public class Client extends User
     {
         return program;
     }
+
+    public boolean addProgram(Program program)
+    {
+        if(!this.program.equals(program))
+        {
+            this.setProgram(program);
+            return true;
+
+        }
+        return false;
+    }
+
+    public boolean removeProgram(Program program)
+    {
+        if(this.program.equals(program))
+        {
+            this.setProgram(null);
+            return true;
+
+        }
+        return false;
+    }
 }

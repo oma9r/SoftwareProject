@@ -7,7 +7,10 @@ import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 import Fitness.InstructorP.Reports.Report;
 import Fitness.InstructorP.Session.Session;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Program
 {
@@ -27,6 +30,9 @@ public class Program
     private ArrayList<Client> ClientsList;
     private ArrayList<Report> reportList;
     float revenue;
+    LocalDate startDate;
+    LocalDate endDate;
+    List <String> time;
 ;
 
     //7 variables
@@ -134,6 +140,18 @@ public class Program
         this.ClientsList = new ArrayList<Client>();
         this.reportList = new ArrayList<Report>();
         revenue = 0;
+
+    }
+
+    public Program(String programName, String programLevel, String programGoals, LocalDate programStartDate, LocalDate programEndDate, List<String> time)
+    {
+        this.setProgramTitle(programName);
+        this.setProgramLevel(programLevel);
+        this.setProgramGoals(programGoals);
+        this.setStartDate(programStartDate);
+        this.setEndDate(programEndDate);
+        this.setTimeList(time);
+
     }
 
     //setter and getter methods
@@ -349,7 +367,30 @@ public class Program
         return programStatus;
     }
 
+    public void setStartDate(LocalDate date)
+    {
+        this.startDate = date;
+    }
 
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+    public void setEndDate(LocalDate date)
+    {
+        this.endDate = date;
+    }
+    public LocalDate getEndDate()
+    {
+        return endDate;
+    }
 
+    public void setTimeList(List <String> listTime)
+    {
+        this.time = listTime;
+    }
 
+    public List <String> getTimeList()
+    {
+        return time;
+    }
 }
