@@ -1,6 +1,6 @@
 package Fitness;
 import Fitness.AdminPackage.Instructor;
-import Fitness.AdminPackage.UserStatus;
+import Fitness.AdminPackage.Status;
 import Fitness.InstructorP.ProgramPackage.ProgramStatus;
 import Fitness.InstructorP.ProgramPackage.tutorialTypeProgram;
 import Fitness.InstructorP.Session.Session;
@@ -25,8 +25,8 @@ public class ProgramManagementStep
 
     public ProgramManagementStep()
     {
-        instructor1 = new Instructor("Ali",26,"male","Nablus","ali@gmail.com","123ali", UserStatus.Active);
-        instructor2 = new Instructor("Sami",27,"male","Ramallah","sami@gmail.com","123sami",UserStatus.Active);
+        instructor1 = new Instructor("Ali",26,"male","Nablus","ali@gmail.com","123ali", Status.Active);
+        instructor2 = new Instructor("Sami",27,"male","Ramallah","sami@gmail.com","123sami",Status.Active);
         instructorsList = new ArrayList<>();
         instructorsList.add(instructor1);
         instructorsList.add(instructor2);

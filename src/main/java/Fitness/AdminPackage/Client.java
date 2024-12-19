@@ -1,6 +1,7 @@
 package Fitness.AdminPackage;
 
 import Fitness.InstructorP.DiscussionFromP.Comment;
+import Fitness.InstructorP.ProgramPackage.Program;
 import Fitness.InstructorP.Reports.Report;
 import Fitness.InstructorP.Session.Session;
 
@@ -8,14 +9,15 @@ import java.util.ArrayList;
 
 public class Client extends User
 {
-    private UserStatus status;
+    private Status status;
     private ArrayList<Session> sessionList;
     private ArrayList<Report> reportList;
     private ArrayList<Comment> replyList;
     private boolean premium;
+    private Program program;
 
 
-    public Client(String name, int age, String gender, String address, String email, String pass,UserStatus status)
+    public Client(String name, int age, String gender, String address, String email, String pass,Status status)
     {
 
         this.status = status;
@@ -36,15 +38,15 @@ public class Client extends User
         super();
         this.reportList = new ArrayList<Report>();
         this.replyList = new ArrayList<Comment>();
-        status=UserStatus.Active;
+        status=Status.Active;
     }
-    public UserStatus getStatus()
+    public Status getStatus()
     {
 
         return status;
     }
 
-    public void setStatus(UserStatus userStatus) {
+    public void setStatus(Status userStatus) {
         this.status = userStatus;
     }
 
@@ -156,5 +158,14 @@ public class Client extends User
             return "Premium";
         return "Not Premium";
 
+    }
+
+    public void setProgram(Program program)
+    {
+        this.program = program;
+    }
+    public Program getProgram()
+    {
+        return program;
     }
 }

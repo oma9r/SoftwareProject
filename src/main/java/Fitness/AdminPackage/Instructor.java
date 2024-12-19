@@ -14,14 +14,14 @@ import static Fitness.AdminPackage.Application.notApprovedArticles;
 
 public class Instructor extends User
 {
-    private UserStatus status;
+    private Status status;
 
     private ArrayList<Program> programs;
     private ArrayList<DiscussionForm> discussionFormList;
     private ArrayList<Comment> commentReportList;
 
 
-    public Instructor(String name, int age, String gender, String address, String email, String pass, UserStatus status)
+    public Instructor(String name, int age, String gender, String address, String email, String pass, Status status)
     {
                 super(name, age, gender, address, email, pass, Role.Instructor);
 
@@ -39,12 +39,12 @@ public class Instructor extends User
 
             }
 
-            public UserStatus getStatus()
+            public Status getStatus()
             {
                 return status;
             }
 
-            public void setStatus(UserStatus userStatus)
+            public void setStatus(Status userStatus)
             {
                 this.status = userStatus;
             }

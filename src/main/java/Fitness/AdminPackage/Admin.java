@@ -35,7 +35,7 @@ public class Admin extends User
         return false;
     }
 
-    public boolean addClient(String name, int age, String gender, String address, String email, String pass, UserStatus status) {
+    public boolean addClient(String name, int age, String gender, String address, String email, String pass, Status status) {
         if(Application.findUser(email)==true)
             return false;
         if(name==null||age<16||gender==null||address==null||email==null||pass==null)
@@ -65,7 +65,7 @@ public class Admin extends User
                 String address =Application.users.get(i).getAddress();
                 String pass =Application.users.get(i).getPass();
                 Application.users.remove(i);
-                Instructor instructor=new Instructor(name,age,gender,address,email,pass,UserStatus.Active);
+                Instructor instructor=new Instructor(name,age,gender,address,email,pass,Status.Active);
                 Application.users.add(instructor);
                 return true;
             }
@@ -73,7 +73,7 @@ public class Admin extends User
         return false;
     }
 
-    public boolean setStatus(String email,UserStatus status) {
+    public boolean setStatus(String email,Status status) {
         for(int i=0; i<Application.users.size(); i++){
             if(Application.users.get(i).getEmail().equals(email)&&(Application.users.get(i) instanceof Client)) {
                 Client c=(Client)Application.users.get(i);
@@ -82,7 +82,7 @@ public class Admin extends User
             }
             if(Application.users.get(i).getEmail().equals(email)&&(Application.users.get(i) instanceof Instructor)) {
                 Instructor instructor=(Instructor)Application.users.get(i);
-                instructor.setStatus(UserStatus.Active);
+                instructor.setStatus(Status.Active);
                 return true;
             }
 
@@ -122,14 +122,14 @@ return y;
         for(int i=0; i<Application.users.size(); i++){
             if(Application.users.get(i) instanceof Instructor) {
                 Instructor instructor=(Instructor)Application.users.get(i);
-                if(instructor.getStatus()==UserStatus.DeActive) {
+                if(instructor.getStatus()==Status.DeActive) {
                     System.out.println(instructor);
                 }
 
             }
             else if(Application.users.get(i) instanceof Client) {
                 Client c=(Client)Application.users.get(i);
-                if(c.getStatus().equals(UserStatus.DeActive)) {
+                if(c.getStatus().equals(Status.DeActive)) {
                     System.out.println(c);
                 }
             }
@@ -204,7 +204,7 @@ return y;
 
     }
 
-    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,Status status) {
         if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0){
             System.out.println("Missed data");
             return false;

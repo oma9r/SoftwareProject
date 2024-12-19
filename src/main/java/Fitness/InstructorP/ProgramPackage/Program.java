@@ -26,7 +26,7 @@ public class Program
     private ArrayList<DiscussionForm> discussionForms;
     private ArrayList<Client> ClientsList;
     private ArrayList<Report> reportList;
-    float revenue=0;
+    float revenue;
 ;
 
     //7 variables
@@ -53,6 +53,7 @@ public class Program
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.ClientsList = new ArrayList<Client>();
         this.reportList = new ArrayList<Report>();
+         revenue = 0;
 
 
 
@@ -81,6 +82,7 @@ public class Program
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.ClientsList = new ArrayList<Client>();
         this.reportList = new ArrayList<Report>();
+        revenue = 0;
 
 
 
@@ -108,6 +110,7 @@ public class Program
         this.discussionForms = new ArrayList<DiscussionForm>();
         this.ClientsList = new ArrayList<Client>();
         this.reportList = new ArrayList<Report>();
+        revenue = 0;
     }
 
     public Program(DiscussionForm discussionForm)
@@ -130,6 +133,7 @@ public class Program
         this.setDiscussionForms(discussionForms);
         this.ClientsList = new ArrayList<Client>();
         this.reportList = new ArrayList<Report>();
+        revenue = 0;
     }
 
     //setter and getter methods
@@ -335,6 +339,17 @@ public class Program
     public void setRevenue(float revenue) {
         this.revenue = revenue;
     }
+
+    public void setProgramStatus(ProgramStatus programStatus)
+    {
+        this.programStatus = programStatus;
+    }
+    public ProgramStatus getProgramStatus()
+    {
+        return programStatus;
+    }
+
+
 
 
 }

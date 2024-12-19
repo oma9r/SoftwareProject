@@ -1,6 +1,6 @@
 package Fitness.AdminPackage;
 
-public enum UserStatus {
+public enum Status {
     Active,
     DeActive;
 }

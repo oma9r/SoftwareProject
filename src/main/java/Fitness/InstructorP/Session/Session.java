@@ -2,11 +2,13 @@
 
 package Fitness.InstructorP.Session;
 
+import Fitness.AdminPackage.Client;
 import Fitness.AdminPackage.User;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 
 public class Session
 {
@@ -17,7 +19,7 @@ public class Session
     private String sessionTime;
     private String sessionType; //online or offline
     private SessionCompleteStatus sessionStatus;     //complete or not
-    private User client;
+    private List<Client> clientList;
 
 
     public Session()
@@ -118,12 +120,13 @@ public class Session
         this.sessionStatus = sessionStatus;
     }
 
-    public void setClient(User client) {
-        this.client = client;
+    public void setClientList(List<Client> clientList) {
+        this.clientList = clientList;
     }
-    public User getClient() {
-        return client;
+    public List<Client> getClientList() {
+        return clientList;
     }
+
 
     public boolean isSessionDateValid(String dateString) {
             try {

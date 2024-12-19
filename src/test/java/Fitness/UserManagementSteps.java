@@ -3,10 +3,10 @@ package Fitness;
 import Fitness.AdminPackage.Admin;
 import Fitness.AdminPackage.Application;
 import Fitness.AdminPackage.User;
-import Fitness.AdminPackage.UserStatus;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import Fitness.AdminPackage.Status;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,9 @@ String message="";
         admin2 = new Admin("admin", 22, "male", "palestine", "admin@gmail.com", "4865");
         users.add(admin1);
         users.add(admin2);
-        admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", UserStatus.Active);
-        admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", UserStatus.DeActive);
-        admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", UserStatus.Active);
+        admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
+        admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", Status.DeActive);
+        admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", Status.Active);
 
 
     }
@@ -44,7 +44,8 @@ String message="";
     @When("the admin executes the addUser with valid details")
     public void the_admin_executes_the_add_user_with_valid_details() {
         totalUsers = users.size();
-if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123", UserStatus.Active)){
+if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123", Status.Active))
+{
     message = "User added successfully";
 
 }else{
@@ -85,7 +86,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
     @When("provides an email already in use")
     public void provides_an_email_already_in_use() {
         String existEmail = "mashaqi@gmail.com";
-        assertFalse(admin1.addClient("fd", 16, "male", "nablus", existEmail, "123", UserStatus.Active));
+        assertFalse(admin1.addClient("fd", 16, "male", "nablus", existEmail, "123", Status.Active));
         flag = true;
 
     }
@@ -216,7 +217,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     @Given("the user exist")
     public void the_user_exist() {
-        admin1.addClient("ave", 16, "male", "nablus", "ave@gmail.com", "123", UserStatus.Active);
+        admin1.addClient("ave", 16, "male", "nablus", "ave@gmail.com", "123", Status.Active);
 
         assertTrue(app.findUser("ave@gmail.com"));
     }
@@ -273,7 +274,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     @When("the admin executes the reactivateUser command with the email")
     public void the_admin_executes_the_reactivate_user_command_with_the_user_id() {
-        assertTrue(admin1.setStatus("not@gmail.com", UserStatus.Active));
+        assertTrue(admin1.setStatus("not@gmail.com", Status.Active));
     }
 
     @Then("the system restores the user account")
@@ -289,7 +290,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     @When("the admin executes the deactivateUser command with the email")
     public void the_admin_executes_the_deactivate_user_command_with_the_user_id() {
-        assertTrue(admin1.setStatus("is@gmail.com", UserStatus.DeActive));
+        assertTrue(admin1.setStatus("is@gmail.com", Status.DeActive));
     }
 
     @Then("the system marks the user account as inactive")
@@ -310,7 +311,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     @When("the admin executes the deactivateUser command with the admins email")
     public void the_admin_executes_the_deactivate_user_command_with_the_admins_user_id() {
-        assertFalse(admin1.setStatus("admin@gmail.com", UserStatus.DeActive));
+        assertFalse(admin1.setStatus("admin@gmail.com", Status.DeActive));
     }
 
     @Then("the system displays the error Message: {string}")
@@ -385,7 +386,7 @@ assertTrue(true);
             String address = data.get("address");
             String email = data.get("email");
             String password = data.get("pass");
-             UserStatus status = UserStatus.Active;  // Assume active by default for example purposes
+             Status status = Status.Active;  // Assume active by default for example purposes
 
                admin1.addClient(name, age, gender, address, email, password, status);
         }

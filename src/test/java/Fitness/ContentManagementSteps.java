@@ -1,6 +1,7 @@
 package Fitness;
 
 import Fitness.AdminPackage.*;
+import Fitness.AdminPackage.Status;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,7 +16,7 @@ public class ContentManagementSteps {
     public ContentManagementSteps(){
         admin = new Admin("Ibrahim",22,"male","fscd","admin1@gmail.com","123");
         users.add(admin);
-        admin.addInstructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865",UserStatus.Active);
+        admin.addInstructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
         instructor=new Instructor();
     }
     @Given("an admin is logged in")
