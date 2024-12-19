@@ -15,10 +15,10 @@ public class Report
     private Program program;
     private Instructor instructor;
     private Client client;
-    private List<Session> sessionList;
+    private ArrayList<Session> sessionList;
     private double ratioProgress;
-    private List<Session> CompletedSessionList;
-    private List<Comment> commentList;
+    private ArrayList<Session> CompletedSessionList;
+    private ArrayList<Comment> commentList;
     private String name;
     private String ID;
     private ArrayList<Comment> replyList;
@@ -49,7 +49,8 @@ public class Report
         this.ratioProgress = ratioProgress;
     }
 
-    public ArrayList<Session> getSessionList() {
+    public ArrayList<Session> getSessionList()
+    {
         return sessionList;
     }
     public double getRatioProgress() {

@@ -1,19 +1,18 @@
 package Fitness;
 
+
+import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.CucumberOptions.SnippetType;
+
+
 
 @RunWith(Cucumber.class)
-@CucumberOptions
-        (
+@CucumberOptions(features="Features",plugin={"html:target/cucumber/wikipedia.html"},monochrome=true,snippets=SnippetType.CAMELCASE,glue={"Fitness"})
 
-                features = "src/test/Features",
-                glue = "Fitness",
-                plugin = {"pretty", "html:target/cucumber-report.html"}
-        )
 
-class ProgramManagementTest
+public class ProgramManagementTest
 {
 
 
