@@ -16,7 +16,7 @@ public class Session
     private String sessionDay;//friday and tue is holidays
     private String sessionTime;
     private String sessionType; //online or offline
-    private SessionCompleteStatus sessionStatus;
+    private SessionCompleteStatus sessionStatus;     //complete or not
     private User client;
 
 

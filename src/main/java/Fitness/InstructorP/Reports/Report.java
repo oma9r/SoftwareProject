@@ -8,16 +8,17 @@ import Fitness.InstructorP.Session;
 import Fitness.InstructorP.SessionCompleteStatus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Report
 {
     private Program program;
     private Instructor instructor;
     private Client client;
-    private ArrayList<Session> sessionList;
+    private List<Session> sessionList;
     private double ratioProgress;
-    ArrayList<Session> CompletedSessionList = new ArrayList<>();
-    private ArrayList<Comment> commentList;
+    private List<Session> CompletedSessionList;
+    private List<Comment> commentList;
     private String name;
     private String ID;
     private ArrayList<Comment> replyList;

@@ -1005,6 +1005,8 @@ public class ClientInteractionStep
 
         if(program1.getReportList().contains(report1))
         {
+
+            /// check the size of report list of program that has been changed -- abdallah thaer
             flag = true;
         }
 
