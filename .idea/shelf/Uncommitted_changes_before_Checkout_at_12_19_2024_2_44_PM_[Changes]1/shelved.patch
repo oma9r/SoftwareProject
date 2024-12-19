@@ -1,0 +1,505 @@
+Index: src/main/java/Fitness/Session.java
+===================================================================
+diff --git a/src/main/java/Fitness/Session.java b/src/main/java/Fitness/Session.java
+new file mode 100644
+--- /dev/null	(date 1734283526192)
++++ b/src/main/java/Fitness/Session.java	(date 1734283526192)
+@@ -0,0 +1,15 @@
++package Fitness;
++
++public class Session {
++    Program program;
++    int participants;
++    Session(Program program) {
++        this.program = program;
++        participants = 0;
++
++    }
++    @Override
++    public String toString() {
++        return "Session [program=" + program + ", participants=" + participants + "]";
++    }
++}
+Index: src/main/java/Fitness/Program.java
+===================================================================
+diff --git a/src/main/java/Fitness/Program.java b/src/main/java/Fitness/Program.java
+new file mode 100644
+--- /dev/null	(date 1734425553341)
++++ b/src/main/java/Fitness/Program.java	(date 1734425553341)
+@@ -0,0 +1,73 @@
++package Fitness;
++
++import java.time.LocalDate;
++import java.util.List;
++
++public class Program {
++    String title;
++    String goals;
++    int enrollments;
++    int duration;
++    String difficulty;
++    boolean complete;
++    float revenue=0;
++    private String name;
++    private String difficultyLevel;
++    private String focusArea;
++    private LocalDate startDate;
++    private LocalDate endDate;
++    private List<String> availableTimeSlots;
++
++    public Program(String title, String goals, int enrollments, int duration, String difficulty) {
++        this.title = title;
++        this.goals = goals;
++        this.enrollments = enrollments;
++        this.duration = duration;
++        this.difficulty = difficulty;
++        this.complete = false;
++
++    }
++    public Program(String name, String difficultyLevel, String focusArea, LocalDate startDate, LocalDate endDate, List<String> availableTimeSlots) {
++        this.name = name;
++        this.difficultyLevel = difficultyLevel;
++        this.focusArea = focusArea;
++        this.startDate = startDate;
++        this.endDate = endDate;
++        this.availableTimeSlots = availableTimeSlots;
++    }
++
++    @Override
++    public String toString() {
++        return "[Title"+title+" Goals"+goals+" Enrollments"+enrollments+" Duration"+duration+" Difficulty"+difficulty+"]\n";
++    }
++
++    public String getTitle() {
++        return title;
++    }
++
++    public float getRevenue() {
++        return revenue;
++    }
++
++    public String getDifficultyLevel() {
++        return difficultyLevel;
++    }
++
++    public String getName() {
++        return name;
++    }
++    public String getFocusArea() {
++        return focusArea;
++    }
++    public LocalDate getStartDate() {
++        return startDate;
++    }
++
++    public LocalDate getEndDate() {
++        return endDate;
++    }
++
++    public List<String> getAvailableTimeSlots() {
++        return availableTimeSlots;
++    }
++}
+Index: Features/ContentManagement.feature
+===================================================================
+diff --git a/Features/ContentManagement.feature b/Features/ContentManagement.feature
+new file mode 100644
+--- /dev/null	(date 1734283526175)
++++ b/Features/ContentManagement.feature	(date 1734283526175)
+@@ -0,0 +1,19 @@
++Feature: Content Management
++
++  Scenario: Admin Approves Wellness Article
++    Given an admin is logged in
++    When an instructor submits a wellness article
++    Then the admin reviews the article
++    Then the article is published
++
++  Scenario: Admin Rejects Wellness Tip
++    Given an admin is logged in
++    When an instructor submits a wellness tip
++    Then the admin reviews the tip
++    And the admin rejects the tip
++    Then the tip is not published
++
++  Scenario: Admin Handles User Feedback
++    Given an admin is logged in
++    When a client submits feedback
++    Then the admin reviews the feedback
+Index: src/main/java/Fitness/Article.java
+===================================================================
+diff --git a/src/main/java/Fitness/Article.java b/src/main/java/Fitness/Article.java
+new file mode 100644
+--- /dev/null	(date 1734283526187)
++++ b/src/main/java/Fitness/Article.java	(date 1734283526187)
+@@ -0,0 +1,15 @@
++package Fitness;
++
++public class Article {
++    private String author;
++    private String content;
++    private boolean approved = false;
++    public Article(String author, String content) {
++        this.author = author;
++        this.content = content;
++    }
++
++    public void setApprove(boolean b) {
++        approved = b;
++    }
++}
+Index: Features/Program Monitoring.feature
+===================================================================
+diff --git a/Features/Program Monitoring.feature b/Features/Program Monitoring.feature
+new file mode 100644
+--- /dev/null	(date 1734283526176)
++++ b/Features/Program Monitoring.feature	(date 1734283526176)
+@@ -0,0 +1,39 @@
++Feature: Program Monitoring
++
++  Scenario: View statistics on the most popular programs by enrollment
++    Given I am logged in as an admin
++    When I navigate to the "Program Monitoring" section
++    Then I should see a list of programs sorted by the number of enrollments
++
++  Scenario: Generate a report on revenue
++    Given I am logged in as an admin
++    When I navigate to the "Program Monitoring" section
++    And I select Generate Report and choose Revenue
++    Then the report should include a breakdown of income per program
++
++  Scenario: Generate a report on attendance
++    Given I am logged in as an admin
++    When I navigate to the "Program Monitoring" section
++    And I select Generate Report and choose Attendance
++    Then I should see a detailed report on the attendance for each program
++    And the report should show the number of participants for each session
++
++  Scenario: Generate a report on client progress
++    Given I am logged in as an admin
++    When I navigate to the "Program Monitoring" section
++    And I select Generate Report and choose Client Progress
++    Then I should see a detailed report on client progress for each program
++    And the report should include completion rates, client feedback, and milestones
++
++  Scenario: Track active programs
++    Given I am logged in as an admin
++    When I navigate to the "Program Monitoring" section
++    Then I should see a list of all active programs
++    And I should be able to filter the list by categories such as difficulty or focus area
++
++  Scenario: Track completed programs
++    Given I am logged in as an admin
++    When I navigate to the "Program Monitoring" section
++    And I filter the programs to show completed ones
++    Then I should see a list of all completed programs
++    And I should be able to view details about the completion status of each program
+Index: Features/SubscriptionManagement.feature
+===================================================================
+diff --git a/Features/SubscriptionManagement.feature b/Features/SubscriptionManagement.feature
+new file mode 100644
+--- /dev/null	(date 1734283526176)
++++ b/Features/SubscriptionManagement.feature	(date 1734283526176)
+@@ -0,0 +1,13 @@
++Feature: Subscription Management
++
++  Scenario: Client Subscribes to a Premium Plan
++    Given a client is logged in
++    When the client selects the "Premium" plan
++    Then the client's subscription is activated
++    And the client can access premium features
++
++
++  Scenario: Admin views Subscription Plans
++    Given an admin is logged in
++    When the admin views the subscription plans
++    Then the admin can see all active plans
+\ No newline at end of file
+Index: src/test/java/use_cases/ContentManagementSteps.java
+===================================================================
+diff --git a/src/test/java/use_cases/ContentManagementSteps.java b/src/test/java/use_cases/ContentManagementSteps.java
+new file mode 100644
+--- /dev/null	(date 1734283526196)
++++ b/src/test/java/use_cases/ContentManagementSteps.java	(date 1734283526196)
+@@ -0,0 +1,87 @@
++package use_cases;
++
++import Fitness.*;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++
++import static Fitness.Application.*;
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertTrue;
++
++public class ContentManagementSteps {
++    Admin admin;
++    Instructor instructor;
++    public ContentManagementSteps(){
++        admin = new Admin("Ibrahim",22,"male","fscd","admin1@gmail.com","123");
++        users.add(admin);
++        admin.addInstructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865",UserStatus.Active);
++        instructor=new Instructor();
++    }
++    @Given("an admin is logged in")
++    public void an_admin_is_logged_in() {
++        Application.login("admin1@gmail.com","123");
++        assertTrue(currentUser instanceof Admin);
++
++    }
++
++
++    @When("an instructor submits a wellness article")
++    public void an_instructor_submits_a_wellness_article() {
++
++        instructor.addWallness(new Article(instructor.getName(),"article"));
++
++    }
++int currentSize;
++    @Then("the admin reviews the article")
++    public void the_admin_reviews_the_article() {
++         currentSize=wallness.size();
++        admin.review();
++
++    }
++
++
++    @Then("the article is published")
++    public void the_article_is_published() {
++        //assertTrue(wallness.size()>currentSize);
++    }
++
++    @When("an instructor submits a wellness tip")
++    public void an_instructor_submits_a_wellness_tip() {
++        instructor.addWallness(new Article(instructor.getName(),"Rejected article"));
++
++    }
++
++    @Then("the admin reviews the tip")
++    public void the_admin_reviews_the_tip() {
++        currentSize=wallness.size();
++        admin.review();
++    }
++
++    @Then("the admin rejects the tip")
++    public void the_admin_rejects_the_tip() {
++
++    }
++
++    @Then("the tip is not published")
++    public void the_tip_is_not_published() {
++        assertEquals(currentSize,wallness.size());
++    }
++
++    Client client;
++    @When("a client submits feedback")
++    public void a_user_submits_feedback() {
++        client=new Client();
++        client.submitFeedBack("feed");
++    }
++
++    @Then("the admin reviews the feedback")
++    public void the_admin_reviews_the_feedback() {
++        admin.review();
++
++    }
++
++
++
++
++}
+Index: src/test/java/use_cases/ProgramMonitoringSteps.java
+===================================================================
+diff --git a/src/test/java/use_cases/ProgramMonitoringSteps.java b/src/test/java/use_cases/ProgramMonitoringSteps.java
+new file mode 100644
+--- /dev/null	(date 1734283526197)
++++ b/src/test/java/use_cases/ProgramMonitoringSteps.java	(date 1734283526197)
+@@ -0,0 +1,121 @@
++package use_cases;
++
++import Fitness.Admin;
++
++import Fitness.Application;
++import Fitness.Program;
++import Fitness.UserStatus;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++import static Fitness.Application.*;
++import static org.junit.Assert.assertTrue;
++
++
++public class ProgramMonitoringSteps {
++
++
++    public ProgramMonitoringSteps() {
++        Application.init();
++    }
++
++
++
++    @Given("I am logged in as an admin")
++    public void i_am_logged_in_as_an_admin() {
++        Application.login("admin@gmail.com","4865");
++        assertTrue(currentUser instanceof Admin);
++    }
++
++    @When("I navigate to the {string} section")
++    public void i_navigate_to_the_section(String string) {
++        Application.currentSection=string;
++    }
++
++    @Then("I should see a list of programs sorted by the number of enrollments")
++    public void i_should_see_a_list_of_programs_sorted_by_the_number_of_enrollments() {
++        Application.showPrograms();
++    }
++
++
++
++    @When("I select Generate Report and choose Revenue")
++    public void i_select_generate_report_and_choose_revenue() {
++         Application.showRevenue();
++    }
++
++
++    @Then("the report should include a breakdown of income per program")
++    public void the_report_should_include_a_breakdown_of_income_per_program() {
++        System.out.println("Reported");
++
++    }
++
++
++    @When("I select Generate Report and choose Attendance")
++    public void i_select_generate_report_and_choose_attendance() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("I should see a detailed report on the attendance for each program")
++    public void i_should_see_a_detailed_report_on_the_attendance_for_each_program() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("the report should show the number of participants for each session")
++    public void the_report_should_show_the_number_of_participants_for_each_session() {
++        Application.participants();
++        
++    }
++
++    @When("I select Generate Report and choose Client Progress")
++    public void i_select_generate_report_and_choose_client_progress() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++
++    @Then("I should see a detailed report on client progress for each program")
++    public void i_should_see_a_detailed_report_on_client_progress_for_each_program() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("the report should include completion rates, client feedback, and milestones")
++    public void the_report_should_include_completion_rates_client_feedback_and_milestones() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("I should see a list of all active programs")
++    public void i_should_see_a_list_of_all_active_programs() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("I should be able to filter the list by categories such as difficulty or focus area")
++    public void i_should_be_able_to_filter_the_list_by_categories_such_as_difficulty_or_focus_area() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @When("I filter the programs to show completed ones")
++    public void i_filter_the_programs_to_show_completed_ones() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("I should see a list of all completed programs")
++    public void i_should_see_a_list_of_all_completed_programs() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++
++    @Then("I should be able to view details about the completion status of each program")
++    public void i_should_be_able_to_view_details_about_the_completion_status_of_each_program() {
++        // Write code here that turns the phrase above into concrete actions
++        
++    }
++}
+Index: src/test/java/use_cases/SubscriptionManagementSteps.java
+===================================================================
+diff --git a/src/test/java/use_cases/SubscriptionManagementSteps.java b/src/test/java/use_cases/SubscriptionManagementSteps.java
+new file mode 100644
+--- /dev/null	(date 1734283526198)
++++ b/src/test/java/use_cases/SubscriptionManagementSteps.java	(date 1734283526198)
+@@ -0,0 +1,59 @@
++package use_cases;
++
++import Fitness.Admin;
++import Fitness.Application;
++import Fitness.Client;
++import Fitness.UserStatus;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++
++import static Fitness.Application.users;
++import static org.junit.Assert.assertTrue;
++
++public class SubscriptionManagementSteps {
++Client client=new Client();
++Admin admin=new Admin();
++
++    public SubscriptionManagementSteps(){
++        users.add(client);
++
++    }
++
++
++    @Given("a client is logged in")
++    public void a_client_is_logged_in() {
++        Application.login(client.getEmail(),client.getPass());
++        assertTrue(Application.currentUser instanceof Client);
++    }
++    String plan;
++    @When("the client selects the {string} plan")
++    public void the_client_selects_the_plan(String string) {
++        plan=string;
++    }
++
++
++    @Then("the client's subscription is activated")
++    public void the_client_s_subscription_is_activated() {
++        assertTrue(client.setPlan(plan));
++    }
++
++    @Then("the client can access premium features")
++    public void the_client_can_access_premium_features() {
++        assertTrue(client.isPremium());
++    }
++
++boolean flag;
++    @When("the admin views the subscription plans")
++    public void the_admin_views_the_subscription_plans() {
++       flag= admin.viewSubscriptions();
++    }
++
++    @Then("the admin can see all active plans")
++    public void the_admin_can_see_all_active_plans() {
++
++        assertTrue(flag);
++    }
++
++
++}

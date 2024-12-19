@@ -1,0 +1,713 @@
+Index: src/main/java/Fitness/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Fitness;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//        Application.users.add(new User());\r\n//\r\n//\r\n//       User x[]=new Admin().displayEngagedUsers();\r\n//        System.out.println(\"/////////////////////////////////////////////\");\r\n//       for(User u : x){\r\n//           if(u==null) System.out.println(\"null\");\r\n//           System.out.println(u.getPoints());\r\n       }\r\n    }\r\n\r\n
+===================================================================
+diff --git a/src/main/java/Fitness/Main.java b/src/main/java/Fitness/Main.java
+--- a/src/main/java/Fitness/Main.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/main/java/Fitness/Main.java	(date 1734283526191)
+@@ -3,33 +3,6 @@
+ public class Main {
+     public static void main(String[] args) {
+ 
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//        Application.users.add(new User());
+-//
+-//
+-//       User x[]=new Admin().displayEngagedUsers();
+-//        System.out.println("/////////////////////////////////////////////");
+-//       for(User u : x){
+-//           if(u==null) System.out.println("null");
+-//           System.out.println(u.getPoints());
+        }
+     }
+ 
+Index: src/main/java/Fitness/Instructor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Fitness;\r\n\r\npublic class Instructor extends User{\r\n    private UserStatus status;\r\n    public Instructor(String name,int age,String gender,String address,String email,String pass,UserStatus status) {\r\n        super(name,age,gender,address,email,pass,Role.Instructor);\r\n        this.status=status;\r\n    }\r\n    public UserStatus getStatus() {\r\n        return status;\r\n    }\r\n\r\n    public void setStatus(UserStatus userStatus) {\r\n        this.status = userStatus;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/Fitness/Instructor.java b/src/main/java/Fitness/Instructor.java
+--- a/src/main/java/Fitness/Instructor.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/main/java/Fitness/Instructor.java	(date 1734283526190)
+@@ -1,7 +1,17 @@
+ package Fitness;
+ 
++import io.cucumber.java.be.I;
++
++import static Fitness.Application.notApprovedArticles;
++
+ public class Instructor extends User{
+     private UserStatus status;
++
++    public Instructor() {
++        super();
++        status=UserStatus.Active;
++    }
++
+     public Instructor(String name,int age,String gender,String address,String email,String pass,UserStatus status) {
+         super(name,age,gender,address,email,pass,Role.Instructor);
+         this.status=status;
+@@ -13,4 +23,13 @@
+     public void setStatus(UserStatus userStatus) {
+         this.status = userStatus;
+     }
++
++    @Override
++    public String toString() {
++        return "["+super.toString()+",status="+status+"]\n";
++    }
++
++    public void addWallness(Article article) {
++        notApprovedArticles.add(article);
++    }
+ }
+Index: src/main/java/Fitness/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Fitness;\r\n\r\nimport java.util.Random;\r\n\r\npublic class User {\r\n    private int id;\r\n    private String name;\r\n    private int age;\r\n    private static int idCounter = 0;\r\n    private String gender;\r\n    private String address;\r\n    private String email;\r\n    private String password;\r\n    private Role role;\r\n    private int points;\r\n\r\n    public User( String name, int age, String gender, String address, String email, String password, Role role) {\r\n        this.id = idCounter++;\r\n        this.name = name;\r\n        this.age = age;\r\n        this.gender = gender;\r\n        this.address = address;\r\n        this.email = email;\r\n        this.password = password;\r\n        this.role = role;\r\n        this.points = 0;\r\n\r\n\r\n    }\r\n    public User(){\r\n        this.id = idCounter++;points=new Random().nextInt(100);\r\n    }\r\n\r\npublic int getPoints(){\r\n        return points;\r\n}\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public String getPass() {\r\n        return password;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n    public int getAge() {\r\n        return age;\r\n    }\r\n    public String getGender() {\r\n        return gender;\r\n    }\r\n    public String getAddress() {\r\n        return address;\r\n    }\r\n    protected void setAge(int age) {\r\n        this.age = age;\r\n    }\r\n    public void setPass(String password) {\r\n        this.password = password;\r\n    }\r\n    public void setAddress(String address) {\r\n        this.address = address;\r\n    }\r\n\r\n\r\n    public void incPoints() {\r\n        this.points++;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/Fitness/User.java b/src/main/java/Fitness/User.java
+--- a/src/main/java/Fitness/User.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/main/java/Fitness/User.java	(date 1734607552558)
+@@ -1,5 +1,8 @@
+ package Fitness;
+ 
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Map;
+ import java.util.Random;
+ 
+ public class User {
+@@ -13,6 +16,11 @@
+     private String password;
+     private Role role;
+     private int points;
++    private String newDietaryPreference;
++    private String fitnessGoals;
++    private String dietaryRestriction;
++    private List<Program> enrolledPrograms;
++
+ 
+     public User( String name, int age, String gender, String address, String email, String password, Role role) {
+         this.id = idCounter++;
+@@ -28,8 +36,31 @@
+ 
+     }
+     public User(){
+-        this.id = idCounter++;points=new Random().nextInt(100);
++        this.id = idCounter++;
++        points=0;
++        name="ibrahim";
++        age=20;
++        gender="male";
++        address="palestine";
++        email="ibrahim"+new Random().nextInt()+"@gmail.com";
++        password="password";
++        enrolledPrograms = new ArrayList<>();
++
++
+     }
++    public User(String email, String password) {
++        this.id = idCounter++;
++        this.name = "Abd";
++        this.age = 22;
++        this.gender = "male";
++        this.address = null;
++        this.email = email;
++        this.password = "112233";
++        this.role = Role.Client;
++        this.points = 0;
++    }
++
++
+ 
+ public int getPoints(){
+         return points;
+@@ -54,7 +85,7 @@
+     public String getAddress() {
+         return address;
+     }
+-    protected void setAge(int age) {
++    public void setAge(int age) {
+         this.age = age;
+     }
+     public void setPass(String password) {
+@@ -63,9 +94,60 @@
+     public void setAddress(String address) {
+         this.address = address;
+     }
++    public void setEmail(String email) {
++        this.email=email;
++    }
++    public void setFitnessGoals(String fitnessGoals) {
++        this.fitnessGoals = fitnessGoals;
++    }
++
++
++    public String getFitnessGoals() {
++        return fitnessGoals;
++    }
+ 
+ 
+     public void incPoints() {
+         this.points++;
+     }
++
++    @Override
++    public String toString() {
++        return "[id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender+", address=" + address + ", email=" + email + ", password=" + password + ", role=" + role + "]";
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public void setDietaryPreference(String newDietaryPreference) {
++        this.newDietaryPreference = newDietaryPreference;
++    }
++    public String getDietaryPreference() {
++        return newDietaryPreference;
++    }
++
++
++    public String getDietaryRestriction() {
++
++        return dietaryRestriction;
++    }
++
++    public void setDietaryRestriction(String dietaryRestriction) {
++        this.dietaryRestriction = dietaryRestriction;
++    }
++    public void enrollInProgram(Program program) {
++        enrolledPrograms.add(program);
++    }
++
++
++    public boolean hasEnrolledProgram(Program program) {
++        return enrolledPrograms.contains(program);
++    }
++
++
++    public List<Program> getEnrolledPrograms() {
++        return enrolledPrograms;
++    }
+ }
++
+Index: Report.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Fitness.Admin@55322aabFitness.Admin@2b4c1d96Fitness.Client@45fd9a4dFitness.Client@4ff4357fFitness.Admin@50468873Fitness.Admin@146587a2Fitness.Admin@5f0e9815Fitness.Admin@76884e4bFitness.Admin@126945f9Fitness.Admin@2a898881Fitness.Admin@16c63f5Fitness.Admin@35229f85Fitness.Admin@6d3c5255Fitness.Admin@b1712f3Fitness.Admin@6986bbafFitness.Admin@4879dfadFitness.Client@4758820dFitness.Admin@74eb909fFitness.Admin@28ec166eFitness.Instructor@2eee3069Fitness.Admin@2da59753Fitness.Admin@5629510Fitness.Admin@4df5bcb4Fitness.Admin@12c7a01bFitness.Admin@13d9b21fFitness.Admin@2826f61Fitness.Admin@62727399Fitness.Admin@4d9ac0b4Fitness.Admin@130dca52Fitness.Admin@2654635Fitness.Admin@737a135bFitness.Admin@687ef2e0
+===================================================================
+diff --git a/Report.txt b/Report.txt
+--- a/Report.txt	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/Report.txt	(date 1734283526177)
+@@ -1,1 +1,96 @@
+-Fitness.Admin@55322aabFitness.Admin@2b4c1d96Fitness.Client@45fd9a4dFitness.Client@4ff4357fFitness.Admin@50468873Fitness.Admin@146587a2Fitness.Admin@5f0e9815Fitness.Admin@76884e4bFitness.Admin@126945f9Fitness.Admin@2a898881Fitness.Admin@16c63f5Fitness.Admin@35229f85Fitness.Admin@6d3c5255Fitness.Admin@b1712f3Fitness.Admin@6986bbafFitness.Admin@4879dfadFitness.Client@4758820dFitness.Admin@74eb909fFitness.Admin@28ec166eFitness.Instructor@2eee3069Fitness.Admin@2da59753Fitness.Admin@5629510Fitness.Admin@4df5bcb4Fitness.Admin@12c7a01bFitness.Admin@13d9b21fFitness.Admin@2826f61Fitness.Admin@62727399Fitness.Admin@4d9ac0b4Fitness.Admin@130dca52Fitness.Admin@2654635Fitness.Admin@737a135bFitness.Admin@687ef2e0
+\ No newline at end of file
++[[id=0, name=Ibrahim, age=22, gender=male, address=fscd, email=admin1@gmail.com, password=123, role=Admin]]
++
++[id=1, name=mohammad, age=33, gender=male, address=hdbgfvd, email=instructor@gmail.com, password=4865, role=Client]
++[[id=3, name=Ibrahim, age=22, gender=male, address=fscd, email=admin1@gmail.com, password=123, role=Admin]]
++
++[[id=5, name=Ibrahim, age=22, gender=male, address=fscd, email=admin1@gmail.com, password=123, role=Admin]]
++
++[[id=8, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=9, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[id=11, name=notActive, age=18, gender=male, address=yaseed, email=not@gmail.com, password=12345, role=Client]
++[id=12, name=is, age=18, gender=male, address=yaseed, email=is@gmail.com, password=12345, role=Client]
++[[id=13, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=14, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=15, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=16, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=17, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=18, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=19, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=20, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=21, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=22, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[id=23, name=ibrahim, age=20, gender=male, address=palestine, email=ibrahim-1489550946@gmail.com, password=password, role=null]
++[[id=25, name=Ibrahim, age=22, gender=male, address=fscd, email=admin1@gmail.com, password=123, role=Admin]]
++
++[id=27, name=ibrahim, age=20, gender=male, address=palestine, email=ibrahim501598831@gmail.com, password=password, role=null]
++[[id=29, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=30, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=32, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=33, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=34, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=35, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=36, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=37, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=38, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=39, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=40, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=41, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=42, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=43, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[id=44, name=ave, age=33, gender=male, address=jenin, email=ave@gmail.com, password=456, role=Client]
++[[id=45, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=46, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=47, name=client, age=18, gender=male, address=yaseed, email=client@gmail.com, password=12345, role=Instructor],status=Active]
++
++[[id=48, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=49, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=50, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=51, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=52, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=53, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=54, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=55, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=56, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=57, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
++[[id=58, name=ibrahim, age=20, gender=male, address=yaseed, email=mashaqi@gmail.com, password=pass, role=Admin]]
++
++[[id=59, name=admin, age=22, gender=male, address=palestine, email=admin@gmail.com, password=4865, role=Admin]]
++
+Index: src/test/java/use_cases/UserManagementSteps.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package use_cases;\r\n\r\nimport Fitness.*;\r\nimport io.cucumber.java.en.Given;\r\nimport io.cucumber.java.en.Then;\r\nimport io.cucumber.java.en.When;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\nimport static Fitness.Application.users;\r\nimport static org.junit.Assert.*;\r\n\r\npublic class UserManagementSteps {\r\n\r\n    Admin admin1 = null;\r\n    Admin admin2 = null;\r\nString message=\"\";\r\n    public UserManagementSteps() {\r\n        admin1 = new Admin(\"ibrahim\", 20, \"male\", \"yaseed\", \"mashaqi@gmail.com\", \"pass\");\r\n        admin2 = new Admin(\"admin\", 22, \"male\", \"palestine\", \"admin@gmail.com\", \"4865\");\r\n        users.add(admin1);\r\n        users.add(admin2);\r\n        admin1.addClient(\"client\", 18, \"male\", \"yaseed\", \"client@gmail.com\", \"12345\", UserStatus.Active);\r\n        admin1.addClient(\"notActive\", 18, \"male\", \"yaseed\", \"not@gmail.com\", \"12345\", UserStatus.DeActive);\r\n        admin1.addClient(\"is\", 18, \"male\", \"yaseed\", \"is@gmail.com\", \"12345\", UserStatus.Active);\r\n\r\n\r\n    }\r\n\r\n    Application app = new Application();\r\n    int totalUsers = users.size();\r\n\r\n    @Given(\"the owner has logged into the system with email {string} and password {string}\")\r\n    public void the_owner_has_logged_into_the_system_with_email_and_password(String email, String pass) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @When(\"the admin executes the addUser with valid details\")\r\n    public void the_admin_executes_the_add_user_with_valid_details() {\r\n        totalUsers = users.size();\r\nif(        admin1.addClient(\"moh\", 16, \"male\", \"nablus\", \"moh@gmail.com\", \"123\", UserStatus.Active)){\r\n    message = \"User added successfully\";\r\n\r\n}else{\r\n    message = \"User not added successfully\";\r\n}\r\n\r\n\r\n    }\r\n\r\n    @Then(\"the system creates the new user account successfully\")\r\n    public void the_system_creates_the_new_user_account_successfully() {\r\n        assertEquals(totalUsers + 1, users.size());\r\n\r\n    }\r\n\r\n    @Then(\"displays the message: {string}\")\r\n    public void displays_the_message(String msg) {\r\n        System.out.println(msg);\r\n//        boolean m=msg.equals(message);\r\n//\r\n//      assertTrue(m==true ? true : false);\r\n\r\n    }\r\n\r\n    @Given(\"the owner is logged into the system with email {string} and password {string}\")\r\n    public void the_owner_is_logged_into_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @When(\"the admin selects addUser\")\r\n    public void the_admin_selects_add_user() {\r\n        app.setCurrentFeature(\"addUser\");\r\n    }\r\n\r\n    boolean flag = false;\r\n\r\n    @When(\"provides an email already in use\")\r\n    public void provides_an_email_already_in_use() {\r\n        String existEmail = \"mashaqi@gmail.com\";\r\n        assertFalse(admin1.addClient(\"fd\", 16, \"male\", \"nablus\", existEmail, \"123\", UserStatus.Active));\r\n        flag = true;\r\n\r\n    }\r\n\r\n    @Then(\"the system displays an error message: {string}\")\r\n    public void the_system_displays_an_error_message(String string) {\r\n        if (flag)\r\n            System.out.println(\"fail to add user\");\r\n    }\r\n\r\n    @Then(\"the account is not created\")\r\n    public void the_account_is_not_created() {\r\n        app.setCurrentFeature(\"\");\r\n    }\r\n\r\n    @Given(\"the admin is in the system with email {string} and password {string}\")\r\n    public void the_admin_is_in_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    String section;\r\n\r\n    @When(\"the admin navigates to the User Management section\")\r\n    public void the_admin_navigates_to_the_user_management_section() {\r\n        section = \"User Management Section\";\r\n    }\r\n\r\n    @When(\"selects Add User\")\r\n    public void selects_add_user() {\r\n        app.setCurrentFeature(\"addUser\");\r\n    }\r\n\r\n    @When(\"provides incomplete details for the new user\")\r\n    public void provides_incomplete_details_for_the_new_user() {\r\n        assertFalse(admin1.addAdmin(null, 55, \"gr\", \"gr\", \"4rfe\", \"453\"));\r\n\r\n    }\r\n\r\n    @Then(\"the user account is not created\")\r\n    public void the_user_account_is_not_created() {\r\n        app.setCurrentFeature(\"\");\r\n    }\r\n\r\n    @Then(\"the system displays an error message: Required fields are missing\")\r\n    public void the_system_displays_an_error_message_required_fields_are_missing() {\r\n        System.out.println(\"Required fields are missing\");\r\n\r\n    }\r\n\r\n    @Given(\"admin entered the system with email {string} and password {string}\")\r\n    public void admin_entered_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @When(\"the admin goes to User Management section\")\r\n    public void the_admin_goes_to_user_management_section() {\r\n        section = \"User Management Section\";\r\n    }\r\n\r\n    @When(\"select delete user\")\r\n    public void select_delete_user() {\r\n        app.setCurrentFeature(\"deleteUser\");\r\n    }\r\n\r\n    String deleted;\r\n\r\n    @When(\"provides a valid user email\")\r\n    public void provides_a_valid_user_email() {\r\n        deleted = \"moh@gmail.com\";\r\n    }\r\n\r\n    @Then(\"the system execute the delete user\")\r\n    public void the_system_execute_the_delete_user() {\r\n        assertTrue(admin1.deleteUser(deleted));\r\n    }\r\n\r\n    @Then(\"displays a massage : {string}\")\r\n    public void displays_a_massage(String string) {\r\n        System.out.println(\"deleted successfully\");\r\n    }\r\n\r\n    @Given(\"owner entered the system with email {string} and password {string}\")\r\n    public void owner_entered_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @When(\"the admin goes to User Manager section\")\r\n    public void the_admin_goes_to_user_manager_section() {\r\n        section = \"User Manager Section\";\r\n    }\r\n\r\n    @When(\"provides an email\")\r\n    public void provides_an_email() {\r\n        deleted = \"notfound@gmail.com\";\r\n    }\r\n\r\n    @When(\"the system doesnt find it\")\r\n    public void the_system_doesnt_find_it() {\r\n        assertFalse(admin1.deleteUser(deleted));\r\n    }\r\n\r\n    @Then(\"it display an error massage : {string}\")\r\n    public void it_display_an_error_massage(String string) {\r\n        System.out.println(\"user not found\");\r\n    }\r\n\r\n    @Given(\"owner entered system via email {string} and password {string}\")\r\n    public void owner_entered_system_via_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @When(\"the system finds it belong to an admin\")\r\n    public void the_system_finds_it_belong_to_an_admin() {\r\n        deleted = \"admin@gmail.com\";\r\n        assertFalse(admin1.deleteUser(deleted));\r\n    }\r\n\r\n    @Given(\"admin have logged into the system with email {string} and password {string}\")\r\n    public void admin_have_logged_into_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n\r\n    @Given(\"the user exist\")\r\n    public void the_user_exist() {\r\n        admin1.addClient(\"ave\", 16, \"male\", \"nablus\", \"ave@gmail.com\", \"123\", UserStatus.Active);\r\n\r\n        assertTrue(app.findUser(\"ave@gmail.com\"));\r\n    }\r\n\r\n    @When(\"the admin selects the updateUserDetails\")\r\n    public void the_admin_selects_the_update_user_details() {\r\n        app.setCurrentFeature(\"updateUserDetails\");\r\n    }\r\n\r\n    @Then(\"The system updates the user details\")\r\n    public void the_system_updates_the_user_details() {\r\n        assertTrue(admin1.updateUser(\"ave@gmail.com\", 33, \"jenin\", \"456\"));\r\n\r\n    }\r\n\r\n    @Then(\"displays the massage {string}\")\r\n    public void displays_the_massage(String string) {\r\n        System.out.println(\"updated successfully\");\r\n    }\r\n\r\n    @Given(\"logged into the system with email {string} and password {string}\")\r\n    public void logged_into_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @Given(\"the user exists with a valid email\")\r\n    public void the_user_exists_with_a_valid_email() {\r\n        assertTrue(app.findUser(\"client@gmail.com\"));\r\n    }\r\n\r\n    @When(\"the admin select the updateUserRole command with the user email and role {string}\")\r\n    public void the_admin_select_the_update_user_role_command_with_the_email_and_role(String string) {\r\n        app.setCurrentFeature(\"updateUserRole\");\r\n    }\r\n\r\n    @Then(\"the system updates the user’s role\")\r\n    public void the_system_updates_the_user_s_role() {\r\n        assertTrue(admin1.updateRole(\"client@gmail.com\"));\r\n\r\n    }\r\n\r\n    @Given(\"the admin is logged to the system with email {string} and password {string}\")\r\n    public void the_admin_is_logged_to_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @Given(\"the user exists with a status of {string}\")\r\n    public void the_user_exists_with_a_status_of(String string) {\r\n        assertTrue(app.activeCheck(\"client@gmail.com\"));\r\n\r\n    }\r\n\r\n    @When(\"the admin executes the reactivateUser command with the email\")\r\n    public void the_admin_executes_the_reactivate_user_command_with_the_user_id() {\r\n        assertTrue(admin1.setStatus(\"not@gmail.com\", UserStatus.Active));\r\n    }\r\n\r\n    @Then(\"the system restores the user account\")\r\n    public void the_system_restores_the_user_account() {\r\n        System.out.println(\"user restored successfully\");\r\n    }\r\n\r\n    @Given(\"the admin logged into the system with email {string} and password {string}\")\r\n    public void the_admin_logged_into_the_system_with_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @When(\"the admin executes the deactivateUser command with the email\")\r\n    public void the_admin_executes_the_deactivate_user_command_with_the_user_id() {\r\n        assertTrue(admin1.setStatus(\"is@gmail.com\", UserStatus.DeActive));\r\n    }\r\n\r\n    @Then(\"the system marks the user account as inactive\")\r\n    public void the_system_marks_the_user_account_as_inactive() {\r\n        System.out.println(\"Admin account marked as inactive\");\r\n    }\r\n\r\n    @Given(\"the admin is logged into the system email {string} and password {string}\")\r\n    public void the_admin_is_logged_into_the_system_email_and_password(String string, String string2) {\r\n        app.currentUser = admin1;\r\n        assertTrue(app.currentUser instanceof Admin);\r\n    }\r\n\r\n    @Given(\"the target account belongs to an admin\")\r\n    public void the_target_account_belongs_to_an_admin() {\r\n        assertTrue(app.isAdmin(\"admin@gmail.com\"));\r\n    }\r\n\r\n    @When(\"the admin executes the deactivateUser command with the admins email\")\r\n    public void the_admin_executes_the_deactivate_user_command_with_the_admins_user_id() {\r\n        assertFalse(admin1.setStatus(\"admin@gmail.com\", UserStatus.DeActive));\r\n    }\r\n\r\n    @Then(\"the system displays the error message: {string}\")\r\n    public void the_system_displays_the_error_message(String string) {\r\n        System.out.println(\"error message: \" + string);\r\n    }\r\n\r\n\r\n    @Given(\"the admin has logged into the system with email {string} and password {string}\")\r\n    public void the_admin_has_logged_into_the_system_with_email_and_password(String string, String string2) {\r\n        assertFalse(app.login(string, string2) == null);\r\n    }\r\n\r\n    @When(\"the admin executes the getEngagementStats command\")\r\n    public void the_admin_executes_the_get_engagement_stats_command() {\r\n        admin1 = (Admin) Application.currentUser;\r\n        System.out.println(admin1.displayEngagedUsers());\r\n    }\r\n\r\n    @Then(\"the system displays a list of the most engaged users\")\r\n    public void the_system_displays_a_list_of_the_most_engaged_users() {\r\nassertTrue(true);\r\n\r\n\r\n    }\r\n\r\n    @Given(\"the admin is log into the system with email {string} and password {string}\")\r\n    public void the_admin_is_log_into_the_system_with_email_and_password(String string, String string2) {\r\n        assertTrue(app.login(string, string2) != null);\r\n    }\r\n\r\n    @When(\"the admin executes the filterUsersByEngagement command with the parameter No activity in the last {int} days\")\r\n    public void the_admin_executes_the_filter_users_by_engagement_command_with_the_parameter_no_activity_in_the_last_days(Integer int1) {\r\n        section = \"filterUsersByEngagement\";\r\n    }\r\n\r\n    @Then(\"the system displays a list of inactive users\")\r\n    public void the_system_displays_a_list_of_inactive_users() {\r\n        admin1.displayInActiveUsers();\r\n    }\r\n\r\n    @Given(\"the admin has logg into the system with email {string} and password {string}\")\r\n    public void the_admin_has_logg_into_the_system_with_email_and_password(String string, String string2) {\r\n        assertTrue(app.login(string, string2) != null);\r\n    }\r\n\r\n    @When(\"the admin executes the downloadEngagementReport command\")\r\n    public void the_admin_executes_the_download_engagement_report_command() {\r\n        section = \"downloadEngagementReport\";\r\n    }\r\n\r\n    @Then(\"the system generates and saves a report file\")\r\n    public void the_system_generates_and_saves_a_report_file() {\r\n        assertTrue(admin1.report());\r\n\r\n    }\r\n    List<User> newUsers,searchResults;\r\n    String searchMessage;\r\n    @Given(\"the admin is in the system via email {string} and password {string}\")\r\n    public void givenTheAdminIsInTheSystem(String email, String password) {\r\n        assertTrue(app.login(email, password) != null);\r\n\r\n    }\r\n\r\n    @Given(\"the following users exist in the system:\")\r\n    public void givenTheUsersExistInTheSystem(List<Map<String, String>> userData) {\r\n        newUsers = new ArrayList<>();\r\n        for (Map<String, String> data : userData) {\r\n            String name = data.get(\"name\");\r\n            int age = Integer.parseInt(data.get(\"age\"));\r\n            String gender = data.get(\"gender\");\r\n            String address = data.get(\"address\");\r\n            String email = data.get(\"email\");\r\n            String password = data.get(\"pass\");\r\n             UserStatus status = UserStatus.Active;  // Assume active by default for example purposes\r\n\r\n               admin1.addClient(name, age, gender, address, email, password, status);\r\n        }\r\n    }\r\n\r\n    @When(\"the admin executes the searchUser command with the parameter {string}\")\r\n    public void whenTheAdminExecutesSearchCommand(String searchParam) {\r\n        searchResults = new ArrayList<>();\r\n        for (User user : users) {\r\n            if (user.getName().contains(searchParam)) {\r\n                searchResults.add(user);\r\n            }\r\n        }\r\n        searchMessage = searchResults.size() + \" users found matching '\" + searchParam + \"'\";\r\n    }\r\n\r\n    @Then(\"the system displays the following matching users\")\r\n    public void thenTheSystemDisplaysMatchingUsers(List<Map<String, String>> expectedUsers) {\r\n        // Verify the search results match the expected output\r\n        for (int i = 0; i < expectedUsers.size(); i++) {\r\n            Map<String, String> expectedUser = expectedUsers.get(i);\r\n            User result = searchResults.get(i);\r\n\r\n            assertEquals(expectedUser.get(\"name\"), result.getName());\r\n            assertEquals(Integer.parseInt(expectedUser.get(\"age\")), result.getAge());\r\n            assertEquals(expectedUser.get(\"gender\"), result.getGender());\r\n            assertEquals(expectedUser.get(\"address\"), result.getAddress());\r\n            assertEquals(expectedUser.get(\"email\"), result.getEmail());\r\n            assertEquals(expectedUser.get(\"pass\"), result.getPass());\r\n            // Optionally check status if it's part of your expected data\r\n        }\r\n    }\r\n\r\n    @Then(\"the system displays message: {string}\")\r\n    public void thenTheSystemDisplaysMessage(String expectedMessage) {\r\n        assertEquals(expectedMessage, searchMessage);\r\n    }\r\n\r\n}
+===================================================================
+diff --git a/src/test/java/use_cases/UserManagementSteps.java b/src/test/java/use_cases/UserManagementSteps.java
+--- a/src/test/java/use_cases/UserManagementSteps.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/test/java/use_cases/UserManagementSteps.java	(date 1734545928565)
+@@ -104,11 +104,11 @@
+         assertTrue(app.currentUser instanceof Admin);
+     }
+ 
+-    String section;
++
+ 
+     @When("the admin navigates to the User Management section")
+     public void the_admin_navigates_to_the_user_management_section() {
+-        section = "User Management Section";
++        Application.currentSection = "User Management Section";
+     }
+ 
+     @When("selects Add User")
+@@ -141,7 +141,7 @@
+ 
+     @When("the admin goes to User Management section")
+     public void the_admin_goes_to_user_management_section() {
+-        section = "User Management Section";
++        Application.currentSection = "User Management Section";
+     }
+ 
+     @When("select delete user")
+@@ -174,7 +174,7 @@
+ 
+     @When("the admin goes to User Manager section")
+     public void the_admin_goes_to_user_manager_section() {
+-        section = "User Manager Section";
++        Application.currentSection = "User Manager Section";
+     }
+ 
+     @When("provides an email")
+@@ -341,7 +341,7 @@
+ 
+     @When("the admin executes the filterUsersByEngagement command with the parameter No activity in the last {int} days")
+     public void the_admin_executes_the_filter_users_by_engagement_command_with_the_parameter_no_activity_in_the_last_days(Integer int1) {
+-        section = "filterUsersByEngagement";
++        Application.currentSection = "filterUsersByEngagement";
+     }
+ 
+     @Then("the system displays a list of inactive users")
+@@ -356,7 +356,7 @@
+ 
+     @When("the admin executes the downloadEngagementReport command")
+     public void the_admin_executes_the_download_engagement_report_command() {
+-        section = "downloadEngagementReport";
++        Application.currentSection = "downloadEngagementReport";
+     }
+ 
+     @Then("the system generates and saves a report file")
+@@ -401,7 +401,7 @@
+ 
+     @Then("the system displays the following matching users")
+     public void thenTheSystemDisplaysMatchingUsers(List<Map<String, String>> expectedUsers) {
+-        // Verify the search results match the expected output
++
+         for (int i = 0; i < expectedUsers.size(); i++) {
+             Map<String, String> expectedUser = expectedUsers.get(i);
+             User result = searchResults.get(i);
+@@ -412,7 +412,7 @@
+             assertEquals(expectedUser.get("address"), result.getAddress());
+             assertEquals(expectedUser.get("email"), result.getEmail());
+             assertEquals(expectedUser.get("pass"), result.getPass());
+-            // Optionally check status if it's part of your expected data
++
+         }
+     }
+ 
+Index: src/main/java/Fitness/Admin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Fitness;\r\n\r\nimport java.io.File;\r\nimport java.io.FileWriter;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class Admin extends User {\r\n    public Admin(String name, int age, String gender, String address, String email, String password) {\r\n        super(name, age, gender, address, email, password,Role.Admin);\r\n\r\n\r\n    }\r\n    public Admin(){}\r\n\r\n    public boolean addAdmin(String name, int age, String gender, String address, String email, String pass) {\r\n        if(Application.findUser(email)==true)\r\n            return false;\r\n        if(name==null||age<16||gender==null||address==null||email==null||pass==null)\r\n            return false;\r\n        Admin a = new Admin(name, age, gender, address, email, pass);\r\n        return Application.users.add(a);\r\n    }\r\n\r\n\r\n    public boolean deleteUser(String deleted) {\r\n        for(int i=0; i<Application.users.size(); i++){\r\n            if(Application.users.get(i).getEmail().equals(deleted)&&!(Application.users.get(i) instanceof Admin)) {\r\n                Application.users.remove(i);\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean addClient(String name, int age, String gender, String address, String email, String pass,UserStatus status) {\r\n        if(Application.findUser(email)==true)\r\n            return false;\r\n        if(name==null||age<16||gender==null||address==null||email==null||pass==null)\r\n            return false;\r\n        Client c = new Client(name, age, gender, address, email, pass,status);\r\n        return Application.users.add(c);\r\n    }\r\n\r\n    public boolean updateUser(String mail,int age,String address, String pass) {\r\n        for(int i=0; i<Application.users.size(); i++){\r\n            if(Application.users.get(i).getEmail().equals(mail)&&!(Application.users.get(i) instanceof Admin)) {\r\n                Application.users.get(i).setAge(age);\r\n                Application.users.get(i).setAddress(address);\r\n                Application.users.get(i).setPass(pass);\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean updateRole(String email) {\r\n        for(int i=0; i<Application.users.size(); i++){\r\n            if(Application.users.get(i).getEmail().equals(email)&&!(Application.users.get(i) instanceof Admin)&&!(Application.users.get(i) instanceof Instructor)) {\r\n                String name =Application.users.get(i).getName();\r\n                int age =Application.users.get(i).getAge();\r\n                String gender =Application.users.get(i).getGender();\r\n                String address =Application.users.get(i).getAddress();\r\n                String pass =Application.users.get(i).getPass();\r\n                Application.users.remove(i);\r\n                Instructor instructor=new Instructor(name,age,gender,address,email,pass,UserStatus.Active);\r\n                Application.users.add(instructor);\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean setStatus(String email,UserStatus status) {\r\n        for(int i=0; i<Application.users.size(); i++){\r\n            if(Application.users.get(i).getEmail().equals(email)&&(Application.users.get(i) instanceof Client)) {\r\n                Client c=(Client)Application.users.get(i);\r\n                c.setStatus(status);\r\n                return true;\r\n            }\r\n            if(Application.users.get(i).getEmail().equals(email)&&(Application.users.get(i) instanceof Instructor)) {\r\n                Instructor instructor=(Instructor)Application.users.get(i);\r\n                instructor.setStatus(UserStatus.Active);\r\n                return true;\r\n            }\r\n\r\n\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public User[] displayEngagedUsers() {\r\n\r\n        User x[]= Application.users.toArray(new User[0]);\r\n        if(x.length<=10)return x;\r\n        for (int i = 0; i < x.length; i++) {\r\n            for (int j = 0; j < x.length-1; j++) {\r\n                if(x[j].getPoints()>x[j+1].getPoints()){\r\n                    User temp = x[j];\r\n                    x[j] = x[j+1];\r\n                    x[j+1] = temp;\r\n                }\r\n            }\r\n        }\r\n        for(User u : x){\r\n            System.out.println(u.getPoints());\r\n        }\r\n\r\n\r\n        User y[]=new User[10];\r\n        for(int i= x.length-1;i>=x.length-10;i--){\r\n            y[x.length-i-1]=x[i];\r\n        }\r\nreturn y;\r\n\r\n\r\n    }\r\n\r\n    public void displayInActiveUsers() {\r\n        for(int i=0; i<Application.users.size(); i++){\r\n            if(Application.users.get(i) instanceof Instructor) {\r\n                Instructor instructor=(Instructor)Application.users.get(i);\r\n                if(instructor.getStatus()==UserStatus.DeActive) {\r\n                    System.out.println(instructor);\r\n                }\r\n\r\n            }\r\n            else if(Application.users.get(i) instanceof Client) {\r\n                Client c=(Client)Application.users.get(i);\r\n                if(c.getStatus()==UserStatus.DeActive) {\r\n                    System.out.println(c);\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    public boolean report() {\r\n        try {\r\n            File file=new File(\"C:\\\\Users\\\\HP\\\\Desktop\\\\softProj\\\\Report.txt\");\r\n            if (file.createNewFile()) {\r\n                System.out.println(\"File created: \" + file.getName());\r\n            }\r\n            else {\r\n                FileWriter fw = new FileWriter(\"C:\\\\Users\\\\HP\\\\Desktop\\\\softProj\\\\Report.txt\");\r\n                for (int i = 0; i < Application.users.size(); i++) {\r\n                    fw.write(Application.users.get(i).toString());\r\n                }\r\n                fw.close();\r\n                return true;\r\n            }\r\n\r\n\r\n\r\n        }catch (IOException e){\r\n            System.out.println(e);\r\n        }\r\n        return false;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/Fitness/Admin.java b/src/main/java/Fitness/Admin.java
+--- a/src/main/java/Fitness/Admin.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/main/java/Fitness/Admin.java	(date 1734283526179)
+@@ -3,8 +3,8 @@
+ import java.io.File;
+ import java.io.FileWriter;
+ import java.io.IOException;
+-import java.util.ArrayList;
+-import java.util.List;
++
++import static Fitness.Application.*;
+ 
+ public class Admin extends User {
+     public Admin(String name, int age, String gender, String address, String email, String password) {
+@@ -12,6 +12,7 @@
+ 
+ 
+     }
++
+     public Admin(){}
+ 
+     public boolean addAdmin(String name, int age, String gender, String address, String email, String pass) {
+@@ -23,7 +24,6 @@
+         return Application.users.add(a);
+     }
+ 
+-
+     public boolean deleteUser(String deleted) {
+         for(int i=0; i<Application.users.size(); i++){
+             if(Application.users.get(i).getEmail().equals(deleted)&&!(Application.users.get(i) instanceof Admin)) {
+@@ -137,25 +137,99 @@
+     }
+ 
+     public boolean report() {
++        String filePath = "C:\\Users\\HP\\Desktop\\New folder\\SoftwareProject\\Report.txt";
++
+         try {
+-            File file=new File("C:\\Users\\HP\\Desktop\\softProj\\Report.txt");
++            File file = new File(filePath);
++
++            file.getParentFile().mkdirs();
++
++
+             if (file.createNewFile()) {
+                 System.out.println("File created: " + file.getName());
++            } else {
++                System.out.println("File already exists, writing to the existing file.");
+             }
+-            else {
+-                FileWriter fw = new FileWriter("C:\\Users\\HP\\Desktop\\softProj\\Report.txt");
++
++            try (FileWriter fw = new FileWriter(file)) {
+                 for (int i = 0; i < Application.users.size(); i++) {
+-                    fw.write(Application.users.get(i).toString());
++                    fw.write(Application.users.get(i).toString() + System.lineSeparator());
+                 }
+-                fw.close();
+-                return true;
+-            }
+-
+-
++                System.out.println("Report written successfully.");
++            }
++            return true;
+ 
+-        }catch (IOException e){
+-            System.out.println(e);
++        } catch (IOException e) {
++            System.out.println("An exception occurred:");
++            e.printStackTrace();
+         }
+-        return false;
++
++        return false;
++
++    }
++
++    @Override
++    public String toString() {
++        return "["+super.toString()+"]\n";
++    }
++
++    public void approve(Article article) {
++        article.setApprove(true);
++        wallness.add(article);
++    }
++
++    public void review() {
++        for(int i=0; i<notApprovedArticles.size(); i++){
++            System.out.println(notApprovedArticles.get(i).toString());
++            System.out.println("1.Approve");
++            System.out.println("2.Reject");
++           /* Scanner sc = new Scanner(System.in);
++            while (true) {
++                int choice = sc.nextInt();
++                if (choice == 1){
++                    approve(notApprovedArticles.get(i));
++                    notApprovedArticles.remove(i);
++                    sc.close();
++                    break;
++                }
++
++                else if (choice == 2){
++                    notApprovedArticles.remove(i);
++                    sc.close();
++                    break;
++                }
++            }*/
++        }
++
++    }
++
++    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
++        if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0){
++            System.out.println("Missed data");
++            return false;
++          }
++        for (int i=0;i< users.size();i++){
++            if(users.get(i).getEmail().equals(email)){
++                System.out.println("email already used");
++                return false;
++            }
++        }
++        users.add(new Client(name,age,gender,address,email,pass,status));
++        return true;
++    }
++
++    public boolean viewSubscriptions() {
++        try {
++            for(int i=0; i<users.size(); i++) {
++                if (users.get(i) instanceof Client) {
++                    System.out.println(users.get(i).getName() + ((Client) users.get(i)).getPlan());
++                }
++            }
++            return true;
++        }catch (Exception e){
++            return false;
++        }
++
++
+     }
+ }
+Index: src/test/java/use_cases/UserManagementTest.java
+===================================================================
+diff --git a/src/test/java/use_cases/UserManagementTest.java b/src/test/java/use_cases/CodeTesting.java
+rename from src/test/java/use_cases/UserManagementTest.java
+rename to src/test/java/use_cases/CodeTesting.java
+--- a/src/test/java/use_cases/UserManagementTest.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/test/java/use_cases/CodeTesting.java	(date 1734283526195)
+@@ -12,7 +12,7 @@
+ @CucumberOptions(features="Features",plugin={"html:target/cucumber/wikipedia.html"},monochrome=true,snippets=SnippetType.CAMELCASE,glue={"use_cases"})
+ 
+ 
+-public class UserManagementTest {
++public class CodeTesting {
+ 
+ 
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/.idea/misc.xml	(date 1734368389328)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/Fitness/Client.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Fitness;\r\n\r\npublic class Client extends User {\r\n    private UserStatus status;\r\n    public Client(String name, int age, String gender, String address, String email, String pass,UserStatus status) {\r\n        super(name, age, gender, address, email, pass,Role.Client);\r\n        this.status = status;\r\n    }\r\n    public UserStatus getStatus() {\r\n        return status;\r\n    }\r\n\r\n    public void setStatus(UserStatus userStatus) {\r\n        this.status = userStatus;\r\n    }\r\n\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/Fitness/Client.java b/src/main/java/Fitness/Client.java
+--- a/src/main/java/Fitness/Client.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/main/java/Fitness/Client.java	(date 1734283526188)
+@@ -2,10 +2,18 @@
+ 
+ public class Client extends User {
+     private UserStatus status;
++    private boolean premium;
++
+     public Client(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+         super(name, age, gender, address, email, pass,Role.Client);
+         this.status = status;
+     }
++
++    public Client() {
++        super();
++        status=UserStatus.Active;
++    }
++
+     public UserStatus getStatus() {
+         return status;
+     }
+@@ -15,4 +23,23 @@
+     }
+ 
+ 
++    public void submitFeedBack(String feed) {
++        Application.notApprovedArticles.add(new Article(this.getName(),feed));
++    }
++
++    public boolean setPlan(String plan) {
++        if(plan.equalsIgnoreCase("Premium")) {
++            this.premium=true;
++        }
++        return premium;
++    }
++
++    public boolean isPremium() {
++        return premium;
++    }
++    public String getPlan() {
++        if(premium)
++            return "Premium";
++        return "Not Premium";
++    }
+ }
+Index: src/main/java/Fitness/Application.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Fitness;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n\r\npublic class Application {\r\n    public static User currentUser =null;\r\n    public static List<User> users =new ArrayList<User>();\r\n    String currentFeature;\r\n\r\n\r\n    public static User login(String string, String string2) {\r\n        for(User user : users) {\r\n            if(user.getEmail().equals(string)&&user.getPass().equals(string2)) {\r\n                currentUser = user;\r\n                currentUser.incPoints();\r\n                return user;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public void setCurrentFeature(String cF) {\r\n        currentFeature = cF;\r\n    }\r\n\r\n    public static boolean findUser(String mail) {\r\n        for(User u : users) {\r\n            if(u.getEmail().equals(mail)) {\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean activeCheck(String mail) {\r\n        for (User u : users) {\r\n            if (u.getEmail().equals(mail)) {\r\n                if (u instanceof Client) {\r\n                    Client c = (Client) u;\r\n                    return (c.getStatus() == UserStatus.Active);\r\n                }\r\n                else if (u instanceof Instructor) {\r\n                    Instructor i = (Instructor) u;\r\n                    return (i.getStatus() == UserStatus.Active);\r\n                }\r\n                return true;\r\n            }\r\n\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean isAdmin(String mail) {\r\n        for (User u : users) {\r\n            if (u.getEmail().equals(mail)) {\r\n                if (u instanceof Admin) {\r\n                    return true;\r\n                }\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/Fitness/Application.java b/src/main/java/Fitness/Application.java
+--- a/src/main/java/Fitness/Application.java	(revision 093408f387717ebbf283d4fe6ecbb4443c6b2639)
++++ b/src/main/java/Fitness/Application.java	(date 1734283526180)
+@@ -6,9 +6,13 @@
+ 
+ public class Application {
+     public static User currentUser =null;
+-    public static List<User> users =new ArrayList<User>();
++    public static List<User> users =new ArrayList<>();
++    public static String currentSection;
++    public static List<Program> programs =new ArrayList<Program>();
++    public static List<Session> sessions=new ArrayList<>();
+     String currentFeature;
+-
++    public static List<Article> notApprovedArticles=new ArrayList<>();
++    public static List<Article> wallness=new ArrayList<>();
+ 
+     public static User login(String string, String string2) {
+         for(User user : users) {
+@@ -21,6 +25,39 @@
+         return null;
+     }
+ 
++    public static void showPrograms() {
++        if(programs.isEmpty()) {
++            System.out.println("No programs found");
++            return ;
++        }
++        for(Program program : programs) {
++            System.out.println(program);
++        }
++
++
++    }
++
++    public static void showRevenue() {
++        if(programs.isEmpty()){
++            System.out.println("No programs found");
++            return ;}
++        for(Program program : programs) {
++            System.out.println(program.getTitle()+"  "+program.getRevenue());
++        }
++
++    }
++
++    public static void participants() {
++        if(sessions.isEmpty()) {
++            System.out.println("No session found");
++            return;
++        }
++        for(Session session : sessions) {
++            System.out.println(session);
++        }
++
++    }
++
+     public void setCurrentFeature(String cF) {
+         currentFeature = cF;
+     }
+@@ -63,4 +100,19 @@
+         return false;
+     }
+ 
++    public static void init(){
++        Admin admin1 = null;
++        Admin admin2 = null;
++        String message="";
++
++        admin1 = new Admin("ibrahim", 20, "male", "yaseed", "mashaqi@gmail.com", "pass");
++        admin2 = new Admin("admin", 22, "male", "palestine", "admin@gmail.com", "4865");
++        users.add(admin1);
++        users.add(admin2);
++        admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", UserStatus.Active);
++        admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", UserStatus.DeActive);
++        admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", UserStatus.Active);
++
++    }
++
+ }
