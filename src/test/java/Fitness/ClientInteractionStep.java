@@ -1,18 +1,19 @@
 package Fitness;
 
+import Fitness.AdminPackage.Client;
+import Fitness.AdminPackage.Instructor;
+import Fitness.AdminPackage.Role;
 import Fitness.InstructorP.Communicate.*;
 import Fitness.InstructorP.DiscussionFromP.Comment;
 import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 import Fitness.InstructorP.DiscussionFromP.Post;
 import Fitness.InstructorP.DiscussionFromP.PostType;
-import Fitness.InstructorP.Program;
+import Fitness.InstructorP.ProgramPackage.Program;
 import Fitness.InstructorP.Reports.Report;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -165,7 +166,7 @@ public class ClientInteractionStep
     public void malik_sends_a_message_to_ahmad(String message)
     {
 
-        messageInstructor = new Message(instructor1,message,Role.Instructor,MessageType.sent);
+        messageInstructor = new Message(instructor1,message, Role.Instructor,MessageType.sent);
         messagingSystem1.addMessage(messageInstructor);
         instructor1.addMessage(messageInstructor);
         messagingSystem1.addInstructorMessage(messageInstructor);

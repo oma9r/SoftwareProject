@@ -1,7 +1,7 @@
 package Fitness.InstructorP.Communicate;
 
-import Fitness.Client;
-import Fitness.Instructor;
+import Fitness.AdminPackage.Client;
+import Fitness.AdminPackage.Instructor;
 
 import java.util.ArrayList;
 

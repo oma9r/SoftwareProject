@@ -1,8 +1,8 @@
-package Fitness;
+package Fitness.AdminPackage;
 
 import Fitness.InstructorP.DiscussionFromP.Comment;
 import Fitness.InstructorP.Reports.Report;
-import Fitness.InstructorP.Session;
+import Fitness.InstructorP.Session.Session;
 
 import java.util.ArrayList;
 
@@ -12,9 +12,12 @@ public class Client extends User
     private ArrayList<Session> sessionList;
     private ArrayList<Report> reportList;
     private ArrayList<Comment> replyList;
+    private boolean premium;
+
+
     public Client(String name, int age, String gender, String address, String email, String pass,UserStatus status)
     {
-        super(name, age, gender, address, email, pass,Role.Client);
+
         this.status = status;
         this.reportList = new ArrayList<Report>();
         this.replyList = new ArrayList<Comment>();
@@ -33,9 +36,11 @@ public class Client extends User
         super();
         this.reportList = new ArrayList<Report>();
         this.replyList = new ArrayList<Comment>();
+        status=UserStatus.Active;
     }
     public UserStatus getStatus()
     {
+
         return status;
     }
 
@@ -43,24 +48,30 @@ public class Client extends User
         this.status = userStatus;
     }
 
-    public void setSessionList(ArrayList<Session> sessionList) {
+    public void setSessionList(ArrayList<Session> sessionList)
+    {
         this.sessionList = sessionList;
     }
-    public ArrayList<Session> getSessionList() {
+    public ArrayList<Session> getSessionList()
+    {
         return sessionList;
     }
 
-    public void setReportList(ArrayList<Report> reportList) {
+
+    public void setReportList(ArrayList<Report> reportList)
+    {
         this.reportList = reportList;
     }
-    public ArrayList<Report> getReportList() {
+    public ArrayList<Report> getReportList()
+    {
         return reportList;
     }
 
     public void setReplyList(ArrayList<Comment> replyList) {
         this.replyList = replyList;
     }
-    public ArrayList<Comment> getReplyList() {
+    public ArrayList<Comment> getReplyList()
+    {
         return replyList;
     }
 
@@ -114,13 +125,36 @@ public class Client extends User
         return false;
     }
 
-    public boolean removeReply(Comment reply)
+    public boolean removeReply(Comment reply) {
+        if (this.replyList.contains(reply)) {
+            this.replyList.remove(reply);
+            return true;
+        }
+        return false;
+    }
+    public void submitFeedBack(String feed)
+        {
+        Application.notApprovedArticles.add(new Article(this.getName(),feed));
+    }
+
+    public boolean setPlan(String plan)
+        {
+        if(plan.equalsIgnoreCase("Premium"))
+        {
+            this.premium=true;
+        }
+        return premium;
+    }
+
+    public boolean isPremium()
     {
-            if(this.replyList.contains(reply))
-            {
-                this.replyList.remove(reply);
-                return true;
-            }
-            return false;
+        return premium;
+    }
+    public String getPlan()
+    {
+        if(premium)
+            return "Premium";
+        return "Not Premium";
+
     }
 }

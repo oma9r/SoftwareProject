@@ -1,8 +1,8 @@
 
 
-package Fitness.InstructorP;
+package Fitness.InstructorP.Session;
 
-import Fitness.User;
+import Fitness.AdminPackage.User;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

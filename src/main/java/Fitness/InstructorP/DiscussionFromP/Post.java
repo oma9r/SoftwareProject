@@ -1,6 +1,6 @@
 package Fitness.InstructorP.DiscussionFromP;
 
-import Fitness.User;
+import Fitness.AdminPackage.User;
 
 import java.util.ArrayList;
 

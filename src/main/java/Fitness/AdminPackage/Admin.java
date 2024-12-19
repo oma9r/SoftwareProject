@@ -1,17 +1,19 @@
-package Fitness;
+package Fitness.AdminPackage;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Admin extends User {
+import static Fitness.AdminPackage.Application.*;
+
+public class Admin extends User
+{
     public Admin(String name, int age, String gender, String address, String email, String password) {
-        super(name, age, gender, address, email, password,Role.Admin);
+        super(name, age, gender, address, email, password, Role.Admin);
 
 
     }
+
     public Admin(){}
 
     public boolean addAdmin(String name, int age, String gender, String address, String email, String pass) {
@@ -23,7 +25,6 @@ public class Admin extends User {
         return Application.users.add(a);
     }
 
-
     public boolean deleteUser(String deleted) {
         for(int i=0; i<Application.users.size(); i++){
             if(Application.users.get(i).getEmail().equals(deleted)&&!(Application.users.get(i) instanceof Admin)) {
@@ -34,7 +35,7 @@ public class Admin extends User {
         return false;
     }
 
-    public boolean addClient(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+    public boolean addClient(String name, int age, String gender, String address, String email, String pass, UserStatus status) {
         if(Application.findUser(email)==true)
             return false;
         if(name==null||age<16||gender==null||address==null||email==null||pass==null)
@@ -128,7 +129,7 @@ return y;
             }
             else if(Application.users.get(i) instanceof Client) {
                 Client c=(Client)Application.users.get(i);
-                if(c.getStatus()==UserStatus.DeActive) {
+                if(c.getStatus().equals(UserStatus.DeActive)) {
                     System.out.println(c);
                 }
             }
@@ -137,25 +138,99 @@ return y;
     }
 
     public boolean report() {
+        String filePath = "C:\\Users\\HP\\Desktop\\New folder\\SoftwareProject\\Report.txt";
+
         try {
-            File file=new File("C:\\Users\\HP\\Desktop\\softProj\\Report.txt");
+            File file = new File(filePath);
+
+            file.getParentFile().mkdirs();
+
+
             if (file.createNewFile()) {
                 System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists, writing to the existing file.");
             }
-            else {
-                FileWriter fw = new FileWriter("C:\\Users\\HP\\Desktop\\softProj\\Report.txt");
+
+            try (FileWriter fw = new FileWriter(file)) {
                 for (int i = 0; i < Application.users.size(); i++) {
-                    fw.write(Application.users.get(i).toString());
+                    fw.write(Application.users.get(i).toString() + System.lineSeparator());
                 }
-                fw.close();
-                return true;
+                System.out.println("Report written successfully.");
             }
+            return true;
 
-
-
-        }catch (IOException e){
-            System.out.println(e);
+        } catch (IOException e) {
+            System.out.println("An exception occurred:");
+            e.printStackTrace();
         }
+
         return false;
+
+    }
+
+    @Override
+    public String toString() {
+        return "["+super.toString()+"]\n";
+    }
+
+    public void approve(Article article) {
+        article.setApprove(true);
+        wallness.add(article);
+    }
+
+    public void review() {
+        for(int i=0; i<notApprovedArticles.size(); i++){
+            System.out.println(notApprovedArticles.get(i).toString());
+            System.out.println("1.Approve");
+            System.out.println("2.Reject");
+           /* Scanner sc = new Scanner(System.in);
+            while (true) {
+                int choice = sc.nextInt();
+                if (choice == 1){
+                    approve(notApprovedArticles.get(i));
+                    notApprovedArticles.remove(i);
+                    sc.close();
+                    break;
+                }
+
+                else if (choice == 2){
+                    notApprovedArticles.remove(i);
+                    sc.close();
+                    break;
+                }
+            }*/
+        }
+
+    }
+
+    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,UserStatus status) {
+        if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0){
+            System.out.println("Missed data");
+            return false;
+          }
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getEmail().equals(email)){
+                System.out.println("email already used");
+                return false;
+            }
+        }
+        users.add(new Client(name,age,gender,address,email,pass,status));
+        return true;
+    }
+
+    public boolean viewSubscriptions() {
+        try {
+            for(int i=0; i<users.size(); i++) {
+                if (users.get(i) instanceof Client) {
+                    System.out.println(users.get(i).getName() + ((Client) users.get(i)).getPlan());
+                }
+            }
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+
+
     }
 }

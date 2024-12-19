@@ -1,6 +1,4 @@
-package Fitness.InstructorP;
-
-import java.awt.*;
+package Fitness.InstructorP.ProgramPackage;
 
 public class tutorialTypeProgram
 {

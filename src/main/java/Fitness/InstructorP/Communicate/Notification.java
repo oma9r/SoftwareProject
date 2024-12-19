@@ -1,7 +1,7 @@
 package Fitness.InstructorP.Communicate;
 
-import Fitness.Role;
-import Fitness.User;
+import Fitness.AdminPackage.Role;
+import Fitness.AdminPackage.User;
 
 public class Notification
 {

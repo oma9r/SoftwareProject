@@ -1,4 +1,4 @@
-package Fitness.InstructorP;
+package Fitness.InstructorP.Session;
 
 public enum SessionCompleteStatus
 {

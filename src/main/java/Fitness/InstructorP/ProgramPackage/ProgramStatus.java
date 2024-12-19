@@ -1,4 +1,4 @@
-package Fitness.InstructorP;
+package Fitness.InstructorP.ProgramPackage;
 
 public enum ProgramStatus
 {

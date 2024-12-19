@@ -1,4 +1,4 @@
-package Fitness;
+package Fitness.AdminPackage;
 
 import Fitness.InstructorP.Communicate.Message;
 import Fitness.InstructorP.Communicate.Notification;
@@ -7,7 +7,8 @@ import Fitness.InstructorP.DiscussionFromP.Post;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class User {
+public class User
+{
     private int id;
     private String name;
     private int age;
@@ -22,7 +23,8 @@ public class User {
     private ArrayList<Notification> notificationList;
     private ArrayList<Post> postList;
 
-    public User( String name, int age, String gender, String address, String email, String password, Role role) {
+    public User( String name, int age, String gender, String address, String email, String password, Role role)
+    {
         this.id = idCounter++;
         this.name = name;
         this.age = age;
@@ -38,10 +40,11 @@ public class User {
 
 
     }
+
     public User()
     {
         this.id = idCounter++;
-        this.points=new Random().nextInt(100);
+        this.points =  0;
         this.setAddress("");
         this.setAge(0);
         this.setPass("");
@@ -49,8 +52,8 @@ public class User {
         this.messageList = new ArrayList<Message>();
         this.notificationList = new ArrayList<Notification>();
         this.postList = new ArrayList<Post>();
-
     }
+
 
     public User(String userName)
     {
@@ -199,7 +202,18 @@ public int getPoints(){
         this.points++;
     }
 
+    @Override
+    public String toString()
+    {
+        return "[id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender+", address=" + address + ", email=" + email + ", password=" + password + ", role=" + role + "]";
+    }
+
+
 
 
 
 }//end of class
+
+
+
+

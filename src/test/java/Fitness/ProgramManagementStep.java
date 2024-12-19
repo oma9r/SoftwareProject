@@ -1,5 +1,10 @@
 package Fitness;
-import Fitness.InstructorP.*;
+import Fitness.AdminPackage.Instructor;
+import Fitness.AdminPackage.UserStatus;
+import Fitness.InstructorP.ProgramPackage.ProgramStatus;
+import Fitness.InstructorP.ProgramPackage.tutorialTypeProgram;
+import Fitness.InstructorP.Session.Session;
+import Fitness.InstructorP.ProgramPackage.Program;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,7 +25,7 @@ public class ProgramManagementStep
 
     public ProgramManagementStep()
     {
-        instructor1 = new Instructor("Ali",26,"male","Nablus","ali@gmail.com","123ali",UserStatus.Active);
+        instructor1 = new Instructor("Ali",26,"male","Nablus","ali@gmail.com","123ali", UserStatus.Active);
         instructor2 = new Instructor("Sami",27,"male","Ramallah","sami@gmail.com","123sami",UserStatus.Active);
         instructorsList = new ArrayList<>();
         instructorsList.add(instructor1);

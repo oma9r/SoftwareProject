@@ -1,11 +1,11 @@
 package Fitness.InstructorP.Reports;
 
-import Fitness.Client;
-import Fitness.Instructor;
+import Fitness.AdminPackage.Client;
+import Fitness.AdminPackage.Instructor;
 import Fitness.InstructorP.DiscussionFromP.Comment;
-import Fitness.InstructorP.Program;
-import Fitness.InstructorP.Session;
-import Fitness.InstructorP.SessionCompleteStatus;
+import Fitness.InstructorP.ProgramPackage.Program;
+import Fitness.InstructorP.Session.Session;
+import Fitness.InstructorP.Session.SessionCompleteStatus;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package Fitness.InstructorP.DiscussionFromP;
 
 
-import Fitness.User;
+import Fitness.AdminPackage.User;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,5 +1,9 @@
 package Fitness;
 
+import Fitness.AdminPackage.Admin;
+import Fitness.AdminPackage.Application;
+import Fitness.AdminPackage.User;
+import Fitness.AdminPackage.UserStatus;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static Fitness.Application.users;
+import static Fitness.AdminPackage.Application.users;
 import static org.junit.Assert.*;
 
 public class UserManagementSteps {
@@ -103,11 +107,11 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
         assertTrue(app.currentUser instanceof Admin);
     }
 
-    String section;
+
 
     @When("the admin navigates to the User Management section")
     public void the_admin_navigates_to_the_user_management_section() {
-        section = "User Management Section";
+        Application.currentSection = "User Management Section";
     }
 
     @When("selects Add User")
@@ -140,7 +144,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     @When("the admin goes to User Management section")
     public void the_admin_goes_to_user_management_section() {
-        section = "User Management Section";
+        Application.currentSection = "User Management Section";
     }
 
     @When("select delete user")
@@ -173,7 +177,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     @When("the admin goes to User Manager section")
     public void the_admin_goes_to_user_manager_section() {
-        section = "User Manager Section";
+        Application.currentSection = "User Manager Section";
     }
 
     @When("provides an email")
@@ -340,7 +344,7 @@ assertTrue(true);
 
     @When("the admin executes the filterUsersByEngagement command with the parameter No activity in the last {int} days")
     public void the_admin_executes_the_filter_users_by_engagement_command_with_the_parameter_no_activity_in_the_last_days(Integer int1) {
-        section = "filterUsersByEngagement";
+        Application.currentSection = "filterUsersByEngagement";
     }
 
     @Then("the system displays a list of inactive users")
@@ -355,7 +359,7 @@ assertTrue(true);
 
     @When("the admin executes the downloadEngagementReport command")
     public void the_admin_executes_the_download_engagement_report_command() {
-        section = "downloadEngagementReport";
+        Application.currentSection = "downloadEngagementReport";
     }
 
     @Then("the system generates and saves a report file")
@@ -400,7 +404,7 @@ assertTrue(true);
 
     @Then("the system displays the following matching users")
     public void thenTheSystemDisplaysMatchingUsers(List<Map<String, String>> expectedUsers) {
-        // Verify the search results match the expected output
+
         for (int i = 0; i < expectedUsers.size(); i++) {
             Map<String, String> expectedUser = expectedUsers.get(i);
             User result = searchResults.get(i);
@@ -411,7 +415,7 @@ assertTrue(true);
             assertEquals(expectedUser.get("address"), result.getAddress());
             assertEquals(expectedUser.get("email"), result.getEmail());
             assertEquals(expectedUser.get("pass"), result.getPass());
-            // Optionally check status if it's part of your expected data
+
         }
     }
 

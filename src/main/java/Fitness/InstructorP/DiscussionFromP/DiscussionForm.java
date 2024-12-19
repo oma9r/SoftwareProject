@@ -1,9 +1,8 @@
 package Fitness.InstructorP.DiscussionFromP;
 
-import Fitness.Instructor;
-import Fitness.InstructorP.Program;
-import Fitness.User;
-import io.cucumber.java.sl.In;
+import Fitness.AdminPackage.Instructor;
+import Fitness.InstructorP.ProgramPackage.Program;
+import Fitness.AdminPackage.User;
 
 import java.util.ArrayList;
 

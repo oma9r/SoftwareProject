@@ -1,10 +1,11 @@
-package Fitness.InstructorP;
+package Fitness.InstructorP.ProgramPackage;
 
-import Fitness.Application;
-import Fitness.Client;
-import Fitness.Instructor;
+import Fitness.AdminPackage.Application;
+import Fitness.AdminPackage.Client;
+import Fitness.AdminPackage.Instructor;
 import Fitness.InstructorP.DiscussionFromP.DiscussionForm;
 import Fitness.InstructorP.Reports.Report;
+import Fitness.InstructorP.Session.Session;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ public class Program
     private ArrayList<DiscussionForm> discussionForms;
     private ArrayList<Client> ClientsList;
     private ArrayList<Report> reportList;
+    float revenue=0;
 ;
 
     //7 variables
@@ -325,6 +327,13 @@ public class Program
             return true;
         }
         return false;
+    }
+
+    public float getRevenue() {
+        return revenue;
+    }
+    public void setRevenue(float revenue) {
+        this.revenue = revenue;
     }
 
 
