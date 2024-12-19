@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/ Progress Tracking.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/AccountManagement.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/FeedbackAndReviews.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/Program Exploration and Enrollment.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/FilterSelection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramDetailPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramExplorer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgressTrackingPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Fitness/FeedbackAndReviews.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgressTracking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Fitness/FilterSelection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Fitness/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Fitness/ProgramData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Fitness/ProgramDetailPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Fitness/ProgramExplorer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Fitness/ProgressTrackingPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" afterDir="false" />
-    </list>
+    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,42 +60,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature:  Progress Tracking.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Account Management.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: AccountManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: FeedbackAndReviews.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Program Exploration and Enrollment.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User browses programs by difficulty level.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User browses programs by focus area.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User creates their profile.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User skips optional fields during profile creation.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.CodeTesting (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CodeTesting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProgramExplorationAndEnrollment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserManagementTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main2&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Cucumber Java.Feature:  Progress Tracking.executor": "Run",
+    "Cucumber Java.Feature: Account Management.executor": "Run",
+    "Cucumber Java.Feature: AccountManagement.executor": "Run",
+    "Cucumber Java.Feature: FeedbackAndReviews.executor": "Run",
+    "Cucumber Java.Feature: Program Exploration and Enrollment.executor": "Run",
+    "Cucumber Java.Scenario: User browses programs by difficulty level.executor": "Run",
+    "Cucumber Java.Scenario: User browses programs by focus area.executor": "Run",
+    "Cucumber Java.Scenario: User creates their profile.executor": "Run",
+    "Cucumber Java.Scenario: User skips optional fields during profile creation.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.CodeTesting (1).executor": "Run",
+    "JUnit.CodeTesting.executor": "Run",
+    "JUnit.ProgramExplorationAndEnrollment.executor": "Run",
+    "JUnit.UserManagementTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main3",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Fitness" />
@@ -256,6 +224,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733154442839</updated>
       <workItem from="1734634808868" duration="5315000" />
+      <workItem from="1734640206251" duration="315000" />
     </task>
     <servers />
   </component>
