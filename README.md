@@ -1,6 +1,6 @@
-# SoftwareProject
-Software course project repository.
-## Students: 
-- ### Omar Abumazen
-- ### Abdulrhman M Sawalmeh 
-- ### Ibrahim Mashaqi 
+# Software Project Course 
+##  Fitness aManagement System
+### Students: 
+- Omar Abumazen
+- Ibrahim Mashaqi
+- Abdulrhman M Sawalmeh 
