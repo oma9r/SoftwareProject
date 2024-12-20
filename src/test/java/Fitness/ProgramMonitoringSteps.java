@@ -4,6 +4,8 @@ import Fitness.AdminPackage.Admin;
 import Fitness.AdminPackage.Application;
 import Fitness.AdminPackage.Client;
 import Fitness.AdminPackage.User;
+import Fitness.InstructorP.ProgramPackage.Program;
+import Fitness.InstructorP.Session.Session;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
