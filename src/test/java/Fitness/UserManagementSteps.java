@@ -1,6 +1,5 @@
-package use_cases;
+package Fitness;
 
-import Fitness.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -339,5 +338,6 @@ assertTrue(true);
     public void thenTheSystemDisplaysMessage(String expectedMessage) {
         assertEquals(expectedMessage, searchMessage);
     }
+
 
 }
