@@ -1,11 +1,11 @@
-package use_cases;
+package Fitness;
 
-import Fitness.*;
+import Fitness.AdminPackage.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static Fitness.Application.*;
+import static Fitness.AdminPackage.Application.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

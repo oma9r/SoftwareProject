@@ -1,13 +1,13 @@
-package use_cases;
+package Fitness;
 
-import Fitness.Admin;
-import Fitness.Application;
-import Fitness.Client;
+import Fitness.AdminPackage.Admin;
+import Fitness.AdminPackage.Application;
+import Fitness.AdminPackage.Client;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static Fitness.Application.users;
+import static Fitness.AdminPackage.Application.users;
 import static org.junit.Assert.assertTrue;
 
 public class SubscriptionManagementSteps {

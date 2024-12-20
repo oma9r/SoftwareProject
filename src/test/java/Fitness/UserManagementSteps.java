@@ -1,5 +1,9 @@
 package Fitness;
 
+import Fitness.AdminPackage.Admin;
+import Fitness.AdminPackage.Application;
+import Fitness.AdminPackage.Status;
+import Fitness.AdminPackage.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static Fitness.Application.users;
+import static Fitness.AdminPackage.Application.users;
 import static org.junit.Assert.*;
 
 public class UserManagementSteps {

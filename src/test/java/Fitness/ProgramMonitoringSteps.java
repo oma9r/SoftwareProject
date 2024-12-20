@@ -1,11 +1,13 @@
-package use_cases;
+package Fitness;
 
-import Fitness.*;
-
+import Fitness.AdminPackage.Admin;
+import Fitness.AdminPackage.Application;
+import Fitness.AdminPackage.Client;
+import Fitness.AdminPackage.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static Fitness.Application.*;
+import static Fitness.AdminPackage.Application.*;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -51,11 +53,11 @@ public class ProgramMonitoringSteps {
 
     }
 
-Session [] nullFlage;
+Session[] nullFlage;
     @When("I select Generate Report and choose Attendance")
     public void i_select_generate_report_and_choose_attendance() {
 
-        for (Fitness.Program program : programs)
+        for (Program program : programs)
             Application.admin1.showAtetendance(program);
 
 
