@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/isComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/ProgramManagment.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/ProgramManagment.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramMonitoringSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramMonitoringSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -65,48 +74,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature:  Progress Tracking.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Account Management.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: AccountManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: FeedbackAndReviews.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Program Exploration and Enrollment.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User browses programs by difficulty level.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User browses programs by focus area.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User creates their profile.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User skips optional fields during profile creation.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.CodeTesting (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CodeTesting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProgramExplorationAndEnrollment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserManagementTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Cucumber Java.Feature:  Progress Tracking.executor": "Run",
+    "Cucumber Java.Feature: Account Management.executor": "Run",
+    "Cucumber Java.Feature: AccountManagement.executor": "Run",
+    "Cucumber Java.Feature: FeedbackAndReviews.executor": "Run",
+    "Cucumber Java.Feature: Program Exploration and Enrollment.executor": "Run",
+    "Cucumber Java.Scenario: User browses programs by difficulty level.executor": "Run",
+    "Cucumber Java.Scenario: User browses programs by focus area.executor": "Run",
+    "Cucumber Java.Scenario: User creates their profile.executor": "Run",
+    "Cucumber Java.Scenario: User skips optional fields during profile creation.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.CodeTesting (1).executor": "Run",
+    "JUnit.CodeTesting.executor": "Run",
+    "JUnit.ProgramExplorationAndEnrollment.executor": "Run",
+    "JUnit.ProgramManagementTest.executor": "Run",
+    "JUnit.UserManagementTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "omar1",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Fitness" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: FeedbackAndReviews">
+  <component name="RunManager" selected="JUnit.ProgramManagementTest">
     <configuration name="Feature: FeedbackAndReviews" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/Features/FeedbackAndReviews.feature" />
@@ -197,14 +207,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProgramManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SoftwareProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Fitness.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Fitness" />
+      <option name="MAIN_CLASS_NAME" value="Fitness.ProgramManagementTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Cucumber Java.Feature: FeedbackAndReviews" />
       <item itemvalue="Cucumber Java.Scenario: User browses programs by focus area" />
+      <item itemvalue="JUnit.ProgramManagementTest" />
       <item itemvalue="JUnit.CodeTesting" />
       <item itemvalue="JUnit.ProgramExplorationAndEnrollment" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProgramManagementTest" />
         <item itemvalue="Cucumber Java.Feature: FeedbackAndReviews" />
         <item itemvalue="JUnit.ProgramExplorationAndEnrollment" />
         <item itemvalue="JUnit.CodeTesting" />
@@ -234,6 +261,12 @@
       <workItem from="1734643533124" duration="171000" />
       <workItem from="1734722334806" duration="27000" />
       <workItem from="1734722729817" duration="400000" />
+      <workItem from="1734723663599" duration="13000" />
+      <workItem from="1734891884023" duration="5123000" />
+      <workItem from="1735068386196" duration="1020000" />
+      <workItem from="1735303641468" duration="42000" />
+      <workItem from="1735635427059" duration="457000" />
+      <workItem from="1735733078591" duration="2466000" />
     </task>
     <servers />
   </component>

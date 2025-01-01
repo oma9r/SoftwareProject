@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
@@ -20,14 +21,14 @@ public class ProgramManagementStep
     Program program1,program2,program3,upProgram,notUpProgram,deleteProgram,notDeleteProgram;
     Session session1,session2,session3,session4;
     ArrayList<Session> sessionsList;
-    ArrayList<Instructor> instructorsList;
+    List<Instructor> instructorsList;
     ArrayList<Program> programsList;
 
     public ProgramManagementStep()
     {
         instructor1 = new Instructor("Ali",26,"male","Nablus","ali@gmail.com","123ali", Status.Active);
         instructor2 = new Instructor("Sami",27,"male","Ramallah","sami@gmail.com","123sami",Status.Active);
-        instructorsList = new ArrayList<>();
+        instructorsList = new ArrayList<Instructor>();
         instructorsList.add(instructor1);
         instructorsList.add(instructor2);
         program1 = new Program("Alpha","120","hard","more power", "Document","65$", ProgramStatus.Active,instructor1);

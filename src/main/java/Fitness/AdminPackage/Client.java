@@ -15,6 +15,7 @@ public class Client extends User
     private ArrayList<Comment> replyList;
     private boolean premium;
     private Program program;
+    private double currentProgress;
 
 
     public Client(String name, int age, String gender, String address, String email, String pass,Status status)
@@ -23,6 +24,7 @@ public class Client extends User
         this.status = status;
         this.reportList = new ArrayList<Report>();
         this.replyList = new ArrayList<Comment>();
+        this.currentProgress = 0;
     }
 
     public Client(String clientName)
@@ -30,6 +32,7 @@ public class Client extends User
 
         super();
         this.replyList = new ArrayList<Comment>();
+        this.currentProgress = 0;
     }
 
     public Client()
@@ -39,6 +42,7 @@ public class Client extends User
         this.reportList = new ArrayList<Report>();
         this.replyList = new ArrayList<Comment>();
         status=Status.Active;
+        this.currentProgress = 0;
     }
     public Status getStatus()
     {
@@ -75,6 +79,14 @@ public class Client extends User
     public ArrayList<Comment> getReplyList()
     {
         return replyList;
+    }
+
+    public void setCurrentProgress(double currentProgress) {
+        this.currentProgress = this.getReportList().get(getReportList().size()).getRatioProgress();
+
+    }
+    public double getCurrentProgress() {
+        return currentProgress;
     }
 
     public boolean addSession(Session session)
