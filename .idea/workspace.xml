@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/isComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_19_2024_2_44_PM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/ProgramManagment.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/ProgramManagment.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramMonitoringSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramMonitoringSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +259,7 @@
       <workItem from="1735068386196" duration="1020000" />
       <workItem from="1735303641468" duration="42000" />
       <workItem from="1735635427059" duration="457000" />
-      <workItem from="1735733078591" duration="2466000" />
+      <workItem from="1735733078591" duration="6870000" />
     </task>
     <servers />
   </component>

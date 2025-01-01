@@ -32,6 +32,8 @@ public class Application
 
     public static User login(String string, String string2)
     {
+        users =new ArrayList<>();
+
         for(User user : users) {
             if(user.getEmail().equals(string)&&user.getPass().equals(string2)) {
                 currentUser = user;
