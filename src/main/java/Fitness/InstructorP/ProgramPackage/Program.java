@@ -33,7 +33,7 @@ public class Program
     LocalDate startDate;
     LocalDate endDate;
     List <String> time;
-;
+    private isComplete isComplete;
 
     //7 variables
 
@@ -261,6 +261,14 @@ public class Program
     }
     public void setReportList(ArrayList<Report> reportList) {
         this.reportList = reportList;
+    }
+
+    public void setIsComplete(Fitness.InstructorP.ProgramPackage.isComplete isComplete) {
+        this.isComplete = isComplete;
+    }
+
+    public Fitness.InstructorP.ProgramPackage.isComplete getIsComplete() {
+        return isComplete;
     }
 
     public boolean addClient(Client client)

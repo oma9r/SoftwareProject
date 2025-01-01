@@ -43,8 +43,7 @@ public class UserManagementSteps {
     @When("the admin executes the addUser with valid details")
     public void the_admin_executes_the_add_user_with_valid_details() {
         totalUsers = users.size();
-        assertFalse(null==admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123", Status.Active));
-
+        assertFalse(admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123", Status.Active));
 
     }
 

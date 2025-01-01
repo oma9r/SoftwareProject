@@ -25,9 +25,15 @@ public class Application
     public static List<Article> notApprovedArticles=new ArrayList<>();
     public static List<Article> wallness=new ArrayList<>();
 
+    public static Admin admin1,admin2;
+
+
+
 
     public static User login(String string, String string2)
     {
+        users =new ArrayList<>();
+
         for(User user : users) {
             if(user.getEmail().equals(string)&&user.getPass().equals(string2)) {
                 currentUser = user;
@@ -115,9 +121,10 @@ public class Application
     }
 
 
-    public static void init(){
-        Admin admin1 = null;
-        Admin admin2 = null;
+    public static void init()
+    {
+        admin1 = null;
+        admin2 = null;
         String message="";
 
         admin1 = new Admin("ibrahim", 20, "male", "yaseed", "mashaqi@gmail.com", "pass");

@@ -1,14 +1,20 @@
 package Fitness.AdminPackage;
 
+import Fitness.InstructorP.ProgramPackage.Program;
+import Fitness.InstructorP.Session.Session;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static Fitness.AdminPackage.Application.*;
 
 public class Admin extends User
 {
-    public Admin(String name, int age, String gender, String address, String email, String password) {
+    public Admin(String name, int age, String gender, String address, String email, String password)
+    {
         super(name, age, gender, address, email, password, Role.Admin);
 
 
@@ -230,6 +236,38 @@ return y;
         }catch (Exception e){
             return false;
         }
+
+
+
+
+    }
+
+    public List<Session> showAtetendance(Program program) {
+        ArrayList<Session> sessions = program.getSessions();
+        System.out.println("Program title:"+program.getProgramTitle());
+        System.out.println("Session number\t Session attendance");
+
+        for (int i=0; i<sessions.size(); i++) {
+            System.out.println(i+"\t"+sessions.get(i).getClientList());
+        }
+        return sessions;
+    }
+
+    public boolean clientProgress(Client c) {
+        try {
+
+            System.out.println(c.getName() + "\t" + c.getProgram().getProgramTitle() + "\t" + c.getCurrentProgress() + "\t");
+        }
+        catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public void getProgramsActive() {
+        for(Program p:programs)
+            System.out.println(p.getProgramTitle()+"\t"+p.getIsComplete());
 
 
     }

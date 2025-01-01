@@ -17,6 +17,7 @@ import static org.junit.Assert.assertTrue;
 public class ProgramMonitoringSteps {
 
     public ProgramMonitoringSteps() {
+
         Application.init();
     }
 

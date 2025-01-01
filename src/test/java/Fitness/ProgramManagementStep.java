@@ -10,6 +10,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
@@ -20,14 +22,14 @@ public class ProgramManagementStep
     Program program1,program2,program3,upProgram,notUpProgram,deleteProgram,notDeleteProgram;
     Session session1,session2,session3,session4;
     ArrayList<Session> sessionsList;
-    ArrayList<Instructor> instructorsList;
+    List<Instructor> instructorsList;
     ArrayList<Program> programsList;
 
     public ProgramManagementStep()
     {
         instructor1 = new Instructor("Ali",26,"male","Nablus","ali@gmail.com","123ali", Status.Active);
         instructor2 = new Instructor("Sami",27,"male","Ramallah","sami@gmail.com","123sami",Status.Active);
-        instructorsList = new ArrayList<>();
+        instructorsList = new ArrayList<Instructor>();
         instructorsList.add(instructor1);
         instructorsList.add(instructor2);
         program1 = new Program("Alpha","120","hard","more power", "Document","65$", ProgramStatus.Active,instructor1);
@@ -40,7 +42,7 @@ public class ProgramManagementStep
         sessionsList.add(session1);
         sessionsList.add(session2);
         program1.setSessions(sessionsList);
-        programsList = new ArrayList<>();
+        programsList = new ArrayList<Program>();
         programsList.add(program1);
         programsList.add(program2);
 
@@ -162,7 +164,7 @@ public class ProgramManagementStep
         //throw new io.cucumber.java.PendingException();
     }
     @Then("the system will display an error Message {string}")
-    public void the_system_will_display_an_error_message() {
+    public void the_system_will_display_an_error_message(String message) {
         System.out.println("Error Message: there's a missing data");
         //throw new io.cucumber.java.PendingException();
     }
@@ -177,7 +179,7 @@ public class ProgramManagementStep
 
 //××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
     @Given("already program exist with following details:")
-    public void already_program_exist_with_following_details(/*io.cucumber.datatable.DataTable dataTable*/)
+    public void already_program_exist_with_following_details(io.cucumber.datatable.DataTable dataTable)
     {
         // Write code here that turns the phrase above into concrete actions
         // For automatic transformation, change DataTable to one of
@@ -294,17 +296,30 @@ public class ProgramManagementStep
     @And("Malik enter the program title called {string}")
     public void malik_enter_the_program_title_called(String programName)
     {
-        deleteProgram = new Program();
-        for(Program program : programsList)
+
+        if (programsList == null || programsList.isEmpty())
         {
-            if(program.getProgramTitle().equals(programName))
-            {
+            throw new IllegalStateException("The programsList is not initialized or is empty.");
+        }
+
+        deleteProgram = null;
+        Iterator<Program> iterator = programsList.iterator();
+
+        while (iterator.hasNext()) {
+            Program program = iterator.next();
+            if (program.getProgramTitle().equals(programName)) {
                 deleteProgram = program;
-                programsList.remove(program);
-
-
+                iterator.remove(); // Safely remove the program using the iterator.
+                break; // Exit the loop after finding the matching program.
             }
         }
+
+        if (deleteProgram == null) {
+            System.out.println("No program found with the title: " + programName);
+        } else {
+            System.out.println("Program removed: " + deleteProgram.getProgramTitle());
+        }
+
 
 
         //throw new io.cucumber.java.PendingException();
@@ -319,6 +334,7 @@ public class ProgramManagementStep
     @Then("the system will delete the program with its details")
     public void the_system_will_delete_the_program_with_its_details()
     {
+        programsList.add(deleteProgram);
         boolean flag = true;
         if(programsList.remove(deleteProgram))
         {
