@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/ProgramManagment.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/ProgramManagment.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +80,7 @@
     "JUnit.CodeTesting (1).executor": "Run",
     "JUnit.CodeTesting.executor": "Run",
     "JUnit.ProgramExplorationAndEnrollment.executor": "Run",
-    "JUnit.ProgramManagementTest.executor": "Run",
+    "JUnit.ProgramManagementTest.executor": "Coverage",
     "JUnit.UserManagementTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -260,10 +257,16 @@
       <workItem from="1735303641468" duration="42000" />
       <workItem from="1735635427059" duration="457000" />
       <workItem from="1735733078591" duration="6870000" />
+      <workItem from="1735748915753" duration="2053000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1735749944530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>Fitness.*</FILTER>
+    </SUITE>
   </component>
 </project>
