@@ -14,13 +14,17 @@ public class ContentManagementSteps {
     Admin admin;
     Instructor instructor;
     public ContentManagementSteps(){
+        users.clear();
         admin = new Admin("Ibrahim",22,"male","fscd","admin1@gmail.com","123");
         users.add(admin);
         admin.addInstructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
         instructor=new Instructor();
+        users.add(instructor);
     }
+
     @Given("an admin is logged in")
     public void an_admin_is_logged_in() {
+
         Application.login("admin1@gmail.com","123");
         assertTrue(currentUser instanceof Admin);
 
@@ -44,7 +48,8 @@ int currentSize;
 
     @Then("the article is published")
     public void the_article_is_published() {
-        //assertTrue(wallness.size()>currentSize);
+
+        //assertTrue(wallness.size() > currentSize);
     }
 
     @When("an instructor submits a wellness tip")

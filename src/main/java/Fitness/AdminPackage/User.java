@@ -53,6 +53,9 @@ public class User
         this.setAge(0);
         this.setPass("");
         this.setName("");
+        this.setGender("");
+        this.setEmail("random"+new Random().nextInt()+"@gmail.com");
+        this.setPassword("");
         this.messageList = new ArrayList<Message>();
         this.notificationList = new ArrayList<Notification>();
         this.postList = new ArrayList<Post>();

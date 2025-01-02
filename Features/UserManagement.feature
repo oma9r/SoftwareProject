@@ -67,7 +67,7 @@ Feature: User Management
 
   Scenario: Restore a Deactivated User
     Given the owner has logged into the system with email "mashaqi@gmail.com" and password "pass"
-    And the user exists with a status
+    And the user exists with a status of "active"
     When the admin executes the reactivateUser command with the email
     Then the system restores the user account
     And displays the message: "User account reactivated"
@@ -76,7 +76,7 @@ Feature: User Management
 
   Scenario: Deactivate a User Successfully
     Given the owner has logged into the system with email "mashaqi@gmail.com" and password "pass"
-    And the user exists with a status
+    And the user exists with a status of "inactive"
     When the admin executes the deactivateUser command with the email
     Then the system marks the user account as inactive
     And displays the message: "User account deactivated"

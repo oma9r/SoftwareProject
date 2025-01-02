@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 import static Fitness.AdminPackage.Application.notApprovedArticles;
 
-//import io.cucumber.java.be.I;
 
 
 public class Instructor extends User
@@ -33,6 +32,7 @@ public class Instructor extends User
 
             public Instructor()
             {
+                super();
                 programs = new ArrayList<Program>();
                 discussionFormList = new ArrayList<DiscussionForm>();
                 commentReportList = new ArrayList<Comment>();

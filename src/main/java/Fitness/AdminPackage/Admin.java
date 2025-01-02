@@ -27,7 +27,7 @@ public class Admin extends User
 
     public boolean deleteUser(String deleted) {
         for(int i=0; i<Application.users.size(); i++){
-            if(Application.users.get(i).getEmail().equals(deleted)&&!(Application.users.get(i) instanceof Admin)) {
+            if(Application.users.get(i).getEmail().toString().equals(deleted)&&!(Application.users.get(i) instanceof Admin)) {
                 Application.users.remove(i);
                 return true;
             }
@@ -205,18 +205,29 @@ return y;
     }
 
     public boolean addInstructor(String name, int age, String gender, String address, String email, String pass,Status status) {
-        if(name.length()==0||age<16||gender.length()==0||address.length()==0||email.length()==0||pass.length()==0){
-            System.out.println("Missed data");
-            return false;
-          }
-        for (int i=0;i< users.size();i++){
-            if(users.get(i).getEmail().equals(email)){
-                System.out.println("email already used");
+        try {
+            if (name.length() == 0 || age < 16 || gender.length() == 0 || address.length() == 0 || email.length() == 0 || pass.length() == 0) {
+                System.out.println("Missed data");
                 return false;
             }
+
+            if (users.size() == 0) {
+                users.add(new Client(name, age, gender, address, email, pass, status));
+                return true;
+            }
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getEmail().equals(email)) {
+                    System.out.println("email already used");
+                    return false;
+                }
+            }
+            users.add(new Client(name, age, gender, address, email, pass, status));
+            return true;
         }
-        users.add(new Client(name,age,gender,address,email,pass,status));
-        return true;
+        catch (Exception e) {
+            System.out.println("An exception occurred:");
+            return false;
+        }
     }
 
     public boolean viewSubscriptions() {

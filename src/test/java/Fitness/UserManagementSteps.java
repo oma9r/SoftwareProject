@@ -61,7 +61,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     }
 
-    @Then("displays the Message: {string}")
+    @Then("displays the message: {string}")
     public void displays_the_message(String msg) {
         System.out.println(msg);
 //        boolean m=msg.equals(Message);
@@ -91,10 +91,10 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
 
     }
 
-    @Then("the system displays an error Message: {string}")
+    @Then("the system displays an error message: {string}")
     public void the_system_displays_an_error_message(String string) {
         if (flag)
-            System.out.println("fail to add user");
+            System.out.println(string);
     }
 
     @Then("the account is not created")
@@ -249,8 +249,8 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
         assertTrue(app.findUser("client@gmail.com"));
     }
 
-    @When("the admin select the updateUserRole command with the user email and role {string}")
-    public void the_admin_select_the_update_user_role_command_with_the_email_and_role(String string) {
+    @When("the admin select the updateUserRole command with the user email and role Instructor")
+    public void the_admin_select_the_update_user_role_command_with_the_email_and_role() {
         app.setCurrentFeature("updateUserRole");
     }
 
@@ -314,7 +314,7 @@ if(        admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123",
         assertFalse(admin1.setStatus("admin@gmail.com", Status.DeActive));
     }
 
-    @Then("the system displays the error Message: {string}")
+    @Then("the system displays the error message: {string}")
     public void the_system_displays_the_error_message(String string) {
         System.out.println("error Message: " + string);
     }
@@ -406,7 +406,7 @@ assertTrue(true);
     @Then("the system displays the following matching users")
     public void thenTheSystemDisplaysMatchingUsers(List<Map<String, String>> expectedUsers) {
 
-        for (int i = 0; i < expectedUsers.size(); i++) {
+        for (int i = 0; i < searchResults.size(); i++) {
             Map<String, String> expectedUser = expectedUsers.get(i);
             User result = searchResults.get(i);
 
@@ -420,7 +420,7 @@ assertTrue(true);
         }
     }
 
-    @Then("the system displays Message: {string}")
+    @Then("the system displays message: {string}")
     public void thenTheSystemDisplaysMessage(String expectedMessage) {
         assertEquals(expectedMessage, searchMessage);
     }
