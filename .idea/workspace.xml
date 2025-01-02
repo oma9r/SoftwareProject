@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/DiscussionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/DiscussionForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/PostType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/PostType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/ProgramStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/ProgramStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/isComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/isComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/tutorialTypeProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/tutorialTypeProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Reports/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Reports/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Days.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Days.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/SessionCompleteStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/SessionCompleteStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/sessionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/sessionType.java" afterDir="false" />
-    </list>
+    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -276,7 +255,7 @@
       <workItem from="1735635427059" duration="457000" />
       <workItem from="1735733078591" duration="6870000" />
       <workItem from="1735748915753" duration="6002000" />
-      <workItem from="1735816075291" duration="2333000" />
+      <workItem from="1735816075291" duration="2643000" />
     </task>
     <servers />
   </component>
