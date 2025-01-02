@@ -6,108 +6,186 @@ import Fitness.AdminPackage.User;
 
 import java.util.ArrayList;
 
-public class DiscussionForm
-{
+/**
+ * The DiscussionForm class represents a discussion forum for a specific program.
+ * It allows instructors to create posts and interact with clients.
+ *
+ * <p>The class stores information about the associated program, the instructor, the list
+ * of posts, and the list of clients participating in the discussion. It also provides methods
+ * for adding and removing clients and posts from the discussion.</p>
+ *
+ * <p>Each discussion form is associated with a particular program and instructor, and can
+ * have multiple posts created by the instructor. Clients can be added to the discussion and
+ * can interact by viewing and possibly replying to the posts.</p>
+ *
+ * Example usage:
+ * <pre>
+ * DiscussionForm discussion = new DiscussionForm(program, instructor, postList, clientList);
+ * discussion.addClient(client);
+ * discussion.addPost(post);
+ * </pre>
+ *
+ * @author Omar Abumazen
+ * @version 1.0
+ */
+public class DiscussionForm {
+
     private Program program;
     private Instructor instructor;
     private ArrayList<Post> postList;
     private ArrayList<User> clientsList;
 
-
-    public DiscussionForm()
-    {
+    /**
+     * Constructs a DiscussionForm object with no associated program or instructor,
+     * and initializes the post list and clients list as empty.
+     */
+    public DiscussionForm() {
         this.setProgram(null);
         this.setInstructor(null);
         this.clientsList = new ArrayList<User>();
         this.postList = new ArrayList<Post>();
-
     }
 
-    public DiscussionForm(Program program, Instructor instructor, ArrayList<Post> postList, ArrayList<User> clientsList)
-    {
+    /**
+     * Constructs a DiscussionForm object with the specified program, instructor,
+     * post list, and client list.
+     *
+     * @param program the program associated with the discussion
+     * @param instructor the instructor leading the discussion
+     * @param postList the list of posts in the discussion
+     * @param clientsList the list of clients participating in the discussion
+     */
+    public DiscussionForm(Program program, Instructor instructor, ArrayList<Post> postList, ArrayList<User> clientsList) {
         this.setProgram(program);
         this.setInstructor(instructor);
         this.setPostList(postList);
         this.setClientsList(clientsList);
         this.clientsList = new ArrayList<User>();
         this.postList = new ArrayList<Post>();
-
     }
 
-
-
-    public void setProgram(Program program)
-    {
+    /**
+     * Sets the program associated with the discussion.
+     *
+     * @param program the program to associate with the discussion
+     */
+    public void setProgram(Program program) {
         this.program = program;
     }
 
-    public Program getProgram()
-    {
+    /**
+     * Returns the program associated with the discussion.
+     *
+     * @return the program associated with the discussion
+     */
+    public Program getProgram() {
         return this.program;
     }
 
-    public void setInstructor(Instructor instructor)
-    {
+    /**
+     * Sets the instructor leading the discussion.
+     *
+     * @param instructor the instructor to set
+     */
+    public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
 
-    public Instructor getInstructor()
-    {
+    /**
+     * Returns the instructor leading the discussion.
+     *
+     * @return the instructor leading the discussion
+     */
+    public Instructor getInstructor() {
         return this.instructor;
     }
 
-    public ArrayList<Post> getPostList()
-    {
+    /**
+     * Returns the list of posts in the discussion.
+     *
+     * @return the list of posts in the discussion
+     */
+    public ArrayList<Post> getPostList() {
         return this.postList;
     }
 
-    public void setPostList(ArrayList<Post> postList)
-    {
+    /**
+     * Sets the list of posts in the discussion.
+     *
+     * @param postList the list of posts to set
+     */
+    public void setPostList(ArrayList<Post> postList) {
         this.postList = postList;
     }
 
+    /**
+     * Returns the list of clients participating in the discussion.
+     *
+     * @return the list of clients participating in the discussion
+     */
     public ArrayList<User> getClientsList() {
         return this.clientsList;
     }
 
+    /**
+     * Sets the list of clients participating in the discussion.
+     *
+     * @param clientsList the list of clients to set
+     */
     public void setClientsList(ArrayList<User> clientsList) {
         this.clientsList = clientsList;
     }
 
-    public boolean addClient(User user)
-    {
-        if(!this.clientsList.contains(user))
-        {
+    /**
+     * Adds a client to the discussion if they are not already part of it.
+     *
+     * @param user the client to add to the discussion
+     * @return true if the client was successfully added, false otherwise
+     */
+    public boolean addClient(User user) {
+        if (!this.clientsList.contains(user)) {
             this.clientsList.add(user);
             return true;
         }
         return false;
     }
 
-    public boolean removeClient(User user)
-    {
-        if(this.clientsList.contains(user))
-        {
+    /**
+     * Removes a client from the discussion if they are part of it.
+     *
+     * @param user the client to remove from the discussion
+     * @return true if the client was successfully removed, false otherwise
+     */
+    public boolean removeClient(User user) {
+        if (this.clientsList.contains(user)) {
             this.clientsList.remove(user);
             return true;
         }
         return false;
     }
 
-    public boolean addPost(Post post)
-    {
-        if(!this.postList.contains(post))
-        {
+    /**
+     * Adds a post to the discussion if it is not already part of the discussion.
+     *
+     * @param post the post to add to the discussion
+     * @return true if the post was successfully added, false otherwise
+     */
+    public boolean addPost(Post post) {
+        if (!this.postList.contains(post)) {
             this.postList.add(post);
             return true;
         }
         return false;
     }
 
-    public boolean removePost(Post post)
-    {
-        if(this.postList.contains(post))
-        {
+    /**
+     * Removes a post from the discussion if it is part of the discussion.
+     *
+     * @param post the post to remove from the discussion
+     * @return true if the post was successfully removed, false otherwise
+     */
+    public boolean removePost(Post post) {
+        if (this.postList.contains(post)) {
             this.postList.remove(post);
             return true;
         }

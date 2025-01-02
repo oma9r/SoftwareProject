@@ -5,6 +5,29 @@ import Fitness.AdminPackage.Instructor;
 
 import java.util.ArrayList;
 
+/**
+ * The {@code MessagingSystem} class facilitates communication between an {@code Instructor} and a {@code Client}.
+ * It manages the message lists for both the instructor and the client, and allows adding or removing messages.
+ * The system handles a list of all messages as well as separate message lists for the instructor and client.
+ *
+ * <p>This class provides methods to:
+ * <ul>
+ *     <li>Add and remove messages to/from the system</li>
+ *     <li>Manage messages specific to the instructor and client</li>
+ * </ul>
+ *
+ * Example usage:
+ * <pre>
+ * Instructor instructor = new Instructor(...);
+ * Client client = new Client(...);
+ * MessagingSystem messagingSystem = new MessagingSystem(instructor, client);
+ * Message message = new Message(...);
+ * messagingSystem.addMessage(message);
+ * </pre>
+ *
+ * @author Omar Abumazen
+ * @version 1.0
+ */
 public class MessagingSystem
 {
     private Instructor instructor;
@@ -13,98 +36,194 @@ public class MessagingSystem
     private ArrayList<Message> clientMessageList;
     private ArrayList<Message> messagesList;
 
+    /**
+     * Constructs a new {@code MessagingSystem} for the given instructor and client.
+     *
+     * @param instructor The instructor involved in the messaging system
+     * @param client The client involved in the messaging system
+     */
     public MessagingSystem(Instructor instructor, Client client)
     {
-
         this.setInstructor(instructor);
         this.setClient(client);
         this.messagesList = new ArrayList<Message>();
         this.instructorMessageList = new ArrayList<Message>();
         this.clientMessageList = new ArrayList<Message>();
-
-
-
     }
 
+    // Getter and setter methods
+
+    /**
+     * Sets the client for this messaging system.
+     *
+     * @param client The client to be set
+     */
     public void setClient(Client client) {
         this.client = client;
     }
+
+    /**
+     * Sets the instructor for this messaging system.
+     *
+     * @param instructor The instructor to be set
+     */
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
+
+    /**
+     * Returns the instructor associated with this messaging system.
+     *
+     * @return The instructor
+     */
     public Instructor getInstructor() {
         return this.instructor;
     }
+
+    /**
+     * Returns the client associated with this messaging system.
+     *
+     * @return The client
+     */
     public Client getClient() {
         return this.client;
     }
+
+    /**
+     * Returns the list of messages sent or received by the instructor.
+     *
+     * @return The instructor's message list
+     */
     public ArrayList<Message> getInstructorMessageList() {
         return this.instructorMessageList;
     }
+
+    /**
+     * Sets the list of messages for the instructor.
+     *
+     * @param instructorMessageList The list of instructor messages to be set
+     */
     public void setInstructorMessageList(ArrayList<Message> instructorMessageList) {
         this.instructorMessageList = instructorMessageList;
     }
+
+    /**
+     * Returns the list of messages sent or received by the client.
+     *
+     * @return The client's message list
+     */
     public ArrayList<Message> getClientMessageList() {
         return this.clientMessageList;
     }
+
+    /**
+     * Sets the list of messages for the client.
+     *
+     * @param clientMessageList The list of client messages to be set
+     */
     public void setClientMessageList(ArrayList<Message> clientMessageList) {
         this.clientMessageList = clientMessageList;
     }
+
+    /**
+     * Returns the list of all messages in the system.
+     *
+     * @return The list of all messages
+     */
     public ArrayList<Message> getMessagesList() {
         return this.messagesList;
     }
+
+    /**
+     * Sets the list of all messages in the system.
+     *
+     * @param messagesList The list of all messages to be set
+     */
     public void setMessagesList(ArrayList<Message> messagesList) {
         this.messagesList = messagesList;
     }
 
-    public boolean addMessage(Message message) {
+    // Message management methods
 
-        if(!this.messagesList.contains(message))
-        {
+    /**
+     * Adds a message to the system's main message list.
+     *
+     * @param message The message to be added
+     * @return {@code true} if the message was added successfully, {@code false} if it already exists
+     */
+    public boolean addMessage(Message message) {
+        if(!this.messagesList.contains(message)) {
             this.messagesList.add(message);
             return true;
         }
         return false;
     }
-    public boolean removeMessage(Message message) {
 
-        if(this.messagesList.contains(message))
-        {
+    /**
+     * Removes a message from the system's main message list.
+     *
+     * @param message The message to be removed
+     * @return {@code true} if the message was removed successfully, {@code false} if it does not exist
+     */
+    public boolean removeMessage(Message message) {
+        if(this.messagesList.contains(message)) {
             this.messagesList.remove(message);
             return true;
         }
         return false;
     }
 
+    /**
+     * Adds a message to the instructor's message list.
+     *
+     * @param message The message to be added
+     * @return {@code true} if the message was added successfully, {@code false} if it already exists
+     */
+    public boolean addInstructorMessage(Message message) {
+        if(!this.instructorMessageList.contains(message)) {
+            this.instructorMessageList.add(message);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Removes a message from the instructor's message list.
+     *
+     * @param message The message to be removed
+     * @return {@code true} if the message was removed successfully, {@code false} if it does not exist
+     */
+    public boolean removeInstructorMessage(Message message) {
+        if(this.instructorMessageList.contains(message)) {
+            this.instructorMessageList.remove(message);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Adds a message to the client's message list.
+     *
+     * @param message The message to be added
+     * @return {@code true} if the message was added successfully, {@code false} if it already exists
+     */
     public boolean addClientMessage(Message message) {
-        if(!this.clientMessageList.contains(message))
-        {
+        if(!this.clientMessageList.contains(message)) {
             this.clientMessageList.add(message);
             return true;
         }
         return false;
     }
-    public boolean removeClientMessage(Message message) {
-        if(this.clientMessageList.contains(message))
-        {
-            this.clientMessageList.remove(message);
-            return true;
-        }
-        return false;
-    }
-    public boolean addInstructorMessage(Message message) {
-        if(!this.instructorMessageList.contains(message))
-        {
-            this.instructorMessageList.add(message);
-            return true;
-        }
-        return false;
 
-    }
-    public boolean removeInstructorMessage(Message message) {
-        if(this.instructorMessageList.contains(message))
-        {
-            this.instructorMessageList.remove(message);
+    /**
+     * Removes a message from the client's message list.
+     *
+     * @param message The message to be removed
+     * @return {@code true} if the message was removed successfully, {@code false} if it does not exist
+     */
+    public boolean removeClientMessage(Message message) {
+        if(this.clientMessageList.contains(message)) {
+            this.clientMessageList.remove(message);
             return true;
         }
         return false;
