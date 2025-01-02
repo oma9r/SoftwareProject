@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature" />
+    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Instructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/FilterSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/FilterSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramDetailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramDetailPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramExplorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgressTrackingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgressTrackingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/DiscussionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/DiscussionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/PostType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/PostType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/ProgramStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/ProgramStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/isComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/isComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/tutorialTypeProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/tutorialTypeProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Reports/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Reports/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Days.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Days.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/SessionCompleteStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/SessionCompleteStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/sessionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/sessionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,43 +96,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature:  Progress Tracking.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Account Management.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: AccountManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: FeedbackAndReviews.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Program Exploration and Enrollment.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User browses programs by difficulty level.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User browses programs by focus area.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User creates their profile.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User skips optional fields during profile creation.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.CodeTesting (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CodeTesting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProgramExplorationAndEnrollment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProgramManagementTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.UserManagementTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;omar1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Cucumber Java.Feature:  Progress Tracking.executor": "Run",
+    "Cucumber Java.Feature: Account Management.executor": "Run",
+    "Cucumber Java.Feature: AccountManagement.executor": "Run",
+    "Cucumber Java.Feature: FeedbackAndReviews.executor": "Run",
+    "Cucumber Java.Feature: Program Exploration and Enrollment.executor": "Run",
+    "Cucumber Java.Scenario: User browses programs by difficulty level.executor": "Run",
+    "Cucumber Java.Scenario: User browses programs by focus area.executor": "Run",
+    "Cucumber Java.Scenario: User creates their profile.executor": "Run",
+    "Cucumber Java.Scenario: User skips optional fields during profile creation.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.CodeTesting (1).executor": "Run",
+    "JUnit.CodeTesting.executor": "Run",
+    "JUnit.ProgramExplorationAndEnrollment.executor": "Run",
+    "JUnit.ProgramManagementTest.executor": "Coverage",
+    "JUnit.UserManagementTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Merging javaDocToMerge",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Fitness" />
