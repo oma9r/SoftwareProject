@@ -68,7 +68,7 @@ public class ProgramDetailPage {
      * @return the program the user is enrolled in.
      */
     public Program getEnrolledProgram() {
-        return enrolledProgram;
+        return this.enrolledProgram;
     }
 
     /**

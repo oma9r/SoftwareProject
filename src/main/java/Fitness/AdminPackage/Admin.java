@@ -32,12 +32,35 @@ public class Admin extends User {
      */
     public Admin(String name, int age, String gender, String address, String email, String password) {
         super(name, age, gender, address, email, password, Role.Admin);
+
+        Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
+        //users.add(instructorTest1);
+        Application.addUser(instructorTest1);
+        Client clientTest1 = new Client("clientTest1",23,"male","clientTest1","clientTest1@gmail.com","clientTest1pass",Status.Active);
+        //users.add(clientTest1);
+        Application.addUser(clientTest1);
+        Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
+        //users.add(instructorTest2);
+        Application.addUser(instructorTest2);
     }
 
     /**
      * Default constructor for the Admin class.
      */
-    public Admin() {}
+    public Admin() {
+
+
+
+        Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
+        //users.add(instructorTest1);
+        Application.addUser(instructorTest1);
+        Client clientTest1 = new Client("clientTest1",23,"male","clientTest1","clientTest1@gmail.com","clientTest1pass",Status.Active);
+        //users.add(clientTest1);
+        Application.addUser(clientTest1);
+        Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
+        //users.add(instructorTest2);
+        Application.addUser(instructorTest2);
+    }
 
     /**
      * Adds a new admin to the system.
@@ -321,6 +344,48 @@ public class Admin extends User {
         users.add(new Client(name, age, gender, address, email, pass, status));
         return true;
     }
+
+    /**
+     * Adds a new instructor to the users list.
+     *
+     * @param instructor the Instructor object containing the details of the instructor to be added.
+     *                  The object must have valid values for all required fields:
+     *                  - Name: non-empty string
+     *                  - Age: must be 16 or older
+     *                  - Gender: non-empty string
+     *                  - Address: non-empty string
+     *                  - Email: non-empty string, unique among users
+     *                  - Password: non-empty string
+     * @return {@code true} if the instructor was added successfully; {@code false} otherwise.
+     *         Reasons for failure include:
+     *         - Missing or invalid data in the instructor object.
+     *         - Email already exists in the users list.
+     */
+    public boolean addInstructor(Instructor instructor)
+    {
+
+        // Check if any required fields in the instructor object are missing or invalid
+        if (instructor.getName().isEmpty() || instructor.getAge() < 16 ||
+                instructor.getGender().isEmpty() || instructor.getAddress().isEmpty() ||
+                instructor.getEmail().isEmpty() || instructor.getPass().isEmpty())
+        {
+            System.out.println("Missed data");
+            return false;
+        }
+
+        // Check if the email is already used
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getEmail().equals(instructor.getEmail())) {
+                System.out.println("Email already used");
+                return false;
+            }
+        }
+
+        // Add the instructor to the users list
+        users.add(instructor);
+        return true;
+    }
+
 
     /**
      * Displays the subscription details of all clients in the system.

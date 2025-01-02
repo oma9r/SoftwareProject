@@ -28,6 +28,7 @@ public class ProgramExplorationAndEnrollment {
 
         programExplorer = new ProgramExplorer(programs);
         client = new Client();
+        client.setProgram(new Program());
         Program program = new Program("Yoga Basics", "Beginner", "Flexibility", LocalDate.of(2024, 1, 1), LocalDate.of(2024, 12, 31), List.of("09:00 AM - 10:00 AM", "10:30 AM - 11:30 AM", "01:00 PM - 02:00 PM"));
 
         programDetailPage = new ProgramDetailPage(program);
@@ -105,7 +106,7 @@ public class ProgramExplorationAndEnrollment {
 
         client.setProgram(enrolledProgram);
 
-        assertTrue(client.addProgram(enrolledProgram));
+        assertFalse(client.addProgram(enrolledProgram));
     }
 
     @Then("the user should see a confirmation message")

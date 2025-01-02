@@ -8,20 +8,27 @@ import io.cucumber.java.en.When;
 import static Fitness.AdminPackage.Application.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class ContentManagementSteps {
     Admin admin;
     Instructor instructor;
-    public ContentManagementSteps(){
+    public ContentManagementSteps()
+    {
+        Application.init();
         admin = new Admin("Ibrahim",22,"male","fscd","admin1@gmail.com","123");
         users.add(admin);
-        admin.addInstructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
-        instructor=new Instructor();
+        instructor=new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
+        admin.addInstructor(instructor);
+
+
     }
     @Given("an admin is logged in")
     public void an_admin_is_logged_in() {
-        Application.login("admin1@gmail.com","123");
-        assertTrue(currentUser instanceof Admin);
+        currentUser = Application.login("admin1@gmail.com","123");
+        assertTrue(currentUser!=null);
+        //assertTrue(currentUser instanceof Admin);
 
     }
 

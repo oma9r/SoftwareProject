@@ -115,7 +115,7 @@ public class User {
      * @return the email of the user
      */
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     /**

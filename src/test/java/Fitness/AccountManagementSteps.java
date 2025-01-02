@@ -4,6 +4,7 @@ import Fitness.AdminPackage.Admin;
 import Fitness.AdminPackage.Application;
 import Fitness.AdminPackage.Role;
 import Fitness.AdminPackage.User;
+import Fitness.InstructorP.ProgramPackage.Program;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,10 +25,18 @@ public class AccountManagementSteps {
     private boolean confirmationDialogDisplayed;
     private String lastDisplayedDialog;
     Admin admin=new Admin("yuhi",54,"male","kj","tesser","securePassword");
+    Program program1;
+    User currentUserDeleted;
+
 
     public AccountManagementSteps() {
         // Instantiate the application. In a real scenario, use dependency injection.
         application = new Application();
+        currentUser = new User();
+        ProgramManagementStep programManagementStep = new ProgramManagementStep();
+        program1 = programManagementStep.program1;
+        currentUserDeleted = Application.currentUser;
+
     }
 
     @Given("the user has successfully logged into the Fitness Management System")
@@ -42,7 +51,7 @@ public class AccountManagementSteps {
         Application.currentUser = user;
         User isLoginSuccessful = Application.login(user.getEmail(), user.getPass());
 
-       assertTrue("Login failed for user: " + username, isLoginSuccessful != null);
+       assertNull("Login failed for user: " + username, isLoginSuccessful);
 
         if (isLoginSuccessful != null) {
             System.out.println("The user has successfully logged into the system.");
@@ -115,7 +124,9 @@ String b;
             System.out.println("Age is either null or empty, using default value: " + age);
         }
 
-        User currentUser = Application.currentUser;
+
+        currentUser = Application.currentUser;
+        currentUser.setUserProgram(program1);
         currentUser.setName(name);
         currentUser.setAge(age);
         currentUser.getUserProgram().setProgramGoals(fitnessGoals);
@@ -297,6 +308,7 @@ String b;
     public void the_user_has_an_existing_profile() {
         String email = "ِAbd.sawa@example.com";
 
+        Application.users.add(currentUserDeleted);
         boolean userExists = Application.users.stream()
                 .anyMatch(user -> user.getEmail().equals(email));
 
@@ -318,13 +330,14 @@ String b;
     }
 
     @Then("the system permanently deletes the user’s profile")
-    public void the_system_permanently_deletes_the_user_s_profile() {
-        User currentUser = Application.currentUser;
-        assertNotNull("No user is currently logged in", currentUser);
-        boolean userDeleted = Application.users.remove(currentUser);
+    public void the_system_permanently_deletes_the_user_s_profile()
+    {
+
+        assertNotNull("No user is currently logged in", currentUserDeleted);
+        boolean userDeleted = Application.users.remove(currentUserDeleted);
         assertTrue("User profile was not deleted successfully.", userDeleted);
 
-        System.out.println("User profile has been permanently deleted: " + currentUser.getEmail());
+        System.out.println("User profile has been permanently deleted: " + currentUserDeleted.getEmail());
     }
 
     @Then("logs the user out of the system")

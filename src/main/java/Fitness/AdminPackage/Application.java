@@ -17,7 +17,7 @@ public class Application {
     /**
      * The current logged-in user.
      */
-    public static User currentUser = null;
+    public static User currentUser;
 
     /**
      * List of all users in the application.
@@ -82,7 +82,8 @@ public class Application {
      * @return The logged-in user if successful, otherwise null.
      */
     public static User login(String email, String password) {
-        users = new ArrayList<>();
+        users = new ArrayList<User>();
+        currentUser = new User();
 
         for (User user : users) {
             if (user.getEmail().equals(email) && user.getPass().equals(password)) {
@@ -149,6 +150,8 @@ public class Application {
      * @return True if the user exists, otherwise false.
      */
     public static boolean findUser(String email) {
+
+        Application.login(email, "");
         for (User u : users) {
             if (u.getEmail().equals(email)) {
                 return true;
@@ -210,5 +213,15 @@ public class Application {
         admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
         admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", Status.DeActive);
         admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", Status.Active);
+    }
+
+    public static boolean addUser(User user)
+    {
+        if(!users.contains(user))
+        {
+            users.add(user);
+            return true;
+        }
+        return false;
     }
 }
