@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature" />
+    <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarcloud-analysis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarcloud-analysis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -262,7 +265,7 @@
       <workItem from="1735733078591" duration="6870000" />
       <workItem from="1735748915753" duration="2053000" />
       <workItem from="1735893943535" duration="10177000" />
-      <workItem from="1735924574488" duration="6012000" />
+      <workItem from="1735924574488" duration="6718000" />
     </task>
     <servers />
   </component>
