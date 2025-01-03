@@ -29,7 +29,7 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-action@v2
         with:
-        organization: SoftwareProjectOrganization  # Your actual organization name
-        projectKey: SoftwareProjectOrganization_SoftwareProject  # Your actual project key
+        sonar-project-key: SoftwareProjectOrganization_SoftwareProject  # Use 'sonar-project-key' instead of 'projectKey'
+        sonar-organization: SoftwareProjectOrganization  # Use 'sonar-organization' instead of 'organization'
         env:
           SONAR_TOKEN: ${{ secrets.SONARTOKEN }}  # This references the secret token
