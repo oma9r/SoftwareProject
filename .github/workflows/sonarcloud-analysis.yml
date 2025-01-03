@@ -25,6 +25,13 @@ jobs:
           java-version: '22'
           distribution: 'temurin'
 
+      # Install SonarScanner
+      - name: Install SonarScanner
+        run: |
+          curl -sS https://get.sonarsource.com/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip -o sonar-scanner.zip
+          unzip sonar-scanner.zip -d /opt/sonar-scanner
+          echo "export PATH=$PATH:/opt/sonar-scanner/sonar-scanner-4.7.0.2747-linux/bin" >> $GITHUB_ENV
+
       # Run the SonarCloud analysis
       - name: Run SonarCloud Analysis
         env:
