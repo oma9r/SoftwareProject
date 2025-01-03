@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/ProgramManagment.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/ProgramManagment.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramManagementStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,43 +68,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Cucumber Java.Feature:  Progress Tracking.executor": "Run",
-    "Cucumber Java.Feature: Account Management.executor": "Run",
-    "Cucumber Java.Feature: AccountManagement.executor": "Run",
-    "Cucumber Java.Feature: FeedbackAndReviews.executor": "Run",
-    "Cucumber Java.Feature: Program Exploration and Enrollment.executor": "Run",
-    "Cucumber Java.Scenario: User browses programs by difficulty level.executor": "Run",
-    "Cucumber Java.Scenario: User browses programs by focus area.executor": "Run",
-    "Cucumber Java.Scenario: User creates their profile.executor": "Run",
-    "Cucumber Java.Scenario: User skips optional fields during profile creation.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.CodeTesting (1).executor": "Run",
-    "JUnit.CodeTesting.executor": "Run",
-    "JUnit.ProgramExplorationAndEnrollment.executor": "Run",
-    "JUnit.ProgramManagementTest.executor": "Run",
-    "JUnit.UserManagementTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "omar1",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature:  Progress Tracking.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Account Management.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: AccountManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: FeedbackAndReviews.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Program Exploration and Enrollment.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User browses programs by difficulty level.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User browses programs by focus area.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User creates their profile.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User skips optional fields during profile creation.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: delete a not exist user.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: delete an exist user.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.CodeTesting (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CodeTesting.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProgramExplorationAndEnrollment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProgramManagementTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserManagementTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;javaDocToMerge&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Fitness" />
@@ -129,15 +132,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User browses programs by focus area" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: delete a not exist user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/Program Exploration and Enrollment.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/UserManagement.feature" />
       <option name="GLUE" value="Fitness" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="SoftwareProject" />
-      <option name="NAME_FILTER" value="^User browses programs by focus area$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User browses programs by focus area$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User browses programs by focus area" />
+      <option name="NAME_FILTER" value="^delete a not exist user$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^delete a not exist user$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: delete a not exist user" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -149,19 +152,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: delete an exist user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/UserManagement.feature" />
+      <option name="GLUE" value="Fitness" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="SoftwareProject" />
+      <option name="NAME_FILTER" value="^delete an exist user$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^delete an exist user$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: delete an exist user" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Fitness.ClientPackage.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_cases" />
-      <option name="MAIN_CLASS_NAME" value="use_cases.CodeTesting" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="--enable-preview " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,19 +222,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: delete a not exist user" />
+      <item itemvalue="Cucumber Java.Scenario: delete an exist user" />
       <item itemvalue="Cucumber Java.Feature: FeedbackAndReviews" />
-      <item itemvalue="Cucumber Java.Scenario: User browses programs by focus area" />
-      <item itemvalue="JUnit.ProgramManagementTest" />
       <item itemvalue="JUnit.CodeTesting" />
+      <item itemvalue="JUnit.ProgramManagementTest" />
       <item itemvalue="JUnit.ProgramExplorationAndEnrollment" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ProgramManagementTest" />
+        <item itemvalue="Cucumber Java.Scenario: delete an exist user" />
+        <item itemvalue="Cucumber Java.Scenario: delete a not exist user" />
         <item itemvalue="Cucumber Java.Feature: FeedbackAndReviews" />
         <item itemvalue="JUnit.ProgramExplorationAndEnrollment" />
-        <item itemvalue="JUnit.CodeTesting" />
-        <item itemvalue="Cucumber Java.Scenario: User browses programs by focus area" />
       </list>
     </recent_temporary>
   </component>
@@ -260,10 +267,44 @@
       <workItem from="1735303641468" duration="42000" />
       <workItem from="1735635427059" duration="457000" />
       <workItem from="1735733078591" duration="6870000" />
+      <workItem from="1735748915753" duration="2053000" />
+      <workItem from="1735893943535" duration="10177000" />
+      <workItem from="1735924574488" duration="2283000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java</url>
+          <line>354</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1735749944530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>Fitness.*</FILTER>
+    </SUITE>
   </component>
 </project>

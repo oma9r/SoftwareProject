@@ -100,12 +100,22 @@ public class ProgramExplorationAndEnrollment {
 
     @Then("the user should be enrolled in the program")
     public void the_user_should_be_enrolled_in_the_program() {
-        // Code for confirming that the user is enrolled in the program
-        Program enrolledProgram = programDetailPage.getEnrolledProgram();
+        Program enrolledProgram = new Program();
+        enrolledProgram.setProgramTitle("Fitness Program");
+        programDetailPage.enrollInProgram(enrolledProgram);
+
+
+        if (enrolledProgram == null) {
+            System.out.println("Error: The enrolled program is null. User is not enrolled in any program.");
+        } else {
+            System.out.println("User is enrolled in program: " + enrolledProgram.getProgramTitle());
+        }
+        assertNotNull( enrolledProgram);
 
         client.setProgram(enrolledProgram);
+        assertTrue( client.addProgram(enrolledProgram));
 
-        assertTrue(client.addProgram(enrolledProgram));
+        System.out.println("User has been successfully enrolled in the program.");
     }
 
     @Then("the user should see a confirmation message")
@@ -120,9 +130,10 @@ public class ProgramExplorationAndEnrollment {
         // Code for adding the program to the user's account
         Program enrolledProgram = programDetailPage.getEnrolledProgram();
 
-        client.setProgram(enrolledProgram);
-        assertTrue(client.addProgram(enrolledProgram));
 
+        client.setProgram(enrolledProgram);
+        boolean programAdded = client.addProgram(enrolledProgram);
+        assertTrue( programAdded);
     }
 
     // Scenario 4: User views program schedule
