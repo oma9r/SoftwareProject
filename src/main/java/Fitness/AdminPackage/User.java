@@ -38,6 +38,7 @@ public class User {
     private Program userProgram;
     private String dietaryPreferencesUser;
     private String dietaryRestrictions;
+    private String goalsUser;
 
     /**
      * Constructs a new User with the specified details.
@@ -351,6 +352,25 @@ public class User {
     public void setDietaryRestrictions(String dietaryRestrictions) {
         this.dietaryRestrictions = dietaryRestrictions;
     }
+
+    /**
+     * Sets the goals for the user.
+     *
+     * @param goalsUser a {@code String} representing the user's goals.
+     */
+    public void setGoalsUser(String goalsUser) {
+        this.goalsUser = goalsUser;
+    }
+
+    /**
+     * Retrieves the goals of the user.
+     *
+     * @return a {@code String} representing the user's goals.
+     */
+    public String getGoalsUser() {
+        return goalsUser;
+    }
+
 
     /**
      * Adds a new message to the user's message list if it doesn't already exist.

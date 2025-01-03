@@ -17,12 +17,12 @@ public class Application {
     /**
      * The current logged-in user.
      */
-    public static User currentUser;
+    public static User currentUser = new User();
 
     /**
      * List of all users in the application.
      */
-    public static List<User> users = new ArrayList<>();
+    public static List<User> users;// = new ArrayList<>();
 
     /**
      * The current section being accessed in the application.
@@ -82,8 +82,8 @@ public class Application {
      * @return The logged-in user if successful, otherwise null.
      */
     public static User login(String email, String password) {
-        users = new ArrayList<User>();
-        currentUser = new User();
+       users = new ArrayList<User>();
+       currentUser = new User();
 
         for (User user : users) {
             if (user.getEmail().equals(email) && user.getPass().equals(password)) {

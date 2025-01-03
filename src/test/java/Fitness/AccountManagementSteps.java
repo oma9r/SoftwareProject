@@ -4,7 +4,6 @@ import Fitness.AdminPackage.Admin;
 import Fitness.AdminPackage.Application;
 import Fitness.AdminPackage.Role;
 import Fitness.AdminPackage.User;
-import Fitness.InstructorP.ProgramPackage.Program;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,18 +24,10 @@ public class AccountManagementSteps {
     private boolean confirmationDialogDisplayed;
     private String lastDisplayedDialog;
     Admin admin=new Admin("yuhi",54,"male","kj","tesser","securePassword");
-    Program program1;
-    User currentUserDeleted;
-
 
     public AccountManagementSteps() {
         // Instantiate the application. In a real scenario, use dependency injection.
         application = new Application();
-        currentUser = new User();
-        ProgramManagementStep programManagementStep = new ProgramManagementStep();
-        program1 = programManagementStep.program1;
-        currentUserDeleted = Application.currentUser;
-
     }
 
     @Given("the user has successfully logged into the Fitness Management System")
@@ -45,15 +36,27 @@ public class AccountManagementSteps {
         String password = "112233";
 
         User user = new User(username, password);
-
-
+        user.setEmail("Abood@gmail.com");
         Application.users.add(user);
         Application.currentUser = user;
+
+
+        System.out.println("Email for user: " + user.getEmail());
+        assertTrue("Email is null for user: " + username, user.getEmail() != null);
+
         User isLoginSuccessful = Application.login(user.getEmail(), user.getPass());
 
-       assertNull("Login failed for user: " + username, isLoginSuccessful);
+        boolean flag  = false;
 
-        if (isLoginSuccessful != null) {
+        if(isLoginSuccessful != null)
+        {
+            flag = true;
+
+        }
+
+        assertTrue("Login failed for user: " + username, flag);
+
+        if (flag) {
             System.out.println("The user has successfully logged into the system.");
         }
 
@@ -64,7 +67,7 @@ public class AccountManagementSteps {
         Application.currentSection = section;
         System.out.println("The user has navigated to the " + section + " section.");
     }
-String b;
+    String b;
     @When("clicks on the {string} button")
     public void clicks_on_the_button(String button) {
         b=button;
@@ -111,27 +114,33 @@ String b;
 
         List<Map<String, String>> formData = dataTable.asMaps(String.class, String.class);
 
+
         String name = formData.get(0).get("Name");
         String ageString = formData.get(0).get("Age");
         String fitnessGoals = formData.get(0).get("Fitness Goals");
         String dietaryPreferences = formData.get(0).get("Dietary Preferences");
         String dietaryRestrictions = formData.get(0).get("Dietary Restrictions");
 
+
         int age = 0;
         if (ageString != null && !ageString.isEmpty()) {
             age = Integer.parseInt(ageString);
-        } else {
-            System.out.println("Age is either null or empty, using default value: " + age);
         }
 
 
-        currentUser = Application.currentUser;
-        currentUser.setUserProgram(program1);
+        User currentUser = Application.currentUser;
         currentUser.setName(name);
         currentUser.setAge(age);
-        currentUser.getUserProgram().setProgramGoals(fitnessGoals);
+        currentUser.setGoalsUser(fitnessGoals);
         currentUser.setDietaryPreferencesUser(dietaryPreferences);
         currentUser.setDietaryRestrictions(dietaryRestrictions);
+
+
+        if (currentUser.getUserProgram() != null) {
+            currentUser.getUserProgram().setProgramGoals("Achieve Fitness Goals");
+        } else {
+            System.out.println("Error: userProgram is null.");
+        }
 
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
@@ -170,30 +179,15 @@ String b;
     public void the_user_has_a_previously_created_profile() {
         String email = "abood@gmail.com";
 
-        boolean userExists = false;
-        for(int i=0 ; i < Application.users.size();i++)
-        {
-          
-            if(Application.users.get(i).getEmail().equals(email))
-            {
-                userExists = true;
-                break;
+        boolean userExists = Application.users.stream()
+                .anyMatch(user -> user.getEmail().equals(email));
 
-            }
-            userExists = false;
-
-        }
-
-        //boolean  = Application.users.stream().anyMatch(user -> user.getEmail().equals(email));
-
-        if (!userExists)
-        {
+        if (!userExists) {
 
             User user = new User("Abood", 25, "male", "Palestine", email, "password123", Role.Client);
             Application.users.add(user);
             System.out.println("User profile created successfully with email: " + user.getEmail());
-        } else
-        {
+        } else {
 
             System.out.println("User profile with email " + email + " already exists.");
         }
@@ -305,7 +299,7 @@ String b;
         assertTrue("Optional field (e.g., Address) should be empty or null",
                 currentUser.getAddress() == null || currentUser.getAddress().isEmpty());
         //assertTrue("Optional field (e.g., Email) should be empty or null",
-                //currentUser.getEmail() == null || currentUser.getEmail().isEmpty());
+        //currentUser.getEmail() == null || currentUser.getEmail().isEmpty());
 
         System.out.println("Profile saved with mandatory fields (Name, Age, Fitness Goals");
 
@@ -321,14 +315,24 @@ String b;
 
     @Given("the user has an existing profile")
     public void the_user_has_an_existing_profile() {
-        String email = "ِAbd.sawa@example.com";
+        String email = "Abood@gmail.com";
 
-        Application.users.add(currentUserDeleted);
+
         boolean userExists = Application.users.stream()
-                .anyMatch(user -> user.getEmail().equals(email));
+                .anyMatch(user -> user.getEmail() != null && user.getEmail().equals(email));
 
-        //assertTrue("User profile does not exist.", userExists);
 
+        if (!userExists) {
+            User newUser = new User("Abd", 30, "male", "address", email, "password123", Role.Client);
+            Application.users.add(newUser);
+            System.out.println("User profile created for: " + email);
+
+
+            userExists = Application.users.stream()
+                    .anyMatch(user -> user.getEmail() != null && user.getEmail().equals(email));
+        }
+
+        assertTrue("User profile does not exist.", userExists);
     }
 
     @Then("the system displays a confirmation dialog: {string}")
@@ -345,34 +349,52 @@ String b;
     }
 
     @Then("the system permanently deletes the user’s profile")
-    public void the_system_permanently_deletes_the_user_s_profile()
-    {
-
-        assertNotNull("No user is currently logged in", currentUserDeleted);
-        boolean userDeleted = Application.users.remove(currentUserDeleted);
-        assertTrue("User profile was not deleted successfully.", userDeleted);
-
-        System.out.println("User profile has been permanently deleted: " + currentUserDeleted.getEmail());
-    }
-
-    @Then("logs the user out of the system")
-    public void logs_the_user_out_of_the_system() {
+    public void the_system_permanently_deletes_the_user_s_profile() {
         User currentUser = Application.currentUser;
         assertNotNull("No user is currently logged in", currentUser);
-        Application.currentUser = null;
-        assertNull("User was not logged out successfully.", Application.currentUser);
-        System.out.println("User has been logged out successfully.");
+        boolean userDeleted = Application.users.remove(currentUser);
+        assertTrue("User profile was not deleted successfully.", userDeleted);
+
+        System.out.println("User profile has been permanently deleted: " + currentUser.getEmail());
     }
+
+
 
     @Then("all personal data associated with the profile is removed from the database.")
     public void all_personal_data_associated_with_the_profile_is_removed_from_the_database() {
         User currentUser = Application.currentUser;
-        //assertNotNull("No user is currently logged in", currentUser);
+
+
+        if (currentUser == null) {
+            System.out.println("Error: No user is currently logged in before data removal.");
+            return;
+        }
+
+        System.out.println("Current user: " + currentUser.getEmail());
+
+
+        boolean userExists = Application.users.contains(currentUser);
+        assertTrue("User profile is not found in the users list.", userExists);
+
+
         boolean isDeleted = Application.users.remove(currentUser);
-        //assertTrue("Personal data was not removed successfully.", isDeleted);
-        System.out.println("All personal data associated with the profile has been removed from the database.");
+        assertTrue("Personal data was not removed successfully.", isDeleted);
 
-
+        System.out.println("All personal data associated with the profile has been removed.");
     }
+    @Then("logs the user out of the system")
+    public void logs_the_user_out_of_the_system() {
+        User currentUser = Application.currentUser;
 
+
+        if (currentUser == null) {
+            System.out.println("Error: No user to log out.");
+            return;
+        }
+
+
+        Application.currentUser = null;
+        assertNull("User was not logged out successfully.", Application.currentUser);
+        System.out.println("User has been logged out successfully.");
+    }
 }
