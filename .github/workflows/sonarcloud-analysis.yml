@@ -1,3 +1,4 @@
+
 name: SonarCloud Analysis
 
 on:
@@ -11,7 +12,7 @@ on:
 jobs:
   sonarcloud:
     name: Analyze on SonarCloud
-    runs-on: ubuntu-latest  # Keep this as 'ubuntu-latest'
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout the repository code
@@ -25,11 +26,18 @@ jobs:
           java-version: '22'
           distribution: 'temurin'
 
-      # Use the official SonarCloud GitHub Action to handle the installation and analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-action@v2
-        with:
-        sonar-project-key: SoftwareProjectOrganization_SoftwareProject  # Use 'sonar-project-key' instead of 'projectKey'
-        sonar-organization: SoftwareProjectOrganization  # Use 'sonar-organization' instead of 'organization'
+      # Install SonarScanner
+      - name: Install SonarScanner
+        run: |
+          curl -sS https://get.sonarsource.com/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip -o sonar-scanner.zip
+          unzip sonar-scanner.zip -d /opt/sonar-scanner
+          echo "export PATH=$PATH:/opt/sonar-scanner/sonar-scanner-4.7.0.2747-linux/bin" >> $GITHUB_ENV
+      # Run the SonarCloud analysis
+      - name: Run SonarCloud Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONARTOKEN }}  # This references the secret token
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=SoftwareProjectOrganization_SoftwareProject \
+            -Dsonar.organization=SoftwareProjectOrganization \
+            -Dsonar.login=$SONARTOKEN
