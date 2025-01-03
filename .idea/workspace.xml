@@ -7,12 +7,11 @@
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramDetailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramDetailPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ContentManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ContentManagementSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/SubscriptionManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/SubscriptionManagementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +82,8 @@
     "Cucumber Java.Scenario: User browses programs by focus area.executor": "Run",
     "Cucumber Java.Scenario: User creates their profile.executor": "Run",
     "Cucumber Java.Scenario: User skips optional fields during profile creation.executor": "Run",
+    "Cucumber Java.Scenario: delete a not exist user.executor": "Run",
+    "Cucumber Java.Scenario: delete an exist user.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.CodeTesting (1).executor": "Run",
     "JUnit.CodeTesting.executor": "Run",
@@ -133,15 +134,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User browses programs by focus area" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: delete a not exist user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/Program Exploration and Enrollment.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/UserManagement.feature" />
       <option name="GLUE" value="Fitness" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="SoftwareProject" />
-      <option name="NAME_FILTER" value="^User browses programs by focus area$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User browses programs by focus area$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User browses programs by focus area" />
+      <option name="NAME_FILTER" value="^delete a not exist user$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^delete a not exist user$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: delete a not exist user" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -153,19 +154,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: delete an exist user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/UserManagement.feature" />
+      <option name="GLUE" value="Fitness" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="SoftwareProject" />
+      <option name="NAME_FILTER" value="^delete an exist user$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^delete an exist user$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: delete an exist user" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Fitness.ClientPackage.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_cases" />
-      <option name="MAIN_CLASS_NAME" value="use_cases.CodeTesting" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="--enable-preview " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,19 +224,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: delete a not exist user" />
+      <item itemvalue="Cucumber Java.Scenario: delete an exist user" />
       <item itemvalue="Cucumber Java.Feature: FeedbackAndReviews" />
-      <item itemvalue="Cucumber Java.Scenario: User browses programs by focus area" />
       <item itemvalue="JUnit.ProgramManagementTest" />
-      <item itemvalue="JUnit.CodeTesting" />
       <item itemvalue="JUnit.ProgramExplorationAndEnrollment" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ProgramManagementTest" />
+        <item itemvalue="Cucumber Java.Scenario: delete an exist user" />
+        <item itemvalue="Cucumber Java.Scenario: delete a not exist user" />
         <item itemvalue="Cucumber Java.Feature: FeedbackAndReviews" />
         <item itemvalue="JUnit.ProgramExplorationAndEnrollment" />
-        <item itemvalue="JUnit.CodeTesting" />
-        <item itemvalue="Cucumber Java.Scenario: User browses programs by focus area" />
       </list>
     </recent_temporary>
   </component>
@@ -265,6 +269,7 @@
       <workItem from="1735635427059" duration="457000" />
       <workItem from="1735733078591" duration="6870000" />
       <workItem from="1735748915753" duration="2053000" />
+      <workItem from="1735893943535" duration="10177000" />
     </task>
     <servers />
   </component>
@@ -281,13 +286,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java</url>
-          <line>335</line>
+          <line>350</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java</url>
-          <line>108</line>
+          <line>109</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

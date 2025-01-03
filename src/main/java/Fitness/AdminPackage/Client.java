@@ -66,6 +66,7 @@ public class Client extends User {
         this.reportList = new ArrayList<>();
         this.replyList = new ArrayList<>();
         this.currentProgress = 0;
+        this.program = new Program();
     }
 
     /**
@@ -77,6 +78,7 @@ public class Client extends User {
         super();
         this.replyList = new ArrayList<>();
         this.currentProgress = 0;
+        this.program = new Program();
     }
 
     /**
@@ -89,6 +91,7 @@ public class Client extends User {
         this.replyList = new ArrayList<>();
         status = Status.Active;
         this.currentProgress = 0;
+        this.program = new Program();
     }
 
     /**
@@ -332,7 +335,7 @@ public class Client extends User {
      * @return true if added successfully, false otherwise
      */
     public boolean addProgram(Program program) {
-        if (!this.program.equals(program)) {
+        if (!this.getProgram().equals(program)) {
             this.setProgram(program);
             return true;
         }

@@ -96,13 +96,14 @@ public class ProgramExplorationAndEnrollment {
         } else if (buttonName.equalsIgnoreCase("View Schedule")) {
             buttonClicked = programDetailPage.clickViewScheduleButton();
         }
-        //assertTrue(buttonClicked);
+        assertTrue(buttonClicked);
     }
 
     @Then("the user should be enrolled in the program")
     public void the_user_should_be_enrolled_in_the_program() {
         // Code for confirming that the user is enrolled in the program
-        Program enrolledProgram = programDetailPage.getEnrolledProgram();
+        Program enrolledProgram = new Program();
+        enrolledProgram = programDetailPage.getEnrolledProgram();
 
         client.setProgram(enrolledProgram);
 

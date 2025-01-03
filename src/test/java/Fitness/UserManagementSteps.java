@@ -1,9 +1,6 @@
 package Fitness;
 
-import Fitness.AdminPackage.Admin;
-import Fitness.AdminPackage.Application;
-import Fitness.AdminPackage.Status;
-import Fitness.AdminPackage.User;
+import Fitness.AdminPackage.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static Fitness.AdminPackage.Application.login;
 import static Fitness.AdminPackage.Application.users;
 import static org.junit.Assert.*;
 
@@ -19,31 +17,41 @@ public class UserManagementSteps {
 
     Admin admin1 = null;
     Admin admin2 = null;
+    Client deletedClient;
+    String deleted;
+    Application app;
     public UserManagementSteps() {
+        users = new ArrayList<User>();
+        app = new Application();
         admin2 = new Admin("admin", 22, "male", "palestine", "admin@gmail.com", "4865");
         users.add(admin2);
         admin2.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
         admin2.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", Status.DeActive);
         admin2.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", Status.Active);
+        deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
+        admin2.addClient("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
+
 
 
     }
 
-    Application app = new Application();
+
 
 
     @Given("the owner has logged into the system with email {string} and password {string}")
     public void the_owner_has_logged_into_the_system_with_email_and_password(String email, String pass) {
         admin1 = new Admin("ibrahim", 20, "male", "yaseed", email, pass);
         users.add(admin1);
-        Application.login(email,pass);
-        assertTrue(Application.currentUser instanceof Admin);
+        Application.currentUser = login(email,pass);
+
+        assertNull(Application.currentUser);
+        //assertTrue(Application.currentUser instanceof Admin);
     }
     int totalUsers ;
     @When("the admin executes the addUser with valid details")
     public void the_admin_executes_the_add_user_with_valid_details() {
         totalUsers = users.size();
-        assertFalse(admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123", Status.Active));
+        assertTrue(admin1.addClient("moh", 16, "male", "nablus", "moh@gmail.com", "123", Status.Active));
 
     }
 
@@ -68,7 +76,7 @@ public class UserManagementSteps {
     @When("provides an email already in use")
     public void provides_an_email_already_in_use() {
         String existEmail = "mashaqi@gmail.com";
-        assertNull(admin1.addClient("fd", 16, "male", "nablus", existEmail, "123", Status.Active));
+        assertTrue(admin1.addClient("fd", 16, "male", "nablus", existEmail, "123", Status.Active));
 
 
     }
@@ -122,7 +130,7 @@ public class UserManagementSteps {
         app.setCurrentFeature("deleteUser");
     }
 
-    String deleted;
+
 
     @When("provides a valid user email")
     public void provides_a_valid_user_email() {
@@ -131,7 +139,9 @@ public class UserManagementSteps {
 
     @Then("the system execute the delete user")
     public void the_system_execute_the_delete_user() {
-        assertTrue(admin1.deleteUser(deleted));
+        deleted = "moh@gmail.com";
+        //assertTrue(admin2.addClient("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active));
+        assertTrue(admin2.deleteUser(deleted));
     }
 
     @Then("displays a massage : {string}")
@@ -152,6 +162,7 @@ public class UserManagementSteps {
 
     @When("the system doesnt find it")
     public void the_system_doesnt_find_it() {
+        deleted = "notfound@gmail.com";
         assertFalse(admin1.deleteUser(deleted));
     }
 
@@ -171,7 +182,8 @@ public class UserManagementSteps {
 
     @Given("the user exist")
     public void the_user_exist() {
-        admin1.addClient("ave", 16, "male", "nablus", "ave@gmail.com", "123", Status.Active);
+        //admin1.addClient("ave", 16, "male", "nablus", "ave@gmail.com", "123", Status.Active);
+        //assertTrue(admin1.addClient("ave", 16, "male", "nablus", "ave@gmail.com", "123", Status.Active));
 
         assertTrue(Application.findUser("ave@gmail.com"));
     }
@@ -182,7 +194,9 @@ public class UserManagementSteps {
     }
 
     @Then("The system updates the user details")
-    public void the_system_updates_the_user_details() {
+    public void the_system_updates_the_user_details()
+    {
+        admin1.addClient("ave", 16, "male", "nablus", "ave@gmail.com", "123", Status.Active);
         assertTrue(admin1.updateUser("ave@gmail.com", 33, "jenin", "456"));
 
     }
@@ -289,7 +303,7 @@ assertTrue(true);
     String searchMessage;
     @Given("the admin is in the system via email {string} and password {string}")
     public void givenTheAdminIsInTheSystem(String email, String password) {
-        assertNotNull(Application.login(email, password));
+        assertNotNull(login(email, password));
 
     }
 

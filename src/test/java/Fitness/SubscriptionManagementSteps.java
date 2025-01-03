@@ -14,7 +14,10 @@ public class SubscriptionManagementSteps {
 Client client=new Client();
 Admin admin=new Admin();
 
-    public SubscriptionManagementSteps(){
+    public SubscriptionManagementSteps()
+    {
+
+
         users.add(client);
 
     }
@@ -22,7 +25,7 @@ Admin admin=new Admin();
 
     @Given("a client is logged in")
     public void a_client_is_logged_in() {
-        Application.login(client.getEmail(),client.getPass());
+        Application.currentUser = Application.login(client.getEmail(),client.getPass());
         assertTrue(Application.currentUser instanceof Client);
     }
     String plan;

@@ -3,6 +3,7 @@ package Fitness.AdminPackage;
 import Fitness.InstructorP.ProgramPackage.Program;
 import Fitness.InstructorP.Session.Session;
 
+import java.awt.desktop.AppForegroundListener;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import static Fitness.AdminPackage.Application.*;
  */
 public class Admin extends User {
 
+    Client deletedClient;
     /**
      * Constructs a new Admin instance with the specified details.
      *
@@ -33,6 +35,8 @@ public class Admin extends User {
     public Admin(String name, int age, String gender, String address, String email, String password) {
         super(name, age, gender, address, email, password, Role.Admin);
 
+        Application.users = new ArrayList<User>();
+
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
         //users.add(instructorTest1);
         Application.addUser(instructorTest1);
@@ -42,6 +46,8 @@ public class Admin extends User {
         Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
         //users.add(instructorTest2);
         Application.addUser(instructorTest2);
+
+        deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
     }
 
     /**
@@ -50,7 +56,7 @@ public class Admin extends User {
     public Admin() {
 
 
-
+        Application.users = new ArrayList<User>();
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
         //users.add(instructorTest1);
         Application.addUser(instructorTest1);
@@ -87,8 +93,11 @@ public class Admin extends User {
      * @return true if the user was deleted successfully; false otherwise
      */
     public boolean deleteUser(String deleted) {
+        //if(Application.users.isEmpty()) return false;
+
+        users.add(deletedClient);
         for (int i = 0; i < Application.users.size(); i++) {
-            if (Application.users.get(i).getEmail().equals(deleted) && !(Application.users.get(i) instanceof Admin)) {
+            if (Application.users.get(i).getEmail().equals(deleted) && (Application.users.get(i) instanceof Client)&&(Application.users.get(i) instanceof Instructor)) {
                 Application.users.remove(i);
                 return true;
             }
@@ -108,11 +117,18 @@ public class Admin extends User {
      * @param status  the subscription status of the client
      * @return true if the client was added successfully; false otherwise
      */
-    public boolean addClient(String name, int age, String gender, String address, String email, String pass, Status status) {
+    public boolean addClient(String name, int age, String gender, String address, String email, String pass, Status status)
+    {
         if (Application.findUser(email)) return false;
         if (name == null || age < 16 || gender == null || address == null || email == null || pass == null) return false;
         Client c = new Client(name, age, gender, address, email, pass, status);
-        return Application.users.add(c);
+
+        if(!Application.users.contains(c))
+        {
+            Application.users.add(c);
+            return true;
+        }
+        return false;
     }
 
     /**

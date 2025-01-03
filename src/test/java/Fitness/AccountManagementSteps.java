@@ -170,15 +170,30 @@ String b;
     public void the_user_has_a_previously_created_profile() {
         String email = "abood@gmail.com";
 
-        boolean userExists = Application.users.stream()
-                .anyMatch(user -> user.getEmail().equals(email));
+        boolean userExists = false;
+        for(int i=0 ; i < Application.users.size();i++)
+        {
+          
+            if(Application.users.get(i).getEmail().equals(email))
+            {
+                userExists = true;
+                break;
 
-        if (!userExists) {
+            }
+            userExists = false;
+
+        }
+
+        //boolean  = Application.users.stream().anyMatch(user -> user.getEmail().equals(email));
+
+        if (!userExists)
+        {
 
             User user = new User("Abood", 25, "male", "Palestine", email, "password123", Role.Client);
             Application.users.add(user);
             System.out.println("User profile created successfully with email: " + user.getEmail());
-        } else {
+        } else
+        {
 
             System.out.println("User profile with email " + email + " already exists.");
         }
