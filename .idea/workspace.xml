@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +92,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/OneDrive/Desktop/SoftwareProject/SoftwareProject",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -269,7 +272,10 @@
       <workItem from="1736205873274" duration="18075000" />
       <workItem from="1736246314593" duration="66000" />
       <workItem from="1736251138208" duration="582000" />
-      <workItem from="1736253807100" duration="4203000" />
+      <workItem from="1736253807100" duration="4508000" />
+      <workItem from="1736262603542" duration="1017000" />
+      <workItem from="1736264496423" duration="97000" />
+      <workItem from="1736264624240" duration="145000" />
     </task>
     <servers />
   </component>
@@ -307,7 +313,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1736262200691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1736264024279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>Fitness.*</FILTER>
     </SUITE>
   </component>
