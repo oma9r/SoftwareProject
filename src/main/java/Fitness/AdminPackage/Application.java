@@ -115,9 +115,10 @@ public  class Application {
 
     public Application()
     {
+        String plaestineString = "Palestine";
         admin1 = new Admin("ibrahim", 20, "male", "yaseed", "mashaqi@gmail.com", "pass");
-        admin2 = new Admin("admin", 22, "male", "palestine", "admin@gmail.com", "4865");
-        admin3 = new Admin("Abood", 22, "male", "palestine", "Abood@gmail.com", "112233");
+        admin2 = new Admin("admin", 22, "male", plaestineString, "admin@gmail.com", "4865");
+        admin3 = new Admin("Abood", 22, "male", plaestineString, "Abood@gmail.com", "112233");
         users.add(admin1);
         users.add(admin2);
         users.add(admin3);
@@ -263,7 +264,7 @@ public  class Application {
 
         admin1 = new Admin("ibrahim", 20, "male", "yaseed", "mashaqi@gmail.com", "pass");
         admin2 = new Admin("admin", 22, "male", "palestine", "admin@gmail.com", "4865");
-        admin3 = new Admin("Abood", 22, "male", "palestine", "Abood@gmail.com", "112233");
+        admin3 = new Admin("Abood", 22, "male", "palestine12", "Abood@gmail.com", "112233");
         users.add(admin1);
         users.add(admin2);
         users.add(admin3);
