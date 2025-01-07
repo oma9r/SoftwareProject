@@ -22,6 +22,7 @@ import static Fitness.AdminPackage.Application.*;
 public class Admin extends User {
 
     Client deletedClient;
+    String constantString;
     /**
      * Constructs a new Admin instance with the specified details.
      *
@@ -36,11 +37,12 @@ public class Admin extends User {
         super(name, age, gender, address, email, password, Role.Admin);
 
         Application.users = new ArrayList<User>();
+         constantString  = "clientTest1";
 
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
         //users.add(instructorTest1);
         Application.addUser(instructorTest1);
-        Client clientTest1 = new Client("clientTest1",23,"male","clientTest1","clientTest1@gmail.com","clientTest1pass",Status.Active);
+        Client clientTest1 = new Client(constantString,23,"male",constantString,"clientTest1@gmail.com","clientTest1pass",Status.Active);
         //users.add(clientTest1);
         Application.addUser(clientTest1);
         Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
@@ -60,7 +62,7 @@ public class Admin extends User {
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
         //users.add(instructorTest1);
         Application.addUser(instructorTest1);
-        Client clientTest1 = new Client("clientTest1",23,"male","clientTest1","clientTest1@gmail.com","clientTest1pass",Status.Active);
+        Client clientTest1 = new Client(constantString,23,"male",constantString,"clientTest1@gmail.com","clientTest1pass",Status.Active);
         //users.add(clientTest1);
         Application.addUser(clientTest1);
         Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
