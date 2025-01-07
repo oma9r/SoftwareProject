@@ -3,7 +3,7 @@ package Fitness.AdminPackage;
 import Fitness.InstructorP.ProgramPackage.Program;
 import Fitness.InstructorP.Session.Session;
 
-import java.awt.desktop.AppForegroundListener;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,13 +40,13 @@ public class Admin extends User {
          constantString  = "clientTest1";
 
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
-        //users.add(instructorTest1);
+
         Application.addUser(instructorTest1);
         Client clientTest1 = new Client(constantString,23,"male",constantString,"clientTest1@gmail.com","clientTest1pass",Status.Active);
-        //users.add(clientTest1);
+
         Application.addUser(clientTest1);
         Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
-        //users.add(instructorTest2);
+
         Application.addUser(instructorTest2);
 
         deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
@@ -58,15 +58,15 @@ public class Admin extends User {
     public Admin() {
 
 
-        //Application.users = new ArrayList<User>();
+
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
-        //users.add(instructorTest1);
+
         Application.addUser(instructorTest1);
         Client clientTest1 = new Client(constantString,23,"male",constantString,"clientTest1@gmail.com","clientTest1pass",Status.Active);
-        //users.add(clientTest1);
+
         Application.addUser(clientTest1);
         Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
-        //users.add(instructorTest2);
+
         Application.addUser(instructorTest2);
     }
 
@@ -95,10 +95,10 @@ public class Admin extends User {
      * @return true if the user was deleted successfully; false otherwise
      */
     public boolean deleteUser(String deleted) {
-        //if(Application.users.isEmpty()) return false;
+
 
         for (int i = 0; i < Application.users.size(); i++) {
-            System.out.println(Application.users.get(i));
+
             if(Application.users.get(i).getEmail() == null) continue;
             if (Application.users.get(i).getEmail().equals(deleted) /*&& !(Application.users.get(i) instanceof Admin)*/)
             {
@@ -125,7 +125,7 @@ public class Admin extends User {
     {
         if (Application.findUser(email))
         {
-            //System.out.println("User already exists");
+
             return false;
         }
         if (name == null || age < 16 || gender == null || address == null || email == null || pass == null) return false;
@@ -199,8 +199,8 @@ public class Admin extends User {
     public boolean setStatus(String email, Status status) {
         for (int i = 0; i < Application.users.size(); i++) {
             if (Application.users.get(i).getEmail().equals(email)) {
-                if (Application.users.get(i) instanceof Client) {
-                    Client c = (Client) Application.users.get(i);
+                if (Application.users.get(i) instanceof Client c) {
+                     c = (Client) Application.users.get(i);
                     c.setStatus(status);
                     return true;
                 }
