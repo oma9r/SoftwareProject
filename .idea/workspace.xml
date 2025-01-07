@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +272,7 @@
       <workItem from="1736205873274" duration="18075000" />
       <workItem from="1736246314593" duration="66000" />
       <workItem from="1736251138208" duration="582000" />
-      <workItem from="1736253807100" duration="1550000" />
+      <workItem from="1736253807100" duration="3903000" />
     </task>
     <servers />
   </component>

@@ -116,7 +116,8 @@ public  class Application {
     public Application()
     {
         String plaestineString = "Palestine";
-        admin1 = new Admin("ibrahim", 20, "male", "yaseed", "mashaqi@gmail.com", "pass");
+        String yaseedString = "Yaseed";
+        admin1 = new Admin("ibrahim", 20, "male", yaseedString, "mashaqi@gmail.com", "pass");
         admin2 = new Admin("admin", 22, "male", plaestineString, "admin@gmail.com", "4865");
         admin3 = new Admin("Abood", 22, "male", plaestineString, "Abood@gmail.com", "112233");
         users.add(admin1);
@@ -125,12 +126,12 @@ public  class Application {
         Application.addUser(admin1);
         Application.addUser(admin2);
         Application.addUser(admin3);
-        Client client = new Client("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
+        Client client = new Client("client", 18, "male", yaseedString, "client@gmail.com", "12345", Status.Active);
         Application.addUser(client);
-        admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
+        admin1.addClient("client", 18, "male",yaseedString, "client@gmail.com", "12345", Status.Active);
 
-        admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", Status.DeActive);
-        admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", Status.Active);
+        admin1.addClient("notActive", 18, "male", yaseedString, "not@gmail.com", "12345", Status.DeActive);
+        admin1.addClient("is", 18, "male", yaseedString, "is@gmail.com", "12345", Status.Active);
 
     }
 
@@ -247,10 +248,10 @@ public  class Application {
     public boolean isAdmin(String email) {
         for (User u : users) {
             if(u.getEmail() == null) continue;
-            if (u.getEmail().equals(email)) {
-                if (u instanceof Admin) {
+            if (u.getEmail().equals(email) && u instanceof Admin) {
+
                     return true;
-                }
+
             }
         }
         return false;

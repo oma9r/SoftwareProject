@@ -4,6 +4,7 @@ import Fitness.AdminPackage.Client;
 import Fitness.AdminPackage.Instructor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The {@code MessagingSystem} class facilitates communication between an {@code Instructor} and a {@code Client}.
@@ -94,7 +95,7 @@ public class MessagingSystem
      *
      * @return The instructor's message list
      */
-    public ArrayList<Message> getInstructorMessageList() {
+    public List<Message> getInstructorMessageList() {
         return this.instructorMessageList;
     }
 
