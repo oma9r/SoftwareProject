@@ -99,41 +99,7 @@ public class Instructor extends User {
         this.programs = programs;
     }
 
-    /**
-     * Returns the list of discussion forms managed by the instructor.
-     *
-     * @return The list of discussion forms.
-     */
-    public ArrayList<DiscussionForm> getDiscussionFormList() {
-        return discussionFormList;
-    }
 
-    /**
-     * Sets the list of discussion forms managed by the instructor.
-     *
-     * @param discussionFormList The new list of discussion forms.
-     */
-    public void setDiscussionFormList(ArrayList<DiscussionForm> discussionFormList) {
-        this.discussionFormList = discussionFormList;
-    }
-
-    /**
-     * Returns the list of comment reports created by the instructor.
-     *
-     * @return The list of comment reports.
-     */
-    public ArrayList<Comment> getCommentReportList() {
-        return commentReportList;
-    }
-
-    /**
-     * Sets the list of comment reports created by the instructor.
-     *
-     * @param commentReportList The new list of comment reports.
-     */
-    public void setCommentReportList(ArrayList<Comment> commentReportList) {
-        this.commentReportList = commentReportList;
-    }
 
     /**
      * Adds a program to the instructor's program list if it's not already present.
@@ -149,19 +115,7 @@ public class Instructor extends User {
         return false;
     }
 
-    /**
-     * Removes a program from the instructor's program list if it's present.
-     *
-     * @param program The program to be removed.
-     * @return True if the program was removed, false otherwise.
-     */
-    public boolean removePrograms(Program program) {
-        if (programs.contains(program)) {
-            programs.remove(program);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a discussion form to the instructor's discussion form list if it's not already present.
@@ -180,19 +134,7 @@ public class Instructor extends User {
         return false;
     }
 
-    /**
-     * Removes a discussion form from the instructor's discussion form list if it's present.
-     *
-     * @param discussionForm The discussion form to be removed.
-     * @return True if the discussion form was removed, false otherwise.
-     */
-    public boolean removeDiscussionForm(DiscussionForm discussionForm) {
-        if (discussionFormList.contains(discussionForm)) {
-            discussionFormList.remove(discussionForm);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a comment report to the instructor's comment report list if it's not already present.
@@ -208,19 +150,6 @@ public class Instructor extends User {
         return false;
     }
 
-    /**
-     * Removes a comment report from the instructor's comment report list if it's present.
-     *
-     * @param comment The comment report to be removed.
-     * @return True if the comment report was removed, false otherwise.
-     */
-    public boolean removeCommentReport(Comment comment) {
-        if (commentReportList.contains(comment)) {
-            commentReportList.remove(comment);
-            return true;
-        }
-        return false;
-    }
 
     /**
      * Returns a string representation of the instructor, including their basic user details and current status.

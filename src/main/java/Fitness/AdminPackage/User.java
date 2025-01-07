@@ -200,14 +200,7 @@ public class User {
         this.name = name;
     }
 
-    /**
-     * Sets the gender of the user.
-     *
-     * @param gender the gender to set
-     */
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+
 
     /**
      * Sets the email of the user.
@@ -218,32 +211,8 @@ public class User {
         this.email = email;
     }
 
-    /**
-     * Sets the role of the user.
-     *
-     * @param role the role to set
-     */
-    public void setRole(Role role) {
-        this.role = role;
-    }
 
-    /**
-     * Sets the points of the user.
-     *
-     * @param points the points to set
-     */
-    public void setPoints(int points) {
-        this.points = points;
-    }
 
-    /**
-     * Gets the ID of the user.
-     *
-     * @return the ID of the user
-     */
-    public int getId() {
-        return id;
-    }
 
     /**
      * Gets the list of messages for the user.
@@ -254,14 +223,7 @@ public class User {
         return messageList;
     }
 
-    /**
-     * Sets the list of messages for the user.
-     *
-     * @param messageList the list of messages to set
-     */
-    public void setMessageList(ArrayList<Message> messageList) {
-        this.messageList = messageList;
-    }
+
 
     /**
      * Gets the list of notifications for the user.
@@ -272,32 +234,7 @@ public class User {
         return notificationList;
     }
 
-    /**
-     * Sets the list of notifications for the user.
-     *
-     * @param notificationList the list of notifications to set
-     */
-    public void setNotificationList(ArrayList<Notification> notificationList) {
-        this.notificationList = notificationList;
-    }
 
-    /**
-     * Gets the list of posts for the user.
-     *
-     * @return the list of posts
-     */
-    public ArrayList<Post> getPostList() {
-        return postList;
-    }
-
-    /**
-     * Sets the list of posts for the user.
-     *
-     * @param postList the list of posts to set
-     */
-    public void setPostList(ArrayList<Post> postList) {
-        this.postList = postList;
-    }
 
     /**
      * Gets the program associated with the user.
@@ -311,11 +248,14 @@ public class User {
     /**
      * Sets the program associated with the user.
      *
-     * @param userProgram the program to set
+     * @param program the program to be assigned to the user.
      */
-    public void setUserProgram(Program userProgram) {
-        this.userProgram = userProgram;
+    public void setUserProgram(Program program) {
+        this.userProgram = program;
     }
+
+
+
 
     /**
      * Gets the dietary preferences of the user.
@@ -335,14 +275,7 @@ public class User {
         this.dietaryPreferencesUser = dietaryPreferencesUser;
     }
 
-    /**
-     * Gets the dietary restrictions of the user.
-     *
-     * @return the dietary restrictions
-     */
-    public String getDietaryRestrictions() {
-        return dietaryRestrictions;
-    }
+
 
     /**
      * Sets the dietary restrictions of the user.
@@ -362,14 +295,6 @@ public class User {
         this.goalsUser = goalsUser;
     }
 
-    /**
-     * Retrieves the goals of the user.
-     *
-     * @return a {@code String} representing the user's goals.
-     */
-    public String getGoalsUser() {
-        return goalsUser;
-    }
 
 
     /**
@@ -386,19 +311,6 @@ public class User {
         return false;
     }
 
-    /**
-     * Removes a message from the user's message list.
-     *
-     * @param message the message to be removed
-     * @return true if the message was removed, false if it wasn't found
-     */
-    public boolean removeMessage(Message message) {
-        if (messageList.contains(message)) {
-            messageList.remove(message);
-            return true;
-        }
-        return false;
-    }
 
     /**
      * Adds a new notification to the user's notification list if it doesn't already exist.
@@ -414,54 +326,7 @@ public class User {
         return false;
     }
 
-    /**
-     * Removes a notification from the user's notification list.
-     *
-     * @param notification the notification to be removed
-     * @return true if the notification was removed, false if it wasn't found
-     */
-    public boolean removeNotification(Notification notification) {
-        if (notificationList.contains(notification)) {
-            notificationList.remove(notification);
-            return true;
-        }
-        return false;
-    }
 
-    /**
-     * Adds a new post to the user's post list if it doesn't already exist.
-     *
-     * @param post the post to be added
-     * @return true if the post was added, false if it already exists
-     */
-    public boolean addPost(Post post) {
-        if (!postList.contains(post)) {
-            postList.add(post);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Removes a post from the user's post list.
-     *
-     * @param post the post to be removed
-     * @return true if the post was removed, false if it wasn't found
-     */
-    public boolean removePost(Post post) {
-        if (postList.contains(post)) {
-            postList.remove(post);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Increments the user's points by one.
-     */
-    public void incPoints() {
-        this.points++;
-    }
 
     /**
      * Returns a string representation of the user, including personal and account details.
@@ -472,5 +337,9 @@ public class User {
     public String toString() {
         return "[id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", address=" + address +
                 ", email=" + email + ", password=" + password + ", role=" + role + "]";
+    }
+
+    public int getId() {
+        return id;
     }
 }

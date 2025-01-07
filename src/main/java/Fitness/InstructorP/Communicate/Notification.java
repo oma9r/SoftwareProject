@@ -52,26 +52,7 @@ public class Notification
         this.setNotificationType(null);
     }
 
-    /**
-     * Constructs a new {@code Notification} with the given author, content, role, and type.
-     * The title, time, date, and day are initialized to {@code null}.
-     *
-     * @param NotificationAuthor The user who authored the notification
-     * @param NotificationContent The content of the notification
-     * @param authorRole The role of the author (e.g., INSTRUCTOR)
-     * @param NotificationType The type of the notification (e.g., INFO)
-     */
-    public Notification(User NotificationAuthor, String NotificationContent, Role authorRole, NotificationType NotificationType)
-    {
-        this.setNotificationAuthor(NotificationAuthor);
-        this.setNotificationContent(NotificationContent);
-        this.setNotificationTitle(null);
-        this.setNotificationTime(null);
-        this.setNotificationDate(null);
-        this.setNotificationDay(null);
-        this.setRole(authorRole);
-        this.setNotificationType(NotificationType);
-    }
+
 
     // Getter and setter methods
 
@@ -147,41 +128,6 @@ public class Notification
         return NotificationTitle;
     }
 
-    /**
-     * Returns the content of the notification.
-     *
-     * @return The content of the notification
-     */
-    public String getNotificationContent() {
-        return NotificationContent;
-    }
-
-    /**
-     * Returns the time when the notification was created.
-     *
-     * @return The time of the notification
-     */
-    public String getNotificationTime() {
-        return NotificationTime;
-    }
-
-    /**
-     * Returns the date when the notification was created.
-     *
-     * @return The date of the notification
-     */
-    public String getNotificationDate() {
-        return NotificationDate;
-    }
-
-    /**
-     * Returns the day when the notification was created.
-     *
-     * @return The day of the notification
-     */
-    public String getNotificationDay() {
-        return NotificationDay;
-    }
 
     /**
      * Returns the role of the notification's author.
@@ -201,14 +147,6 @@ public class Notification
         this.authorRole = role;
     }
 
-    /**
-     * Returns the type of the notification.
-     *
-     * @return The type of the notification
-     */
-    public NotificationType getNotificationType() {
-        return NotificationType;
-    }
 
     /**
      * Sets the type of the notification.

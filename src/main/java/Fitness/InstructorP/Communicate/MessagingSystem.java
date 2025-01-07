@@ -98,14 +98,7 @@ public class MessagingSystem
         return this.instructorMessageList;
     }
 
-    /**
-     * Sets the list of messages for the instructor.
-     *
-     * @param instructorMessageList The list of instructor messages to be set
-     */
-    public void setInstructorMessageList(ArrayList<Message> instructorMessageList) {
-        this.instructorMessageList = instructorMessageList;
-    }
+
 
     /**
      * Returns the list of messages sent or received by the client.
@@ -116,14 +109,7 @@ public class MessagingSystem
         return this.clientMessageList;
     }
 
-    /**
-     * Sets the list of messages for the client.
-     *
-     * @param clientMessageList The list of client messages to be set
-     */
-    public void setClientMessageList(ArrayList<Message> clientMessageList) {
-        this.clientMessageList = clientMessageList;
-    }
+
 
     /**
      * Returns the list of all messages in the system.
@@ -134,14 +120,7 @@ public class MessagingSystem
         return this.messagesList;
     }
 
-    /**
-     * Sets the list of all messages in the system.
-     *
-     * @param messagesList The list of all messages to be set
-     */
-    public void setMessagesList(ArrayList<Message> messagesList) {
-        this.messagesList = messagesList;
-    }
+
 
     // Message management methods
 
@@ -159,19 +138,7 @@ public class MessagingSystem
         return false;
     }
 
-    /**
-     * Removes a message from the system's main message list.
-     *
-     * @param message The message to be removed
-     * @return {@code true} if the message was removed successfully, {@code false} if it does not exist
-     */
-    public boolean removeMessage(Message message) {
-        if(this.messagesList.contains(message)) {
-            this.messagesList.remove(message);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a message to the instructor's message list.
@@ -187,19 +154,7 @@ public class MessagingSystem
         return false;
     }
 
-    /**
-     * Removes a message from the instructor's message list.
-     *
-     * @param message The message to be removed
-     * @return {@code true} if the message was removed successfully, {@code false} if it does not exist
-     */
-    public boolean removeInstructorMessage(Message message) {
-        if(this.instructorMessageList.contains(message)) {
-            this.instructorMessageList.remove(message);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a message to the client's message list.
@@ -215,17 +170,5 @@ public class MessagingSystem
         return false;
     }
 
-    /**
-     * Removes a message from the client's message list.
-     *
-     * @param message The message to be removed
-     * @return {@code true} if the message was removed successfully, {@code false} if it does not exist
-     */
-    public boolean removeClientMessage(Message message) {
-        if(this.clientMessageList.contains(message)) {
-            this.clientMessageList.remove(message);
-            return true;
-        }
-        return false;
-    }
+
 }

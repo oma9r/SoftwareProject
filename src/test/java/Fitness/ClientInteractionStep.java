@@ -1134,6 +1134,8 @@ public class ClientInteractionStep
         boolean flag = false;
         report1.setClient(client1);
         client1.addReport(report1);
+        report1.setProgram(client1.getProgram());
+        report1.setInstructor(instructor1);
 
         if(client1.getReportList().contains(report1))
         {
@@ -1141,6 +1143,11 @@ public class ClientInteractionStep
         }
 
         assertTrue(flag,"Failed in receiving report process");
+
+        if(flag)
+        {
+            report1.printReport();
+        }
 
 
         //throw new io.cucumber.java.PendingException();

@@ -142,32 +142,6 @@ public class Report
         return CompletedSessionList;
     }
 
-    /**
-     * Sets the list of completed sessions for this report.
-     *
-     * @param completedSessionList the list of completed sessions
-     */
-    public void setCompletedSessionList(ArrayList<Session> completedSessionList) {
-        CompletedSessionList = completedSessionList;
-    }
-
-    /**
-     * Returns the list of comments associated with this report.
-     *
-     * @return the list of comments
-     */
-    public ArrayList<Comment> getCommentList() {
-        return commentList;
-    }
-
-    /**
-     * Sets the list of comments associated with this report.
-     *
-     * @param commentList the list of comments
-     */
-    public void setCommentList(ArrayList<Comment> commentList) {
-        this.commentList = commentList;
-    }
 
     /**
      * Returns the name of the report.
@@ -205,45 +179,8 @@ public class Report
         this.ID = ID;
     }
 
-    /**
-     * Returns the list of replies to comments in the report.
-     *
-     * @return the list of replies
-     */
-    public ArrayList<Comment> getReplyList() {
-        return replyList;
-    }
 
-    /**
-     * Sets the list of replies to comments in the report.
-     *
-     * @param replyList the list of replies
-     */
-    public void setReplyList(ArrayList<Comment> replyList) {
-        this.replyList = replyList;
-    }
 
-    /**
-     * Calculates the progress ratio for the report based on the number of completed sessions.
-     *
-     * @return the calculated progress ratio
-     */
-    public double calculateRatio()
-    {
-        for(Session session : this.getSessionList())
-        {
-            if(session.getSessionStatus().equals(SessionCompleteStatus.completed))
-            {
-                if(!CompletedSessionList.contains(session))
-                {
-                    CompletedSessionList.add(session);
-                }
-            }
-        }
-
-        this.setRatioProgress((double)CompletedSessionList.size() / (double)this.getSessionList().size());
-        return this.getRatioProgress();
-    }
 
     /**
      * Prints a summary report including the program title, instructor name, client name, completed sessions,
@@ -282,19 +219,5 @@ public class Report
         return false;
     }
 
-    /**
-     * Removes a comment from the report if it exists in the list.
-     *
-     * @param comment the comment to remove
-     * @return {@code true} if the comment was removed, {@code false} otherwise
-     */
-    public boolean removeComment(Comment comment)
-    {
-        if(commentList.contains(comment))
-        {
-            commentList.remove(comment);
-            return true;
-        }
-        return false;
-    }
+
 }

@@ -241,34 +241,7 @@ public class Program {
         revenue = 0;
     }
 
-    /**
-     * Constructor for creating a Program using a given DiscussionForm.
-     *
-     * @param discussionForm A DiscussionForm that represents the discussion related to the program.
-     * <p>This constructor initializes a Program with default values for all fields except for the discussion forms,
-     * which are set to the provided DiscussionForm.</p>
-     */
-    public Program(DiscussionForm discussionForm) {
-        this.setProgramTitle("");
-        this.setProgramDuration("");
-        this.setProgramLevel("");
-        this.setProgramGoals("");
-        this.setProgramPrice("");
-        this.sessions = new ArrayList<Session>();
-        this.numberOfSessions = 0;
-        instructorProgram = new Instructor();
-        this.instructorProgram = null;
-        this.programStatus = null;
-        this.setTutorialType("");
-        Application.currentProgramId++;
-        this.setIdProgram(Application.currentProgramId);
-        this.setNumberOfSessions(0);
-        this.discussionForms = new ArrayList<DiscussionForm>();
-        this.setDiscussionForms(discussionForms);
-        this.ClientsList = new ArrayList<Client>();
-        this.reportList = new ArrayList<Report>();
-        revenue = 0;
-    }
+
 
     /**
      * Constructor for creating a Program with basic details and specific start and end dates.
@@ -364,14 +337,6 @@ public class Program {
         this.programGoals = programGoals;
     }
 
-    /**
-     * Gets the price of the program.
-     *
-     * @return The price of the program.
-     */
-    public String getProgramPrice() {
-        return programPrice;
-    }
 
     /**
      * Sets the price of the program.
@@ -400,14 +365,6 @@ public class Program {
         this.sessions = sessions;
     }
 
-    /**
-     * Gets the number of sessions for the program.
-     *
-     * @return The number of sessions for the program.
-     */
-    public int getNumberOfSessions() {
-        return numberOfSessions;
-    }
 
     /**
      * Sets the number of sessions for the program.
@@ -418,14 +375,7 @@ public class Program {
         this.numberOfSessions = numberOfSessions;
     }
 
-    /**
-     * Gets the name of the instructor for the program.
-     *
-     * @return The name of the instructor for the program.
-     */
-    public String getInstructorProgramName() {
-        return instructorProgram.getName();
-    }
+
 
     /**
      * Sets the instructor for the program.
@@ -436,14 +386,7 @@ public class Program {
         this.instructorProgram.setName(instructorProgram.getName());
     }
 
-    /**
-     * Gets the tutorial type of the program (e.g., Video, Image, Document).
-     *
-     * @return The tutorial type of the program.
-     */
-    public String getTutorialType() {
-        return tutorialType;
-    }
+
 
     /**
      * Sets the tutorial type for the program (e.g., Video, Image, Document).
@@ -463,14 +406,7 @@ public class Program {
         this.idProgram = idProgram;
     }
 
-    /**
-     * Gets the unique ID of the program.
-     *
-     * @return The unique ID of the program.
-     */
-    public int getIdProgram() {
-        return idProgram;
-    }
+
 
     /**
      * Sets the tutorial type for the program (enum).
@@ -481,32 +417,7 @@ public class Program {
         this.programTutorialType = programTutorialType;
     }
 
-    /**
-     * Gets the tutorial type (enum) of the program.
-     *
-     * @return The tutorial type (enum) of the program.
-     */
-    public tutorialTypeProgram getProgramTutorialType() {
-        return programTutorialType;
-    }
 
-    /**
-     * Sets the list of discussion forms related to the program.
-     *
-     * @param discussionForms The list of discussion forms to be set for the program.
-     */
-    public void setDiscussionForms(ArrayList<DiscussionForm> discussionForms) {
-        this.discussionForms = discussionForms;
-    }
-
-    /**
-     * Gets the list of discussion forms related to the program.
-     *
-     * @return The list of discussion forms related to the program.
-     */
-    public ArrayList<DiscussionForm> getDiscussionForms() {
-        return discussionForms;
-    }
 
     /**
      * Gets the list of clients enrolled in the program.
@@ -517,14 +428,7 @@ public class Program {
         return this.ClientsList;
     }
 
-    /**
-     * Sets the list of clients enrolled in the program.
-     *
-     * @param clientsList The list of clients to be enrolled in the program.
-     */
-    public void setClientsList(ArrayList<Client> clientsList) {
-        this.ClientsList = clientsList;
-    }
+
 
     /**
      * Gets the list of reports related to the program.
@@ -535,23 +439,9 @@ public class Program {
         return reportList;
     }
 
-    /**
-     * Sets the list of reports related to the program.
-     *
-     * @param reportList The list of reports to be set for the program.
-     */
-    public void setReportList(ArrayList<Report> reportList) {
-        this.reportList = reportList;
-    }
 
-    /**
-     * Sets the completion status of the program.
-     *
-     * @param isComplete The completion status of the program (e.g., COMPLETED, IN_PROGRESS).
-     */
-    public void setIsComplete(Fitness.InstructorP.ProgramPackage.isComplete isComplete) {
-        this.isComplete = isComplete;
-    }
+
+
 
     /**
      * Gets the completion status of the program.
@@ -578,20 +468,7 @@ public class Program {
         }
     }
 
-    /**
-     * Removes a client from the program's client list if present.
-     *
-     * @param client The client to be removed from the program.
-     * @return true if the client was successfully removed, false if the client was not in the list.
-     */
-    public boolean removeClient(Client client) {
-        if(this.ClientsList.contains(client)) {
-            this.ClientsList.remove(client);
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     /**
      * Adds a session to the program's session list if not already present.
@@ -608,20 +485,7 @@ public class Program {
         }
     }
 
-    /**
-     * Removes a session from the program's session list if present.
-     *
-     * @param session The session to be removed from the program.
-     * @return true if the session was successfully removed, false if the session was not in the list.
-     */
-    public boolean removeSession(Session session) {
-        if(this.sessions.contains(session)) {
-            this.sessions.remove(session);
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     /**
      * Adds a discussion form to the program's list of discussion forms if not already present.
@@ -637,19 +501,7 @@ public class Program {
         return false;
     }
 
-    /**
-     * Removes a discussion form from the program's list of discussion forms if present.
-     *
-     * @param discussionForm The discussion form to be removed from the program.
-     * @return true if the discussion form was successfully removed, false if the discussion form was not in the list.
-     */
-    public boolean removeDiscussionForm(DiscussionForm discussionForm) {
-        if(this.discussionForms.contains(discussionForm)) {
-            this.discussionForms.remove(discussionForm);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a report to the program's list of reports if not already present.
@@ -665,19 +517,7 @@ public class Program {
         return false;
     }
 
-    /**
-     * Removes a report from the program's list of reports if present.
-     *
-     * @param report The report to be removed from the program.
-     * @return true if the report was successfully removed, false if the report was not in the list.
-     */
-    public boolean removeReport(Report report) {
-        if(this.reportList.contains(report)) {
-            this.reportList.remove(report);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Retrieves the revenue generated by the program.
@@ -688,32 +528,6 @@ public class Program {
         return revenue;
     }
 
-    /**
-     * Sets the revenue for the program.
-     *
-     * @param revenue The revenue to be set for the program.
-     */
-    public void setRevenue(float revenue) {
-        this.revenue = revenue;
-    }
-
-    /**
-     * Sets the status of the program.
-     *
-     * @param programStatus The status to be set for the program (e.g., active, completed).
-     */
-    public void setProgramStatus(ProgramStatus programStatus) {
-        this.programStatus = programStatus;
-    }
-
-    /**
-     * Retrieves the current status of the program.
-     *
-     * @return The status of the program.
-     */
-    public ProgramStatus getProgramStatus() {
-        return programStatus;
-    }
 
     /**
      * Sets the start date of the program.

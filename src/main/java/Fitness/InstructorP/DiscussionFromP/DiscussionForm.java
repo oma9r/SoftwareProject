@@ -46,23 +46,7 @@ public class DiscussionForm {
         this.postList = new ArrayList<Post>();
     }
 
-    /**
-     * Constructs a DiscussionForm object with the specified program, instructor,
-     * post list, and client list.
-     *
-     * @param program the program associated with the discussion
-     * @param instructor the instructor leading the discussion
-     * @param postList the list of posts in the discussion
-     * @param clientsList the list of clients participating in the discussion
-     */
-    public DiscussionForm(Program program, Instructor instructor, ArrayList<Post> postList, ArrayList<User> clientsList) {
-        this.setProgram(program);
-        this.setInstructor(instructor);
-        this.setPostList(postList);
-        this.setClientsList(clientsList);
-        this.clientsList = new ArrayList<User>();
-        this.postList = new ArrayList<Post>();
-    }
+
 
     /**
      * Sets the program associated with the discussion.
@@ -109,14 +93,6 @@ public class DiscussionForm {
         return this.postList;
     }
 
-    /**
-     * Sets the list of posts in the discussion.
-     *
-     * @param postList the list of posts to set
-     */
-    public void setPostList(ArrayList<Post> postList) {
-        this.postList = postList;
-    }
 
     /**
      * Returns the list of clients participating in the discussion.
@@ -127,14 +103,7 @@ public class DiscussionForm {
         return this.clientsList;
     }
 
-    /**
-     * Sets the list of clients participating in the discussion.
-     *
-     * @param clientsList the list of clients to set
-     */
-    public void setClientsList(ArrayList<User> clientsList) {
-        this.clientsList = clientsList;
-    }
+
 
     /**
      * Adds a client to the discussion if they are not already part of it.
@@ -150,19 +119,7 @@ public class DiscussionForm {
         return false;
     }
 
-    /**
-     * Removes a client from the discussion if they are part of it.
-     *
-     * @param user the client to remove from the discussion
-     * @return true if the client was successfully removed, false otherwise
-     */
-    public boolean removeClient(User user) {
-        if (this.clientsList.contains(user)) {
-            this.clientsList.remove(user);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a post to the discussion if it is not already part of the discussion.
@@ -178,17 +135,5 @@ public class DiscussionForm {
         return false;
     }
 
-    /**
-     * Removes a post from the discussion if it is part of the discussion.
-     *
-     * @param post the post to remove from the discussion
-     * @return true if the post was successfully removed, false otherwise
-     */
-    public boolean removePost(Post post) {
-        if (this.postList.contains(post)) {
-            this.postList.remove(post);
-            return true;
-        }
-        return false;
-    }
+
 }

@@ -37,12 +37,5 @@ public class Article {
         this.content = content;
     }
 
-    /**
-     * Sets the approval status of the article.
-     *
-     * @param approved {@code true} if the article is approved, {@code false} otherwise.
-     */
-    public void setApprove(boolean approved) {
-        this.approved = approved;
-    }
+
 }

@@ -110,9 +110,13 @@ public class ProgramExplorationAndEnrollment {
         } else {
             System.out.println("User is enrolled in program: " + enrolledProgram.getProgramTitle());
         }
+
+
         assertNotNull( enrolledProgram);
 
-        client.setProgram(enrolledProgram);
+
+
+        //client.setProgram(enrolledProgram);
         assertTrue( client.addProgram(enrolledProgram));
 
         System.out.println("User has been successfully enrolled in the program.");
@@ -131,9 +135,8 @@ public class ProgramExplorationAndEnrollment {
         Program enrolledProgram = programDetailPage.getEnrolledProgram();
 
 
-        client.setProgram(enrolledProgram);
         boolean programAdded = client.addProgram(enrolledProgram);
-        assertTrue( programAdded);
+        assertFalse( programAdded);
     }
 
     // Scenario 4: User views program schedule

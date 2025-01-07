@@ -26,18 +26,7 @@ public class Session
     private SessionCompleteStatus sessionStatus; // Complete or not
     private List<Client> clientList;
 
-    /**
-     * Default constructor for {@code Session}. Initializes the session with empty values.
-     */
-    public Session()
-    {
-        this.setSessionID("");
-        this.setSessionName("");
-        this.setSessionDay("");
-        this.setSessionTime("");
-        this.setSessionType("");
-        this.setSessionDate("");
-    }
+
 
     /**
      * Constructs a new {@code Session} with specified session ID, name, date, day, time, and type.
@@ -130,14 +119,7 @@ public class Session
         this.sessionName = sessionName;
     }
 
-    /**
-     * Gets the session day.
-     *
-     * @return The session day.
-     */
-    public String getSessionDay() {
-        return sessionDay;
-    }
+
 
     /**
      * Sets the session day.
@@ -148,14 +130,7 @@ public class Session
         this.sessionDay = sessionDay;
     }
 
-    /**
-     * Gets the session time.
-     *
-     * @return The session time.
-     */
-    public String getSessionTime() {
-        return sessionTime;
-    }
+
 
     /**
      * Sets the session time.
@@ -211,23 +186,8 @@ public class Session
         return sessionStatus;
     }
 
-    /**
-     * Sets the session status (completed or not).
-     *
-     * @param sessionStatus The session status.
-     */
-    public void setSessionStatus(SessionCompleteStatus sessionStatus) {
-        this.sessionStatus = sessionStatus;
-    }
 
-    /**
-     * Sets the client list for the session.
-     *
-     * @param clientList The list of clients associated with the session.
-     */
-    public void setClientList(List<Client> clientList) {
-        this.clientList = clientList;
-    }
+
 
     /**
      * Gets the client list associated with the session.

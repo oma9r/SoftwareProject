@@ -5,8 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/Instructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/AdminPackage/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/ClientPackage/ProgramExplorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/MessagingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Communicate/NotificationSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/DiscussionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/DiscussionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/DiscussionFromP/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/tutorialTypeProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/ProgramPackage/tutorialTypeProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Reports/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Reports/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Days.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Fitness/InstructorP/Session/sessionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ClientInteractionStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ClientInteractionStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/ProgramExplorationAndEnrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/SubscriptionManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/SubscriptionManagementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +123,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -268,6 +291,7 @@
       <workItem from="1735893943535" duration="10177000" />
       <workItem from="1735924574488" duration="7417000" />
       <workItem from="1735948425346" duration="564000" />
+      <workItem from="1736205873274" duration="18075000" />
     </task>
     <servers />
   </component>
@@ -279,29 +303,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java</url>
-          <line>32</line>
+          <line>38</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Fitness/AccountManagementSteps.java</url>
-          <line>354</line>
+          <line>409</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java</url>
-          <line>143</line>
+          <line>148</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Fitness/UserManagementSteps.java</url>
-          <line>165</line>
+          <line>170</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1735948450885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1736224256555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>Fitness.*</FILTER>
     </SUITE>
   </component>

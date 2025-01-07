@@ -56,7 +56,7 @@ public class Admin extends User {
     public Admin() {
 
 
-        Application.users = new ArrayList<User>();
+        //Application.users = new ArrayList<User>();
         Instructor instructorTest1 = new Instructor("instructorTest1",20,"maile","instructorTest1Address","instructorTest1@gmail.com","instructorTest1pass",Status.Active);
         //users.add(instructorTest1);
         Application.addUser(instructorTest1);
@@ -95,9 +95,11 @@ public class Admin extends User {
     public boolean deleteUser(String deleted) {
         //if(Application.users.isEmpty()) return false;
 
-        users.add(deletedClient);
         for (int i = 0; i < Application.users.size(); i++) {
-            if (Application.users.get(i).getEmail().equals(deleted) && (Application.users.get(i) instanceof Client)&&(Application.users.get(i) instanceof Instructor)) {
+            System.out.println(Application.users.get(i));
+            if(Application.users.get(i).getEmail() == null) continue;
+            if (Application.users.get(i).getEmail().equals(deleted) /*&& !(Application.users.get(i) instanceof Admin)*/)
+            {
                 Application.users.remove(i);
                 return true;
             }
@@ -119,7 +121,11 @@ public class Admin extends User {
      */
     public boolean addClient(String name, int age, String gender, String address, String email, String pass, Status status)
     {
-        if (Application.findUser(email)) return false;
+        if (Application.findUser(email))
+        {
+            //System.out.println("User already exists");
+            return false;
+        }
         if (name == null || age < 16 || gender == null || address == null || email == null || pass == null) return false;
         Client c = new Client(name, age, gender, address, email, pass, status);
 
@@ -142,6 +148,7 @@ public class Admin extends User {
      */
     public boolean updateUser(String mail, int age, String address, String pass) {
         for (int i = 0; i < Application.users.size(); i++) {
+            if(Application.users.get(i).getEmail() == null) continue;
             if (Application.users.get(i).getEmail().equals(mail) && !(Application.users.get(i) instanceof Admin)) {
                 Application.users.get(i).setAge(age);
                 Application.users.get(i).setAddress(address);
@@ -159,10 +166,11 @@ public class Admin extends User {
      * @return true if the role was updated successfully; false otherwise
      */
     public boolean updateRole(String email) {
-        for (int i = 0; i < Application.users.size(); i++) {
-            if (Application.users.get(i).getEmail().equals(email) &&
-                    !(Application.users.get(i) instanceof Admin) &&
-                    !(Application.users.get(i) instanceof Instructor)) {
+        for (int i = 0; i < Application.users.size(); i++)
+        {
+            if (Application.users.get(i).getEmail().equals(email) && !(Application.users.get(i) instanceof Admin) &&
+                    !(Application.users.get(i) instanceof Instructor))
+            {
 
                 String name = Application.users.get(i).getName();
                 int age = Application.users.get(i).getAge();
@@ -258,7 +266,8 @@ public class Admin extends User {
      *
      * @return true if the report was successfully created and written; false otherwise
      */
-    public boolean report() {
+    public boolean report()
+    {
         String filePath = "C:\\Users\\HP\\Desktop\\New folder\\SoftwareProject\\Report.txt";
 
         try {
@@ -286,15 +295,7 @@ public class Admin extends User {
         return false;
     }
 
-    /**
-     * Approves an article and adds it to the approved articles list.
-     *
-     * @param article the article to be approved
-     */
-    public void approve(Article article) {
-        article.setApprove(true);
-        wallness.add(article);
-    }
+
 
     /**
      * Returns the string representation of the Admin object.
@@ -334,32 +335,7 @@ public class Admin extends User {
         }
     }
 
-    /**
-     * Adds a new instructor to the system.
-     *
-     * @param name    the name of the instructor
-     * @param age     the age of the instructor
-     * @param gender  the gender of the instructor
-     * @param address the address of the instructor
-     * @param email   the email of the instructor
-     * @param pass    the password of the instructor
-     * @param status  the subscription status of the instructor
-     * @return true if the instructor was added successfully; false otherwise
-     */
-    public boolean addInstructor(String name, int age, String gender, String address, String email, String pass, Status status) {
-        if (name.length() == 0 || age < 16 || gender.length() == 0 || address.length() == 0 || email.length() == 0 || pass.length() == 0) {
-            System.out.println("Missed data");
-            return false;
-        }
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getEmail().equals(email)) {
-                System.out.println("Email already used");
-                return false;
-            }
-        }
-        users.add(new Client(name, age, gender, address, email, pass, status));
-        return true;
-    }
+
 
     /**
      * Adds a new instructor to the users list.
@@ -390,7 +366,9 @@ public class Admin extends User {
         }
 
         // Check if the email is already used
-        for (int i = 0; i < users.size(); i++) {
+        for (int i = 0; i < users.size(); i++)
+        {
+            if(users.get(i).getEmail() == null) continue;
             if (users.get(i).getEmail().equals(instructor.getEmail())) {
                 System.out.println("Email already used");
                 return false;

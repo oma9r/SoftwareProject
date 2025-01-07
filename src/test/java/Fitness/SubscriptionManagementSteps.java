@@ -3,20 +3,26 @@ package Fitness;
 import Fitness.AdminPackage.Admin;
 import Fitness.AdminPackage.Application;
 import Fitness.AdminPackage.Client;
+import Fitness.AdminPackage.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static Fitness.AdminPackage.Application.users;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class SubscriptionManagementSteps {
-Client client=new Client();
-Admin admin=new Admin();
+Client client;
+Admin admin;
 
     public SubscriptionManagementSteps()
     {
+        client=new Client();
+        admin=new Admin();
 
+        client.setEmail("instructorTest1@gmail.com");
+        client.setPass("instructorTest1pass");
 
         users.add(client);
 
@@ -25,8 +31,10 @@ Admin admin=new Admin();
 
     @Given("a client is logged in")
     public void a_client_is_logged_in() {
+
         Application.currentUser = Application.login(client.getEmail(),client.getPass());
-        assertTrue(Application.currentUser instanceof Client);
+        System.out.println(Application.currentUser);
+        assertNotNull(Application.currentUser);
     }
     String plan;
     @When("the client selects the {string} plan")

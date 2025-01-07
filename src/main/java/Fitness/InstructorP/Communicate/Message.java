@@ -48,19 +48,7 @@ public class Message {
      */
     private MessageType messageType;
 
-    /**
-     * Default constructor that initializes all fields to null.
-     */
-    public Message() {
-        this.setMessageAuthor(null);
-        this.setMessageTitle(null);
-        this.setMessageContent(null);
-        this.setMessageTime(null);
-        this.setMessageDate(null);
-        this.setMessageDay(null);
-        this.setRole(null);
-        this.setMessageType(null);
-    }
+
 
     /**
      * Constructor to initialize a message with the specified author, content, role, and type.
@@ -144,50 +132,6 @@ public class Message {
         return messageAuthor;
     }
 
-    /**
-     * Gets the title of the message.
-     *
-     * @return the message title.
-     */
-    public String getMessageTitle() {
-        return messageTitle;
-    }
-
-    /**
-     * Gets the content of the message.
-     *
-     * @return the message content.
-     */
-    public String getMessageContent() {
-        return messageContent;
-    }
-
-    /**
-     * Gets the time the message was sent.
-     *
-     * @return the message time.
-     */
-    public String getMessageTime() {
-        return messageTime;
-    }
-
-    /**
-     * Gets the date the message was sent.
-     *
-     * @return the message date.
-     */
-    public String getMessageDate() {
-        return messageDate;
-    }
-
-    /**
-     * Gets the day the message was sent.
-     *
-     * @return the message day.
-     */
-    public String getMessageDay() {
-        return messageDay;
-    }
 
     /**
      * Gets the role of the message author.
@@ -207,14 +151,6 @@ public class Message {
         this.authorRole = role;
     }
 
-    /**
-     * Gets the type of the message.
-     *
-     * @return the message type.
-     */
-    public MessageType getMessageType() {
-        return messageType;
-    }
 
     /**
      * Sets the type of the message.

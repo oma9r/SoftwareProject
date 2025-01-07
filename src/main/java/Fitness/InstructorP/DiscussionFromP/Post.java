@@ -169,32 +169,7 @@ public class Post {
         return comments;
     }
 
-    /**
-     * Sets the list of comments for the post.
-     *
-     * @param comments the list of comments to set
-     */
-    public void setComments(ArrayList<Comment> comments) {
-        this.comments = comments;
-    }
 
-    /**
-     * Returns the discussion form associated with this post.
-     *
-     * @return the discussion form associated with the post
-     */
-    public DiscussionForm getDiscussionForm() {
-        return this.discussionForm;
-    }
-
-    /**
-     * Sets the discussion form associated with this post.
-     *
-     * @param discussionForm the discussion form to set for the post
-     */
-    public void setDiscussionForm(DiscussionForm discussionForm) {
-        this.discussionForm = discussionForm;
-    }
 
     /**
      * Returns the title of the post.
@@ -214,14 +189,7 @@ public class Post {
         this.title = titlePost;
     }
 
-    /**
-     * Returns the type of the post.
-     *
-     * @return the type of the post
-     */
-    public PostType getPostType() {
-        return postType;
-    }
+
 
     /**
      * Sets the type of the post.
@@ -232,23 +200,8 @@ public class Post {
         this.postType = postType;
     }
 
-    /**
-     * Returns the list of users who are participants in the discussion of this post.
-     *
-     * @return the list of users participating in the discussion
-     */
-    public ArrayList<User> getParticipantList() {
-        return participantList;
-    }
 
-    /**
-     * Sets the list of participants for the post's discussion.
-     *
-     * @param participantList the list of participants to set
-     */
-    public void setParticipantList(ArrayList<User> participantList) {
-        this.participantList = participantList;
-    }
+
 
     /**
      * Adds a comment to the post.
@@ -261,16 +214,6 @@ public class Post {
         return true;
     }
 
-    /**
-     * Removes a comment from the post.
-     *
-     * @param comment the comment to remove
-     * @return true if the comment was removed successfully
-     */
-    public boolean removeComment(Comment comment) {
-        this.comments.remove(comment);
-        return true;
-    }
 
     /**
      * Adds a participant to the post's discussion.
@@ -286,17 +229,5 @@ public class Post {
         return false;
     }
 
-    /**
-     * Removes a participant from the post's discussion.
-     *
-     * @param user the user to remove as a participant
-     * @return true if the participant was removed successfully
-     */
-    public boolean removeParticipant(User user) {
-        if (this.participantList.contains(user)) {
-            this.participantList.remove(user);
-            return true;
-        }
-        return false;
-    }
+
 }

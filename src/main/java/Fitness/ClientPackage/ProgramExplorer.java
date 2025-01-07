@@ -30,13 +30,6 @@ public class ProgramExplorer {
         this.filteredPrograms = programs;
     }
 
-    /**
-     * Simulates the user navigating to the program exploration page.
-     */
-    public void testUserIsOnProgramExplorationPage() {
-        programExplorer.navigateToProgramExplorationPage();
-        //assertTrue(programExplorer.isOnProgramExplorationPage(), "The user is not on the program exploration page.");
-    }
 
     /**
      * Constructor to initialize the ProgramExplorer without any programs.
@@ -113,14 +106,5 @@ public class ProgramExplorer {
         return filteredPrograms;
     }
 
-    /**
-     * Simulates clicking the "Clear Filters" button to reset the program list to its original state.
-     *
-     * @return true if the filters were cleared successfully.
-     */
-    public boolean clickClearFiltersButton() {
-        this.filteredPrograms = new ArrayList<>(allPrograms);
-        System.out.println("Filters cleared.");
-        return true;
-    }
+
 }

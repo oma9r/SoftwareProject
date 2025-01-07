@@ -98,14 +98,7 @@ public class NotificationSystem
         return this.instructorNotificationList;
     }
 
-    /**
-     * Sets the list of instructor notifications.
-     *
-     * @param instructorNotificationList The list of notifications for the instructor
-     */
-    public void setInstructorNotificationList(ArrayList<Notification> instructorNotificationList) {
-        this.instructorNotificationList = instructorNotificationList;
-    }
+
 
     /**
      * Gets the list of notifications for the clients.
@@ -116,14 +109,7 @@ public class NotificationSystem
         return this.clientNotificationList;
     }
 
-    /**
-     * Sets the list of client notifications.
-     *
-     * @param clientNotificationList The list of notifications for the clients
-     */
-    public void setClientNotificationList(ArrayList<Notification> clientNotificationList) {
-        this.clientNotificationList = clientNotificationList;
-    }
+
 
     /**
      * Gets the list of all notifications in the system.
@@ -134,14 +120,7 @@ public class NotificationSystem
         return this.NotificationsList;
     }
 
-    /**
-     * Sets the list of all notifications in the system.
-     *
-     * @param NotificationsList The list of all notifications
-     */
-    public void setNotificationsList(ArrayList<Notification> NotificationsList) {
-        this.NotificationsList = NotificationsList;
-    }
+
 
     // Methods to add and remove notifications
 
@@ -159,19 +138,7 @@ public class NotificationSystem
         return false;
     }
 
-    /**
-     * Removes a notification from the system.
-     *
-     * @param Notification The notification to remove
-     * @return {@code true} if the notification was removed successfully, {@code false} otherwise
-     */
-    public boolean removeNotification(Notification Notification) {
-        if (this.NotificationsList.contains(Notification)) {
-            this.NotificationsList.remove(Notification);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a notification specifically for a client.
@@ -187,19 +154,7 @@ public class NotificationSystem
         return false;
     }
 
-    /**
-     * Removes a notification specifically for a client.
-     *
-     * @param Notification The notification to remove
-     * @return {@code true} if the notification was removed successfully, {@code false} otherwise
-     */
-    public boolean removeClientNotification(Notification Notification) {
-        if (this.clientNotificationList.contains(Notification)) {
-            this.clientNotificationList.remove(Notification);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a notification specifically for an instructor.
@@ -215,19 +170,7 @@ public class NotificationSystem
         return false;
     }
 
-    /**
-     * Removes a notification specifically for an instructor.
-     *
-     * @param Notification The notification to remove
-     * @return {@code true} if the notification was removed successfully, {@code false} otherwise
-     */
-    public boolean removeInstructorNotification(Notification Notification) {
-        if (this.instructorNotificationList.contains(Notification)) {
-            this.instructorNotificationList.remove(Notification);
-            return true;
-        }
-        return false;
-    }
+
 
     // Methods to add and remove clients
 
@@ -245,17 +188,5 @@ public class NotificationSystem
         return false;
     }
 
-    /**
-     * Removes a client from the system.
-     *
-     * @param Client The client to remove
-     * @return {@code true} if the client was removed successfully, {@code false} otherwise
-     */
-    public boolean removeClient(Client Client) {
-        if (this.clientList.contains(Client)) {
-            this.clientList.remove(Client);
-            return true;
-        }
-        return false;
-    }
+
 }

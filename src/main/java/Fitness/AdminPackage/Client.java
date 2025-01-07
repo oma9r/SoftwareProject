@@ -112,32 +112,8 @@ public class Client extends User {
         this.status = userStatus;
     }
 
-    /**
-     * Sets the list of sessions for the client.
-     *
-     * @param sessionList the list of sessions
-     */
-    public void setSessionList(ArrayList<Session> sessionList) {
-        this.sessionList = sessionList;
-    }
 
-    /**
-     * Gets the list of sessions for the client.
-     *
-     * @return the session list
-     */
-    public ArrayList<Session> getSessionList() {
-        return sessionList;
-    }
 
-    /**
-     * Sets the list of reports for the client.
-     *
-     * @param reportList the list of reports
-     */
-    public void setReportList(ArrayList<Report> reportList) {
-        this.reportList = reportList;
-    }
 
     /**
      * Gets the list of reports for the client.
@@ -148,14 +124,6 @@ public class Client extends User {
         return reportList;
     }
 
-    /**
-     * Sets the list of replies for the client.
-     *
-     * @param replyList the list of replies
-     */
-    public void setReplyList(ArrayList<Comment> replyList) {
-        this.replyList = replyList;
-    }
 
     /**
      * Gets the list of replies for the client.
@@ -166,14 +134,6 @@ public class Client extends User {
         return replyList;
     }
 
-    /**
-     * Sets the client's current progress.
-     *
-     * @param currentProgress the current progress
-     */
-    public void setCurrentProgress(double currentProgress) {
-        this.currentProgress = this.getReportList().get(getReportList().size()).getRatioProgress();
-    }
 
     /**
      * Gets the client's current progress.
@@ -184,33 +144,7 @@ public class Client extends User {
         return currentProgress;
     }
 
-    /**
-     * Adds a session to the client's session list.
-     *
-     * @param session the session to add
-     * @return true if added successfully, false otherwise
-     */
-    public boolean addSession(Session session) {
-        if (!this.sessionList.contains(session)) {
-            this.sessionList.add(session);
-            return true;
-        }
-        return false;
-    }
 
-    /**
-     * Removes a session from the client's session list.
-     *
-     * @param session the session to remove
-     * @return true if removed successfully, false otherwise
-     */
-    public boolean removeSession(Session session) {
-        if (this.sessionList.contains(session)) {
-            this.sessionList.remove(session);
-            return true;
-        }
-        return false;
-    }
 
     /**
      * Adds a report to the client's report list.
@@ -226,19 +160,7 @@ public class Client extends User {
         return false;
     }
 
-    /**
-     * Removes a report from the client's report list.
-     *
-     * @param report the report to remove
-     * @return true if removed successfully, false otherwise
-     */
-    public boolean removeReport(Report report) {
-        if (this.reportList.contains(report)) {
-            this.reportList.remove(report);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Adds a reply to the client's reply list.
@@ -254,19 +176,7 @@ public class Client extends User {
         return false;
     }
 
-    /**
-     * Removes a reply from the client's reply list.
-     *
-     * @param reply the reply to remove
-     * @return true if removed successfully, false otherwise
-     */
-    public boolean removeReply(Comment reply) {
-        if (this.replyList.contains(reply)) {
-            this.replyList.remove(reply);
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * Submits feedback as an article.
@@ -342,17 +252,5 @@ public class Client extends User {
         return false;
     }
 
-    /**
-     * Removes a program from the client.
-     *
-     * @param program the program to remove
-     * @return true if removed successfully, false otherwise
-     */
-    public boolean removeProgram(Program program) {
-        if (this.program.equals(program)) {
-            this.setProgram(null);
-            return true;
-        }
-        return false;
-    }
+
 }
