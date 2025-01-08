@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4bdf91f-cafe-495f-8fe5-c59de468879f" name="Changes" comment="client Feature">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class diagram UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classDiagramUML.uml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cucumber/wikipedia.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/wikipedia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,46 +66,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Cucumber Java.Feature:  Progress Tracking.executor": "Run",
-    "Cucumber Java.Feature: Account Management.executor": "Run",
-    "Cucumber Java.Feature: AccountManagement.executor": "Run",
-    "Cucumber Java.Feature: FeedbackAndReviews.executor": "Run",
-    "Cucumber Java.Feature: Program Exploration and Enrollment.executor": "Run",
-    "Cucumber Java.Scenario: User browses programs by difficulty level.executor": "Run",
-    "Cucumber Java.Scenario: User browses programs by focus area.executor": "Run",
-    "Cucumber Java.Scenario: User creates their profile.executor": "Run",
-    "Cucumber Java.Scenario: User skips optional fields during profile creation.executor": "Run",
-    "Cucumber Java.Scenario: delete a not exist user.executor": "Run",
-    "Cucumber Java.Scenario: delete an exist user.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.CodeTesting (1).executor": "Run",
-    "JUnit.CodeTesting.executor": "Run",
-    "JUnit.ProgramExplorationAndEnrollment.executor": "Run",
-    "JUnit.ProgramManagementTest.executor": "Coverage",
-    "JUnit.UserManagementTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/OneDrive/Desktop/SoftwareProject/SoftwareProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature:  Progress Tracking.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Account Management.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: AccountManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: FeedbackAndReviews.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Program Exploration and Enrollment.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User browses programs by difficulty level.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User browses programs by focus area.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User creates their profile.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User skips optional fields during profile creation.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: delete a not exist user.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: delete an exist user.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.CodeTesting (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CodeTesting.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProgramExplorationAndEnrollment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProgramManagementTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserManagementTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive/Desktop/SoftwareProject/SoftwareProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hp/IdeaProjects/SoftwareProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Fitness" />
@@ -276,6 +277,10 @@
       <workItem from="1736262603542" duration="1017000" />
       <workItem from="1736264496423" duration="97000" />
       <workItem from="1736264624240" duration="145000" />
+      <workItem from="1736357229079" duration="2104000" />
+      <workItem from="1736359356222" duration="246000" />
+      <workItem from="1736359619393" duration="117000" />
+      <workItem from="1736359748564" duration="63000" />
     </task>
     <servers />
   </component>
@@ -313,7 +318,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1736264024279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/Main_java$ProgramManagementTest.ic" NAME="ProgramManagementTest Coverage Results" MODIFIED="1736359631727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>Fitness.*</FILTER>
     </SUITE>
   </component>

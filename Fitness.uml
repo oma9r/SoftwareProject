@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/user/OneDrive/Desktop/SoftwareProject/SoftwareProject/src/main/java/Fitness</OriginalElement>
+  <nodes>
+    <node x="1618.5957678181858" y="736.4220067347568">Fitness.InstructorP.Communicate.Notification</node>
+    <node x="925.5433187314151" y="1474.4315350495247">Fitness.InstructorP.Communicate.NotificationSystem</node>
+    <node x="-116.96166937204944" y="83.38920257895266">Fitness.InstructorP.Session.SessionCompleteStatus</node>
+    <node x="1367.2590218542941" y="620.10112450186">Fitness.InstructorP.Communicate.MessageType</node>
+    <node x="1670.392342153594" y="161.22256222057473">Fitness.InstructorP.DiscussionFromP.Post</node>
+    <node x="637.5676318677002" y="1121.576592574764">Fitness.ClientPackage.ProgramDetailPage</node>
+    <node x="934.8777433522984" y="228.9148684372538">Fitness.AdminPackage.Instructor</node>
+    <node x="337.86806082630216" y="1339.5801040256595">Fitness.AdminPackage.Client</node>
+    <node x="523.2194454830154" y="399.66236950042537">Fitness.InstructorP.ProgramPackage.isComplete</node>
+    <node x="597.0506778550605" y="1829.0053836577224">Fitness.ClientPackage.ProgressTrackingPage</node>
+    <node x="1058.3727865527653" y="1720.895994922803">Fitness.ClientPackage.FilterSelection</node>
+    <node x="781.1322421113733" y="1705.1507128094643">Fitness.AdminPackage.Application</node>
+    <node x="362.491612626452" y="519.0508026929747">Fitness.InstructorP.ProgramPackage.tutorialTypeProgram</node>
+    <node x="1791.184477131822" y="-13.415231295208471">Fitness.InstructorP.DiscussionFromP.Comment</node>
+    <node x="953.3845171459266" y="1840.4943053312288">Fitness.Main</node>
+    <node x="1079.5559343689056" y="543.4345257597344">Fitness.InstructorP.DiscussionFromP.DiscussionForm</node>
+    <node x="374.5665752667128" y="1163.4806307757667">Fitness.ClientPackage.ProgramData</node>
+    <node x="636.1241554611329" y="500.48478508459283">Fitness.InstructorP.ProgramPackage.ProgramStatus</node>
+    <node x="631.8268545404874" y="589.1794951861082">Fitness.InstructorP.ProgramPackage.Program</node>
+    <node x="950.8581012207665" y="1120.999141558526">Fitness.ClientPackage.ProgramExplorer</node>
+    <node x="213.85921253063978" y="1153.222608358538">Fitness.AdminPackage.Article</node>
+    <node x="1552.7566543128455" y="530.999344368948">Fitness.AdminPackage.Role</node>
+    <node x="-19.689077738993745" y="172.07719867229878">Fitness.InstructorP.Session.Session</node>
+    <node x="181.38183568591" y="3.326080069051617">Fitness.AdminPackage.Status</node>
+    <node x="1697.4047730771515" y="596.7235388383623">Fitness.InstructorP.Communicate.NotificationType</node>
+    <node x="1330.118096114009" y="750.9259692793021">Fitness.InstructorP.Communicate.Message</node>
+    <node x="1583.1731039024548" y="1052.376282299342">Fitness.AdminPackage.User</node>
+    <node x="1602.5703162697187" y="72.79584721211748">Fitness.InstructorP.DiscussionFromP.PostType</node>
+    <node x="-11.979181126523315" y="494.3966363955783">Fitness.InstructorP.Reports.Report</node>
+    <node x="1620.2938114762358" y="1800.814428061118">Fitness.AdminPackage.Admin</node>
+    <node x="1337.6265739042556" y="1552.9337190106928">Fitness.InstructorP.Communicate.MessagingSystem</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.InstructorP.ProgramPackage.ProgramStatus" relationship="TO_ONE">
+      <point x="-68.20269907935449" y="-235.5" />
+      <point x="0.0" y="14.000000000000057" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Admin" target="Fitness.AdminPackage.User" relationship="GENERALIZATION">
+      <point x="49.500188523764336" y="-4.280611178728577E-4" />
+      <point x="1900.0" y="1814.814" />
+      <point x="1900.0" y="1136.0" />
+      <point x="144.49989609754516" y="-103.87628229934194" />
+    </edge>
+    <edge source="Fitness.InstructorP.Reports.Report" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_ONE">
+      <point x="156.5001811265233" y="-120.34563639557831" />
+      <point x="605.0" y="501.551" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_MANY">
+      <point x="-92.00024211137338" y="2.871905358006188E-4" />
+      <point x="605.0" y="1736.651" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Admin" target="Fitness.AdminPackage.Client" relationship="TO_ONE">
+      <point x="-49.499811476235664" y="-4.280611178728577E-4" />
+      <point x="1304.0" y="1814.814" />
+      <point x="1304.0" y="1785.651" />
+      <point x="-35.0" y="1785.651" />
+      <point x="-35.0" y="1443.08" />
+      <point x="-119.00006082630216" y="-1.0402565953882004E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.DiscussionForm" target="Fitness.AdminPackage.User" relationship="TO_MANY">
+      <point x="109.00006563109446" y="-8.333525759734357" />
+      <point x="1588.0" y="602.601" />
+      <point x="1588.0" y="984.922" />
+      <point x="1727.673" y="984.922" />
+      <point x="-1.0390245483904437E-4" y="-187.50028229934196" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Instructor" target="Fitness.AdminPackage.Status" relationship="TO_ONE">
+      <point x="-117.99974335229831" y="1.315627462190605E-4" />
+      <point x="306.0" y="272.415" />
+      <point x="306.0" y="17.326" />
+      <point x="49.500164314090014" y="-8.00690516165048E-5" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.Notification" target="Fitness.InstructorP.Communicate.NotificationType" relationship="TO_ONE">
+      <point x="38.809005258965726" y="-115.5" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Instructor" target="Fitness.InstructorP.DiscussionFromP.DiscussionForm" relationship="TO_MANY">
+      <point x="-14.99974335229831" y="43.50013156274622" />
+      <point x="1037.8780000000002" y="427.0" />
+      <point x="1188.556" y="427.0" />
+      <point x="6.563109445778537E-5" y="-67.49952575973441" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Post" target="Fitness.InstructorP.DiscussionFromP.DiscussionForm" relationship="TO_ONE">
+      <point x="-3.421535939196474E-4" y="115.50043777942528" />
+      <point x="1791.892" y="427.0" />
+      <point x="1188.556" y="427.0" />
+      <point x="6.563109445778537E-5" y="-67.49952575973441" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.NotificationSystem" target="Fitness.AdminPackage.Instructor" relationship="TO_ONE">
+      <point x="-3.1873141506366665E-4" y="-79.49953504952464" />
+      <point x="1101.5430000000001" y="1362.08" />
+      <point x="1266.0" y="1362.08" />
+      <point x="1266.0" y="718.922" />
+      <point x="1337.618" y="718.922" />
+      <point x="1337.618" y="272.415" />
+      <point x="118.00025664770158" y="1.315627462190605E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.Message" target="Fitness.AdminPackage.User" relationship="TO_ONE">
+      <point x="113.49990388599099" y="3.072069796417054E-5" />
+      <point x="1588.0" y="866.426" />
+      <point x="1588.0" y="984.922" />
+      <point x="1727.673" y="984.922" />
+      <point x="-1.0390245483904437E-4" y="-187.50028229934196" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.InstructorP.Session.Session" relationship="TO_MANY">
+      <point x="-119.00006082630216" y="14.999895974340461" />
+      <point x="177.0" y="1458.08" />
+      <point x="177.0" y="1052.679" />
+      <point x="344.99199999999996" y="1052.679" />
+      <point x="344.99199999999996" y="455.0" />
+      <point x="147.5" y="455.0" />
+      <point x="22.689077738993745" y="115.49980132770122" />
+    </edge>
+    <edge source="Fitness.InstructorP.Session.Session" target="Fitness.AdminPackage.Client" relationship="TO_MANY">
+      <point x="7.773899374541315E-5" y="115.49980132770122" />
+      <point x="124.811" y="446.897" />
+      <point x="-35.0" y="446.897" />
+      <point x="-35.0" y="1443.08" />
+      <point x="-119.00006082630216" y="-1.0402565953882004E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.MessagingSystem" target="Fitness.AdminPackage.Instructor" relationship="TO_ONE">
+      <point x="4.260957443875668E-4" y="-79.49971901069284" />
+      <point x="1485.127" y="1362.08" />
+      <point x="1266.0" y="1362.08" />
+      <point x="1266.0" y="718.922" />
+      <point x="1337.618" y="718.922" />
+      <point x="1337.618" y="272.415" />
+      <point x="118.00025664770158" y="1.315627462190605E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.Notification" target="Fitness.AdminPackage.Role" relationship="TO_ONE">
+      <point x="-121.49976781818577" y="115.49999326524323" />
+      <point x="1626.096" y="1018.0" />
+      <point x="1742.673" y="1018.0" />
+      <point x="1742.673" y="999.922" />
+      <point x="1960.892" y="999.922" />
+      <point x="1960.892" y="544.999" />
+      <point x="41.50034568715455" y="-3.4436894793543615E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.DiscussionForm" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_ONE">
+      <point x="-108.99993436890554" y="4.7424026558928745E-4" />
+      <point x="1011.0" y="610.935" />
+      <point x="1011.0" y="482.985" />
+      <point x="605.0" y="482.985" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.AdminPackage.Article" relationship="TO_MANY">
+      <point x="-92.0" y="-14.9997128094642" />
+      <point x="278.35921253063975" y="1721.651" />
+      <point x="15.0" y="14.0" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.MessagingSystem" target="Fitness.AdminPackage.Client" relationship="TO_ONE">
+      <point x="-147.4995739042556" y="2.809893071571423E-4" />
+      <point x="1304.0" y="1632.434" />
+      <point x="1304.0" y="1785.651" />
+      <point x="-35.0" y="1785.651" />
+      <point x="-35.0" y="1443.08" />
+      <point x="-119.00006082630216" y="-1.0402565953882004E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Reports.Report" target="Fitness.InstructorP.DiscussionFromP.Comment" relationship="TO_MANY">
+      <point x="156.5001811265233" y="3.6360442175009666E-4" />
+      <point x="326.0" y="621.897" />
+      <point x="326.0" y="137.0" />
+      <point x="1910.184" y="137.0" />
+      <point x="-4.771318219809473E-4" y="55.500231295208465" />
+    </edge>
+    <edge source="Fitness.AdminPackage.User" target="Fitness.InstructorP.DiscussionFromP.Post" relationship="TO_MANY">
+      <point x="144.49989609754516" y="-2.82299341961334E-4" />
+      <point x="1945.892" y="1239.876" />
+      <point x="1945.892" y="122.0" />
+      <point x="1806.892" y="122.0" />
+      <point x="14.99965784640608" y="-115.49956222057472" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Post" target="Fitness.AdminPackage.User" relationship="TO_MANY">
+      <point x="-111.987342153594" y="115.50043777942528" />
+      <point x="1679.905" y="617.224" />
+      <point x="1588.0" y="617.224" />
+      <point x="1588.0" y="984.922" />
+      <point x="1727.673" y="984.922" />
+      <point x="-1.0390245483904437E-4" y="-187.50028229934196" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.Notification" target="Fitness.AdminPackage.User" relationship="TO_ONE">
+      <point x="-128.99976781818577" y="-6.734756766491046E-6" />
+      <point x="1588.0" y="851.922" />
+      <point x="1588.0" y="984.922" />
+      <point x="1727.673" y="984.922" />
+      <point x="-1.0390245483904437E-4" y="-187.50028229934196" />
+    </edge>
+    <edge source="Fitness.ClientPackage.ProgramDetailPage" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_ONE">
+      <point x="3.6813229974086425E-4" y="79.50040742523606" />
+      <point x="759.068" y="1311.0" />
+      <point x="605.0" y="1311.0" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Post" target="Fitness.AdminPackage.User" relationship="CREATE">
+      <point x="14.99965784640608" y="115.50043777942528" />
+      <point x="1806.892" y="427.0" />
+      <point x="1916.0" y="427.0" />
+      <point x="1916.0" y="1254.876" />
+      <point x="144.49989609754516" y="14.999717700658039" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.InstructorP.ProgramPackage.isComplete" relationship="TO_ONE">
+      <point x="61.29714545951265" y="-235.5" />
+      <point x="847.624" y="412.0" />
+      <point x="68.5" y="-1.6623695004253705" />
+    </edge>
+    <edge source="Fitness.AdminPackage.User" target="Fitness.InstructorP.Communicate.Notification" relationship="TO_MANY">
+      <point x="-139.17310390245484" y="-187.50028229934196" />
+      <point x="1588.5" y="1003.0" />
+      <point x="1712.673" y="1003.0" />
+      <point x="-34.922767818185775" y="115.49999326524323" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.InstructorP.DiscussionFromP.Comment" relationship="TO_MANY">
+      <point x="-111.87606082630217" y="-103.50010402565954" />
+      <point x="344.99199999999996" y="1092.679" />
+      <point x="326.0" y="1092.679" />
+      <point x="326.0" y="137.0" />
+      <point x="1910.184" y="137.0" />
+      <point x="-4.771318219809473E-4" y="55.500231295208465" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Admin" target="Fitness.AdminPackage.Instructor" relationship="CREATE">
+      <point x="1.8852376433642348E-4" y="-14.000428061117873" />
+      <point x="1669.794" y="1451.0" />
+      <point x="1736.794" y="1451.0" />
+      <point x="1736.794" y="2173.505" />
+      <point x="-134.462" y="2173.505" />
+      <point x="-134.462" y="-30.915" />
+      <point x="1037.8780000000002" y="-30.915" />
+      <point x="-14.99974335229831" y="-43.49986843725381" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.AdminPackage.User" relationship="GENERALIZATION">
+      <point x="-6.082630216042162E-5" y="103.49989597434046" />
+      <point x="456.868" y="1665.932" />
+      <point x="1295.043" y="1665.932" />
+      <point x="1295.043" y="1847.994" />
+      <point x="1900.0" y="1847.994" />
+      <point x="1900.0" y="1136.0" />
+      <point x="144.49989609754516" y="-103.87628229934194" />
+    </edge>
+    <edge source="Fitness.ClientPackage.ProgramExplorer" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_MANY">
+      <point x="-1.0122076650986855E-4" y="55.49985844147409" />
+      <point x="1086.358" y="1311.0" />
+      <point x="605.0" y="1311.0" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Instructor" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_MANY">
+      <point x="2.566477016898716E-4" y="43.50013156274622" />
+      <point x="1052.8780000000002" y="461.897" />
+      <point x="1011.0" y="461.897" />
+      <point x="1011.0" y="482.985" />
+      <point x="605.0" y="482.985" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.AdminPackage.Status" relationship="TO_ONE">
+      <point x="-119.00006082630216" y="-15.000104025659539" />
+      <point x="-50.0" y="1428.08" />
+      <point x="-50.0" y="154.577" />
+      <point x="306.0" y="154.577" />
+      <point x="306.0" y="17.326" />
+      <point x="49.500164314090014" y="-8.00690516165048E-5" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.AdminPackage.Instructor" relationship="TO_ONE">
+      <point x="154.50014545951262" y="14.999504813891804" />
+      <point x="1266.0" y="839.679" />
+      <point x="1266.0" y="718.922" />
+      <point x="1337.618" y="718.922" />
+      <point x="1337.618" y="272.415" />
+      <point x="118.00025664770158" y="1.315627462190605E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.InstructorP.Reports.Report" relationship="TO_MANY">
+      <point x="-119.00006082630216" y="-30.00010402565954" />
+      <point x="196.35899999999998" y="1413.08" />
+      <point x="196.35899999999998" y="1107.679" />
+      <point x="475.0" y="1107.679" />
+      <point x="475.0" y="658.5" />
+      <point x="156.5001811265233" y="36.6033636044217" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Post" target="Fitness.InstructorP.DiscussionFromP.DiscussionForm" relationship="CREATE">
+      <point x="-121.5" y="10.69243777942529" />
+      <point x="1218.556" y="287.415" />
+      <point x="30.000065631094458" y="-67.5" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.DiscussionForm" target="Fitness.AdminPackage.Instructor" relationship="TO_ONE">
+      <point x="6.563109445778537E-5" y="67.50047424026559" />
+      <point x="1188.556" y="809.679" />
+      <point x="1266.0" y="809.679" />
+      <point x="1266.0" y="718.922" />
+      <point x="1337.618" y="718.922" />
+      <point x="1337.618" y="272.415" />
+      <point x="118.00025664770158" y="1.315627462190605E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Reports.Report" target="Fitness.AdminPackage.Client" relationship="TO_ONE">
+      <point x="-156.4998188734767" y="3.6360442175009666E-4" />
+      <point x="-35.0" y="621.897" />
+      <point x="-35.0" y="1443.08" />
+      <point x="-119.00006082630216" y="-1.0402565953882004E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.DiscussionForm" target="Fitness.InstructorP.DiscussionFromP.Post" relationship="TO_MANY">
+      <point x="15.000065631094458" y="-67.49952575973441" />
+      <point x="1203.556" y="122.0" />
+      <point x="1806.892" y="122.0" />
+      <point x="14.99965784640608" y="-115.49956222057472" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.MessagingSystem" target="Fitness.InstructorP.Communicate.Message" relationship="TO_MANY">
+      <point x="105.54642609574444" y="-79.49971901069284" />
+      <point x="1590.673" y="1466.0" />
+      <point x="1532.0" y="1466.0" />
+      <point x="1532.0" y="1267.0" />
+      <point x="1458.618" y="1267.0" />
+      <point x="14.999903885990989" y="115.50003072069796" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.InstructorP.ProgramPackage.Program" relationship="CREATE">
+      <point x="-15.00006082630216" y="-103.50010402565954" />
+      <point x="441.868" y="1272.0" />
+      <point x="617.0" y="1272.0" />
+      <point x="617.0" y="1094.179" />
+      <point x="786.327" y="1094.179" />
+      <point x="1.454595126233471E-4" y="235.49950481389192" />
+    </edge>
+    <edge source="Fitness.InstructorP.Reports.Report" target="Fitness.AdminPackage.Instructor" relationship="TO_ONE">
+      <point x="1.8112652331581103E-4" y="127.50036360442175" />
+      <point x="144.52100000000002" y="1077.679" />
+      <point x="1266.0" y="1077.679" />
+      <point x="1266.0" y="718.922" />
+      <point x="1337.618" y="718.922" />
+      <point x="1337.618" y="272.415" />
+      <point x="118.00025664770158" y="1.315627462190605E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.User" target="Fitness.InstructorP.Communicate.Message" relationship="TO_MANY">
+      <point x="-144.50010390245484" y="-2.82299341961334E-4" />
+      <point x="1532.0" y="1239.876" />
+      <point x="1532.0" y="1267.0" />
+      <point x="1458.618" y="1267.0" />
+      <point x="14.999903885990989" y="115.50003072069796" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.AdminPackage.Admin" relationship="CREATE">
+      <point x="49.418757888626715" y="31.5" />
+      <point x="922.551" y="1915.994" />
+      <point x="1684.7938114762358" y="1915.994" />
+      <point x="15.0" y="14.0" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.InstructorP.DiscussionFromP.DiscussionForm" relationship="TO_MANY">
+      <point x="46.29714545951265" y="-235.5004951861082" />
+      <point x="832.624" y="427.0" />
+      <point x="1188.556" y="427.0" />
+      <point x="6.563109445778537E-5" y="-67.49952575973441" />
+    </edge>
+    <edge source="Fitness.AdminPackage.User" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_ONE">
+      <point x="-144.50010390245484" y="107.20371770065799" />
+      <point x="913.068" y="1347.08" />
+      <point x="913.068" y="1311.0" />
+      <point x="605.0" y="1311.0" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.AdminPackage.Instructor" relationship="CREATE">
+      <point x="111.74114545951261" y="235.49950481389192" />
+      <point x="898.068" y="1451.0" />
+      <point x="1736.794" y="1451.0" />
+      <point x="1736.794" y="2173.505" />
+      <point x="-134.462" y="2173.505" />
+      <point x="-134.462" y="-30.915" />
+      <point x="1037.8780000000002" y="-30.915" />
+      <point x="-14.99974335229831" y="-43.49986843725381" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.InstructorP.Session.Session" relationship="TO_MANY">
+      <point x="31.29714545951265" y="-235.5004951861082" />
+      <point x="817.624" y="455.0" />
+      <point x="147.5" y="455.0" />
+      <point x="22.689077738993745" y="115.49980132770122" />
+    </edge>
+    <edge source="Fitness.AdminPackage.User" target="Fitness.AdminPackage.Role" relationship="TO_ONE">
+      <point x="-124.17310390245484" y="-187.50028229934196" />
+      <point x="1603.5" y="1018.0" />
+      <point x="1742.673" y="1018.0" />
+      <point x="1742.673" y="999.922" />
+      <point x="1960.892" y="999.922" />
+      <point x="1960.892" y="544.999" />
+      <point x="41.50034568715455" y="-3.4436894793543615E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Reports.Report" target="Fitness.InstructorP.Session.Session" relationship="TO_MANY">
+      <point x="2.979181126523315" y="-127.4996363955783" />
+      <point x="22.689077738993745" y="115.49980132770122" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.NotificationSystem" target="Fitness.AdminPackage.Client" relationship="TO_MANY">
+      <point x="175.99968126858482" y="4.6495047536154743E-4" />
+      <point x="1304.0" y="1553.932" />
+      <point x="1304.0" y="1785.651" />
+      <point x="-35.0" y="1785.651" />
+      <point x="-35.0" y="1443.08" />
+      <point x="-119.00006082630216" y="-1.0402565953882004E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.Message" target="Fitness.InstructorP.Communicate.MessageType" relationship="TO_ONE">
+      <point x="2.1409257402851836" y="-115.5" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Instructor" target="Fitness.InstructorP.DiscussionFromP.Comment" relationship="TO_MANY">
+      <point x="2.566477016898716E-4" y="-43.49986843725381" />
+      <point x="1052.8780000000002" y="137.0" />
+      <point x="1910.184" y="137.0" />
+      <point x="-4.771318219809473E-4" y="55.500231295208465" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Comment" target="Fitness.InstructorP.DiscussionFromP.Post" relationship="GENERALIZATION">
+      <point x="-15.000477131821981" y="55.5" />
+      <point x="103.291657846406" y="-115.5" />
+    </edge>
+    <edge source="Fitness.ClientPackage.ProgramData" target="Fitness.InstructorP.ProgramPackage.Program" relationship="CREATE">
+      <point x="4.2473328721825965E-4" y="31.500369224233282" />
+      <point x="476.067" y="1272.0" />
+      <point x="617.0" y="1272.0" />
+      <point x="617.0" y="1094.179" />
+      <point x="786.327" y="1094.179" />
+      <point x="1.454595126233471E-4" y="235.49950481389192" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.InstructorP.ProgramPackage.tutorialTypeProgram" relationship="TO_ONE">
+      <point x="-154.5" y="-228.0" />
+      <point x="104.5" y="22.128692493133485" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Admin" target="Fitness.AdminPackage.Client" relationship="CREATE">
+      <point x="-14.999811476235664" y="-14.000428061117873" />
+      <point x="1654.794" y="1729.434" />
+      <point x="1235.873" y="1729.434" />
+      <point x="1235.873" y="1684.0" />
+      <point x="471.868" y="1684.0" />
+      <point x="14.99993917369784" y="103.49989597434046" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.AdminPackage.Admin" relationship="TO_ONE">
+      <point x="92.0" y="25.245282113338817" />
+      <point x="1644.294" y="1761.895994922803" />
+      <point x="-25.499811476235664" y="-14.0" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Admin" target="Fitness.AdminPackage.User" relationship="CREATE">
+      <point x="15.000188523764336" y="-14.000428061117873" />
+      <point x="1684.794" y="1560.434" />
+      <point x="1916.0" y="1560.434" />
+      <point x="1916.0" y="1254.876" />
+      <point x="144.49989609754516" y="14.999717700658039" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.NotificationSystem" target="Fitness.InstructorP.Communicate.Notification" relationship="TO_MANY">
+      <point x="149.45668126858493" y="-79.49953504952464" />
+      <point x="1251.0" y="1003.0" />
+      <point x="1712.673" y="1003.0" />
+      <point x="-34.922767818185775" y="115.49999326524323" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.NotificationSystem" target="Fitness.AdminPackage.Instructor" relationship="CREATE">
+      <point x="73.95668126858493" y="-79.49953504952464" />
+      <point x="1175.5" y="1451.0" />
+      <point x="1736.794" y="1451.0" />
+      <point x="1736.794" y="2173.505" />
+      <point x="-134.462" y="2173.505" />
+      <point x="-134.462" y="-30.915" />
+      <point x="1037.8780000000002" y="-30.915" />
+      <point x="-14.99974335229831" y="-43.49986843725381" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.AdminPackage.Client" relationship="CREATE">
+      <point x="-2.4211137338170374E-4" y="-31.4997128094642" />
+      <point x="873.132" y="1684.0" />
+      <point x="471.868" y="1684.0" />
+      <point x="14.99993917369784" y="103.49989597434046" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.InstructorP.Session.Session" relationship="TO_MANY">
+      <point x="-92.00024211137338" y="15.0002871905358" />
+      <point x="177.0" y="1751.651" />
+      <point x="177.0" y="1052.679" />
+      <point x="344.99199999999996" y="1052.679" />
+      <point x="344.99199999999996" y="455.0" />
+      <point x="147.5" y="455.0" />
+      <point x="22.689077738993745" y="115.49980132770122" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.InstructorP.ProgramPackage.Program" relationship="TO_ONE">
+      <point x="-6.082630216042162E-5" y="-103.50010402565954" />
+      <point x="456.868" y="1311.0" />
+      <point x="605.0" y="1311.0" />
+      <point x="605.0" y="824.679" />
+      <point x="-154.49985454048738" y="-4.951861081963216E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.AdminPackage.Client" relationship="TO_MANY">
+      <point x="154.50014545951262" y="-4.951861081963216E-4" />
+      <point x="1304.0" y="824.679" />
+      <point x="1304.0" y="1785.651" />
+      <point x="-35.0" y="1785.651" />
+      <point x="-35.0" y="1443.08" />
+      <point x="-119.00006082630216" y="-1.0402565953882004E-4" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Instructor" target="Fitness.AdminPackage.User" relationship="GENERALIZATION">
+      <point x="15.00025664770169" y="43.50013156274622" />
+      <point x="1067.8780000000002" y="461.897" />
+      <point x="1900.0" y="461.897" />
+      <point x="1900.0" y="1136.0" />
+      <point x="144.49989609754516" y="-103.87628229934194" />
+    </edge>
+    <edge source="Fitness.InstructorP.Session.Session" target="Fitness.InstructorP.Session.SessionCompleteStatus" relationship="TO_ONE">
+      <point x="-124.7725916330557" y="-115.5" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Post" target="Fitness.InstructorP.DiscussionFromP.Comment" relationship="TO_MANY">
+      <point x="-3.421535939196474E-4" y="-115.49956222057472" />
+      <point x="1791.892" y="137.0" />
+      <point x="1910.184" y="137.0" />
+      <point x="-4.771318219809473E-4" y="55.500231295208465" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Client" target="Fitness.AdminPackage.Article" relationship="CREATE">
+      <point x="-119.0" y="-45.00010402565954" />
+      <point x="293.35921253063975" y="1398.08" />
+      <point x="30.0" y="14.0" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Comment" target="Fitness.InstructorP.DiscussionFromP.Post" relationship="TO_ONE">
+      <point x="14.999522868178019" y="55.500231295208465" />
+      <point x="1925.184" y="122.0" />
+      <point x="1806.892" y="122.0" />
+      <point x="14.99965784640608" y="-115.49956222057472" />
+    </edge>
+    <edge source="Fitness.InstructorP.Communicate.Message" target="Fitness.AdminPackage.Role" relationship="TO_ONE">
+      <point x="-9.61140090112167E-5" y="115.50003072069796" />
+      <point x="1443.618" y="1018.0" />
+      <point x="1742.673" y="1018.0" />
+      <point x="1742.673" y="999.922" />
+      <point x="1960.892" y="999.922" />
+      <point x="1960.892" y="544.999" />
+      <point x="41.50034568715455" y="-3.4436894793543615E-4" />
+    </edge>
+    <edge source="Fitness.InstructorP.ProgramPackage.Program" target="Fitness.InstructorP.Reports.Report" relationship="TO_MANY">
+      <point x="-154.49985454048738" y="72.32050481389183" />
+      <point x="475.0" y="897.0" />
+      <point x="475.0" y="658.5" />
+      <point x="156.5001811265233" y="36.6033636044217" />
+    </edge>
+    <edge source="Fitness.AdminPackage.Application" target="Fitness.AdminPackage.User" relationship="TO_MANY">
+      <point x="19.418757888626715" y="31.5002871905358" />
+      <point x="892.551" y="1885.994" />
+      <point x="1930.892" y="1885.994" />
+      <point x="1930.892" y="718.922" />
+      <point x="1588.0" y="718.922" />
+      <point x="1588.0" y="984.922" />
+      <point x="1727.673" y="984.922" />
+      <point x="-1.0390245483904437E-4" y="-187.50028229934196" />
+    </edge>
+    <edge source="Fitness.InstructorP.DiscussionFromP.Post" target="Fitness.InstructorP.DiscussionFromP.PostType" relationship="TO_ONE">
+      <point x="-114.0" y="-115.5" />
+      <point x="13.822025883875313" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.39685393258426965" showDependencies="true" x="957.5000000000001" y="1081.5000000000002" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
