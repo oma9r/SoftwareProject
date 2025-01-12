@@ -126,12 +126,13 @@ public  class Application {
         Application.addUser(admin1);
         Application.addUser(admin2);
         Application.addUser(admin3);
-        Client client = new Client("client", 18, "male", yaseedString, "client@gmail.com", "12345", Status.Active);
-        Application.addUser(client);
-        admin1.addClient("client", 18, "male",yaseedString, "client@gmail.com", "12345", Status.Active);
+        //Client client = new Client("client", 18, "male", yaseedString, "client@gmail.com", "12345", Status.Active);
+        //Application.addUser(client);
+        //admin1.addClient("client", 18, "male",yaseedString, "client@gmail.com", "12345", Status.Active);
 
         admin1.addClient("notActive", 18, "male", yaseedString, "not@gmail.com", "12345", Status.DeActive);
         admin1.addClient("is", 18, "male", yaseedString, "is@gmail.com", "12345", Status.Active);
+        admin1.addClient("mo", 18, "male", "yaseed", "moh@gmail.com", "12345", Status.Active);
 
     }
 
@@ -275,12 +276,14 @@ public  class Application {
         admin1.addClient("client", 18, "male", "yaseed", "client@gmail.com", "12345", Status.Active);
         admin1.addClient("notActive", 18, "male", "yaseed", "not@gmail.com", "12345", Status.DeActive);
         admin1.addClient("is", 18, "male", "yaseed", "is@gmail.com", "12345", Status.Active);
+        admin1.addClient("mo", 18, "male", "yaseed", "moh@gmail.com", "12345", Status.Active);
     }
 
     public static boolean addUser(User user)
     {
         if(!users.contains(user))
         {
+            //System.out.println(user.getEmail());
             users.add(user);
             return true;
         }

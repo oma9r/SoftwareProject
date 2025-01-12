@@ -21,7 +21,7 @@ import static Fitness.AdminPackage.Application.*;
  */
 public class Admin extends User {
 
-    Client deletedClient;
+    //Client deletedClient;
     String constantString;
     /**
      * Constructs a new Admin instance with the specified details.
@@ -49,7 +49,8 @@ public class Admin extends User {
 
         Application.addUser(instructorTest2);
 
-        deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
+        Client deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
+        Application.addUser(deletedClient);
     }
 
     /**
@@ -68,6 +69,9 @@ public class Admin extends User {
         Instructor instructorTest2 = new Instructor("mohammad",33,"male","hdbgfvd","instructor@gmail.com","4865", Status.Active);
 
         Application.addUser(instructorTest2);
+
+        Client deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
+        Application.addUser(deletedClient);
     }
 
     /**
@@ -98,8 +102,9 @@ public class Admin extends User {
 
 
         for (int i = 0; i < Application.users.size(); i++) {
-
+            System.out.println(Application.users.get(i).getEmail());
             if(Application.users.get(i).getEmail() == null) continue;
+
             if (Application.users.get(i).getEmail().equals(deleted) /*&& !(Application.users.get(i) instanceof Admin)*/)
             {
                 Application.users.remove(i);

@@ -33,8 +33,8 @@ public class UserManagementSteps {
         deletedClient = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
         admin2.addClient("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
         //admin2.addClient("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
-        Client user = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
-        Application.addUser(user);
+        //Client user = new Client("delete user",25,"female","testAddress","moh@gmail.com","passTest",Status.Active);
+        Application.addUser(deletedClient);
 
 
 
